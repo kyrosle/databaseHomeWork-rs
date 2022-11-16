@@ -2095,3 +2095,15 @@
 2022-11-16 00:53:47.0185702 INFO rbatis::plugin::log - [rbatis] [435241361680240640] Fetch  ==> show databases;
                                                       [rbatis]                      Args   ==> []
 2022-11-16 00:53:47.0236946 INFO rbatis::plugin::log - [rbatis] [435241361680240640] ReturnRows <== 5
+2022-11-16 02:49:55.200308 TRACE mio::poll - registering event source with poller: token=Token(0), interests=READABLE | WRITABLE
+2022-11-16 02:49:57.2039049 TRACE mio::poll - deregistering event source from poller
+2022-11-16 02:49:57.2042211 TRACE mio::poll - registering event source with poller: token=Token(16777216), interests=READABLE | WRITABLE
+2022-11-16 02:49:59.2055822 TRACE mio::poll - deregistering event source from poller
+2022-11-16 02:52:41.62537 TRACE mio::poll - registering event source with poller: token=Token(0), interests=READABLE | WRITABLE
+2022-11-16 02:52:43.626384 TRACE mio::poll - deregistering event source from poller
+2022-11-16 02:52:43.6266934 TRACE mio::poll - registering event source with poller: token=Token(16777216), interests=READABLE | WRITABLE
+2022-11-16 02:52:45.6297483 TRACE mio::poll - deregistering event source from poller
+2022-11-16 02:57:31.5873225 TRACE mio::poll - registering event source with poller: token=Token(0), interests=READABLE | WRITABLE
+2022-11-16 02:57:33.588729 TRACE mio::poll - deregistering event source from poller
+2022-11-16 02:57:33.5890544 TRACE mio::poll - registering event source with poller: token=Token(16777216), interests=READABLE | WRITABLE
+2022-11-16 02:57:35.5923791 TRACE mio::poll - deregistering event source from poller

@@ -54,20 +54,7 @@ fn get_cfg<'a>(docs: &'a Vec<Yaml>, key: &str) -> Result<&'a Yaml, Error> {
 #[cfg(test)]
 mod test {
     use super::*;
-    use std::{
-        fs::File,
-        io::{self, BufRead},
-        path::Path,
-    };
-
-    /// read the file content with line by line.
-    fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
-    where
-        P: AsRef<Path>,
-    {
-        let file = File::open(filename)?;
-        Ok(io::BufReader::new(file).lines())
-    }
+    use crate::utils::read_lines;
     /// ensure the mysql connection config data structure is correctly match the yml file.
     #[test]
     fn test_config() {
@@ -80,7 +67,6 @@ mod test {
         match read_lines("./application.yml") {
             Ok(lines) => {
                 for s in lines.flatten() {
-                    dbg!(&s);
                     if !s.starts_with('#') {
                         let sp = s.splitn(2, ':');
                         txt.push(
