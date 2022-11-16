@@ -4,7 +4,7 @@ use std::io::Read;
 use once_cell::sync::Lazy;
 use yaml_rust::{Yaml, YamlLoader};
 
-pub static CONFIG: Lazy<ApplicationConfig> = Lazy::new(|| ApplicationConfig::default());
+pub static CONFIG: Lazy<ApplicationConfig> = Lazy::new(ApplicationConfig::default);
 
 /// Data structure for the config of Mysql Connection
 #[derive(Debug)]
