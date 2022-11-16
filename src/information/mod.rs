@@ -1,11 +1,13 @@
 use rbatis::rbdc;
 use serde::{Deserialize, Serialize};
 
+// Dto Fields :
 pub type FieldString = Option<String>;
 pub type FieldFloat = Option<rbdc::decimal::Decimal>;
 pub type Key = Option<usize>;
 pub type Id = Option<usize>;
 pub type CheckStatus = Option<usize>;
+
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct Attendance {
     pub name: FieldString,

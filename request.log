@@ -1,0 +1,1957 @@
+2022-11-15 08:14:39.1486439 TRACE mio::poll - registering event source with poller: token=Token(0), interests=READABLE | WRITABLE
+2022-11-15 08:14:39.1770122 DEBUG rustls::client::hs - No cached session for DnsName(DnsName(DnsName("localhost")))
+2022-11-15 08:14:39.1773755 DEBUG rustls::client::hs - Not resuming any session
+2022-11-15 08:14:39.1778964 TRACE rustls::client::hs - Sending ClientHello Message {
+    version: TLSv1_0,
+    payload: Handshake {
+        parsed: HandshakeMessagePayload {
+            typ: ClientHello,
+            payload: ClientHello(
+                ClientHelloPayload {
+                    client_version: TLSv1_2,
+                    random: 6c492487274f002c9a5a63ce4eb173c696bfc8e30145e49ec76ab9c9ae1144cd,
+                    session_id: 42f5933d223a546704b93955f8e7bd5f51cafda9e8b85d523d7df804aefcea33,
+                    cipher_suites: [
+                        TLS13_AES_256_GCM_SHA384,
+                        TLS13_AES_128_GCM_SHA256,
+                        TLS13_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_EMPTY_RENEGOTIATION_INFO_SCSV,
+                    ],
+                    compression_methods: [
+                        Null,
+                    ],
+                    extensions: [
+                        SupportedVersions(
+                            [
+                                TLSv1_3,
+                                TLSv1_2,
+                            ],
+                        ),
+                        ECPointFormats(
+                            [
+                                Uncompressed,
+                            ],
+                        ),
+                        NamedGroups(
+                            [
+                                X25519,
+                                secp256r1,
+                                secp384r1,
+                            ],
+                        ),
+                        SignatureAlgorithms(
+                            [
+                                ECDSA_NISTP384_SHA384,
+                                ECDSA_NISTP256_SHA256,
+                                ED25519,
+                                RSA_PSS_SHA512,
+                                RSA_PSS_SHA384,
+                                RSA_PSS_SHA256,
+                                RSA_PKCS1_SHA512,
+                                RSA_PKCS1_SHA384,
+                                RSA_PKCS1_SHA256,
+                            ],
+                        ),
+                        ExtendedMasterSecretRequest,
+                        CertificateStatusRequest(
+                            OCSP(
+                                OCSPCertificateStatusRequest {
+                                    responder_ids: [],
+                                    extensions: ,
+                                },
+                            ),
+                        ),
+                        ServerName(
+                            [
+                                ServerName {
+                                    typ: HostName,
+                                    payload: HostName(
+                                        (
+                                            6c6f63616c686f7374,
+                                            DnsName(
+                                                "localhost",
+                                            ),
+                                        ),
+                                    ),
+                                },
+                            ],
+                        ),
+                        SignedCertificateTimestampRequest,
+                        KeyShare(
+                            [
+                                KeyShareEntry {
+                                    group: X25519,
+                                    payload: 6fc678880479b73be010748d0cf03852ce153977c2ea3172f63bf8bb646a592f,
+                                },
+                            ],
+                        ),
+                        PresharedKeyModes(
+                            [
+                                PSK_DHE_KE,
+                            ],
+                        ),
+                        SessionTicket(
+                            Request,
+                        ),
+                    ],
+                },
+            ),
+        },
+        encoded: 010000e703036c492487274f002c9a5a63ce4eb173c696bfc8e30145e49ec76ab9c9ae1144cd2042f5933d223a546704b93955f8e7bd5f51cafda9e8b85d523d7df804aefcea330014130213011303c02cc02bcca9c030c02fcca800ff0100008a002b00050403040303000b00020100000a00080006001d00170018000d00140012050304030807080608050804060105010401001700000005000501000000000000000e000c0000096c6f63616c686f737400120000003300260024001d00206fc678880479b73be010748d0cf03852ce153977c2ea3172f63bf8bb646a592f002d0002010100230000,
+    },
+}
+2022-11-15 08:14:39.2055183 TRACE rustls::client::hs - We got ServerHello ServerHelloPayload {
+    legacy_version: TLSv1_2,
+    random: f54c78a0abdc6a5ca8ca11bb16ac205ba216749b640ebaca5c2808469c64217d,
+    session_id: 42f5933d223a546704b93955f8e7bd5f51cafda9e8b85d523d7df804aefcea33,
+    cipher_suite: TLS13_AES_256_GCM_SHA384,
+    compression_method: Null,
+    extensions: [
+        SupportedVersions(
+            TLSv1_3,
+        ),
+        KeyShare(
+            KeyShareEntry {
+                group: X25519,
+                payload: 39822ebfeeeadeabab1523242474599bb1fa4726f9a2aa9a98d0f99461d03d04,
+            },
+        ),
+    ],
+}
+2022-11-15 08:14:39.205566 DEBUG rustls::client::hs - Using ciphersuite TLS13_AES_256_GCM_SHA384
+2022-11-15 08:14:39.205612 DEBUG rustls::client::tls13 - Not resuming
+2022-11-15 08:14:39.205626 TRACE rustls::client::client_conn - EarlyData rejected
+2022-11-15 08:14:39.2064379 TRACE rustls::conn - Dropping CCS
+2022-11-15 08:14:39.2064926 DEBUG rustls::client::tls13 - TLS1.3 encrypted extensions: []
+2022-11-15 08:14:39.2065004 DEBUG rustls::client::hs - ALPN protocol is None
+2022-11-15 08:14:39.2065741 DEBUG rustls::client::tls13 - Got CertificateRequest CertificateRequestPayloadTLS13 { context: , extensions: [SignatureAlgorithms([ECDSA_NISTP256_SHA256, ECDSA_NISTP384_SHA384, ECDSA_NISTP521_SHA512, ED25519, ED448, Unknown(2057), RSA_PSS_SHA256, Unknown(2058), RSA_PSS_SHA384, Unknown(2059), RSA_PSS_SHA512, RSA_PKCS1_SHA256, RSA_PKCS1_SHA384, RSA_PKCS1_SHA512, Unknown(771), Unknown(769), ECDSA_SHA1_Legacy, RSA_PKCS1_SHA1])] }
+2022-11-15 08:14:39.2066001 DEBUG rustls::client::common - Client auth requested but no cert/sigscheme available
+2022-11-15 08:14:39.2069011 TRACE rustls::client::tls13 - Server cert is [Certificate(b"0\x82\x03\x070\x82\x01\xef\xa0\x03\x02\x01\x02\x02\x01\x020\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0@1>0<\x06\x03U\x04\x03\x0c5MySQL_Server_8.0.30_Auto_Generated_Server_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xf3\x83\xe2\x85\x1dx\xaf\x02i \xaf\x06\xcb\x92\xee\xc66\xf0\xbd\x1e\x8bA\xb7\xbf\xaa\x8a\r\xa5\xe7\x9f\xe8E\x11\x92c)\x1b\x91\x85,\xc6\x05\0\xfc\xfa#\xef\xa7\xf3\xbcO\xcfX\xdb\x82\xe6\x97\xad\xd9\xaf\xeaf6\xf07\x0ec\x19\xd9>\xacy\x8e\xc3IW\xfa\xec/\xc5^\x9a\x06\xe5\xb2wQ\xd4\xe0\xea\x827\xbe\x82\xc4H\xe6i\xa4?%\r\xcc}\xd3s\x80R#\x95\xe3tL\r\x8c\xcap\xcd\x98!\xb1!\x8e\0m8X\xb4\x86\xa5/\xf2\xfeB\x8c\xf4\xf5\x17\xc1\x95\x9b\xe2C\xf3\x18c\xcf\xc9p\xf1\x82F\xb2\xaa\xf7\xe9\xa9\xd8O\x9a\xf2\x14\x8aa\xe0\xd0&\x0el\x86\xea\xd7<\xb8\x81\xce\xde\x8b\x90\xb9\x9e\x80gIe8T\xe4F\x15y\xa3\x03\xe2\xe8n\xef\xdbc\x81]\xe1k\x02\x98B\"\x98\xc9\xa8\xf95\x1b\x9ec\xa4w\xc8\x8a\x92\xf8\x10\xa1\t~[ThT=\xa2\x1a\xb7V\x06\x80\xa4\x9d\xd6Y\xc1\xca\x0f\xd5\x90\xb7\x8b\xe0U\x90\xc0_\xf5\xa1ji\x02\x03\x01\0\x01\xa3\x100\x0e0\x0c\x06\x03U\x1d\x13\x01\x01\xff\x04\x020\00\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0th\xf8X#G\x91^+Af^\xe8\x817\x8c\xa4\xd0\xc8:\xf4}v>K\xadb\xcf\xad\xea\xc8\xf0d\xc1j\x9c\x8aS\xdbX\xf9(\xf2\x99L\x91\xdc\xbcR\x94\xc0(\xd19\xb9\xc6]]\xe5\x127\x04\x88\xf3\r\xa0-\xa1\xe2\xb3\xe7\xc3vN\x12:[7\x9bc\x12f\x89W7\x9f\xb8\x06\"\x9e\x14\xe9\x84\x83l\xd2\x83@\x84\x98e\twb\x9d\xf5\xba\x93\xf7ski\xca\xc3\xf0\xf7Y7.A\x08Q\x89\xe6\xc7]\xccrfv\xb2\x88\x97\xb6\xe2jH\xc0Q\x8c\xebM\xcc\xca\xad\x14O\xdbc\tp?)\xec.\xaf\x8e\xd1\x8c\\)7E\xb8\x9c\xdah\x04\xfa\xdf\x19\xfeC\xf9G\r\xbf\xb3D\x14BJ\x07\xc0\xdc\x9d\xb3\xf1d!\xd2\xb0?\x95j\x86\x8a?\x08\xd3\xc6\xd4\xd9\xa3~3\x05]\"\xbfO\xb6\xaf\xf0\xd5\xb7o\x0fK\xfe\x85?|\xd9\xb8ad\xec\x89\xb5\x18C,\xff9\x92\x9c\xf8\x98e\x0bj\x12\x98\xddDU\x9e\xd5cV\xdb\xa3\x959\x8e"), Certificate(b"0\x82\x03\x060\x82\x01\xee\xa0\x03\x02\x01\x02\x02\x01\x010\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xca\xb3,\x88\x10\xbf\xd7|\xffm\x96\xa7\xa48\t\xa1Xec\xfd7\xc2V\x85\xebFq\xfc\xd7\xc0'\x03`\xfd\xf8\xd4} \xe4\x1d\xea8\xb9\x8a\xd2tr\x87\x9d#A\x97E\xc0=\xec\x8c\xd8\\\x7f\xff\xae\"\x90*\xc9\x88$Tf\x04o\xf4\xe3S\nr\0G5\x85\"\xda\x9f\x97\xc2\xa0$\xb6\xdd:\"'\xadR\xa0\x81\xcb\x87\xb3#\xe9O\xef\xe2f\xd6\x13\x9c\n\xf9P\xde\xad\xe2\x15\tJVc#\x0b\xe6\xb04\x14\x13\xe0N\x05\xc1z\xb6l\x0er\x91\xc8\x96\x8a\xc3\n*\x9f\xe1z\x01 \x02\x04\x04\x1a7\x01\"\xe7\x8ei\x87#\xeb\x9a\x90\xd6!\x14pi\xda\xd4\xe6\x06\x8b\xbc\xba\xd0\xees\x04\xfc\xc3R'\xb8\x07O\xed\xd6\xd5\x8d\x97\xbev\xe2!\x97H\xf5\x12\x1f\xf4\xc6\xfe\x049\x91{4\x1c\xdc\x9f\\bL\rrj\x0cL\xca\x8c\xbcb#fY\xcb\x8bD\x9c$\xcfj)N\x8f\x88\xc8\xee\xcd\x1d\x84\x08\x8d'N\x817E\xf1\x85\x99H\xa9s\xf7\x02\x03\x01\0\x01\xa3\x130\x110\x0f\x06\x03U\x1d\x13\x01\x01\xff\x04\x050\x03\x01\x01\xff0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0\x03\xcd\xc8,W~z\xcc=#\xca\x13Cv\x13N\x06x[\xd0\xdb%\xe0\x0eKd\xcb\x8f\x0bc\x9cg#\x85\xf5\x8d\xa1%\x98[.Ojh\xc4'\xeb\xa0\x02\x91\x05B\x06\x0c\xb3Z\xbc\xeba}\xe4|\xc8\x8c\x16\xd6\x14\xf0\xa3,\x03\xce\x14\\\x1et\x97\xad\x03\x85M\x16\t\x8aj*\xd5\x12\xe2Q\xd7\xc0\xbeA_\xec\xfd\x07\x11\xeb\xc3s\xc6\x95K\xc6O\x89\xf5\xcb1\xa3\xc3\r\xbe\x12\x8f\x87\xd5\xd0\xba\xac\x1a[+\xabt\x93\xfe\xff\"\x9dz\x10\xcc\x07\xc4|\x82\xee\xb2\x8b_\x8d8\x10\xdc^W>b\xcfI\x81DC\xa9GW+\n\x97\xa6\x8bQ\xa9\xa4\x8f'\xbf\x86\xdf\xe4\xbb\xa0\xea\xcf\xec\xcc\xbc\xe7\x0c\x87=\xa0Zh\x99nV\x03\xc4\xda\xf4\xe4\"(Bp\xbb\xaf\xb5\x12\xcc\x1a\xe31\x81|\xc4\x8d\x83m\xe3\x17*\x1e\xef\0[\\f\xffn\0\xdbe3\x99C\x95g\xb9\x15\0\x8b\x0f\x93\xb9W=\xc8\x16\xea\x04_t'\xd4\xf8.#\x01h\xb3\xa2")]
+2022-11-15 08:14:39.208681 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 08:14:39.2087398 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 08:14:39.2198622 TRACE mio::poll - deregistering event source from poller
+2022-11-15 08:15:48.16973 TRACE mio::poll - registering event source with poller: token=Token(0), interests=READABLE | WRITABLE
+2022-11-15 08:15:48.1755561 DEBUG rustls::client::hs - No cached session for DnsName(DnsName(DnsName("localhost")))
+2022-11-15 08:15:48.1758497 DEBUG rustls::client::hs - Not resuming any session
+2022-11-15 08:15:48.1762166 TRACE rustls::client::hs - Sending ClientHello Message {
+    version: TLSv1_0,
+    payload: Handshake {
+        parsed: HandshakeMessagePayload {
+            typ: ClientHello,
+            payload: ClientHello(
+                ClientHelloPayload {
+                    client_version: TLSv1_2,
+                    random: 1ee1baaa501e0f64198b5f38dd78661197d8614b42341e2b1b16aaa19211ccf5,
+                    session_id: c08a1945d779aea28d0d2eea494f443b2294cb226340342dcb1bd4ed45a7fa26,
+                    cipher_suites: [
+                        TLS13_AES_256_GCM_SHA384,
+                        TLS13_AES_128_GCM_SHA256,
+                        TLS13_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_EMPTY_RENEGOTIATION_INFO_SCSV,
+                    ],
+                    compression_methods: [
+                        Null,
+                    ],
+                    extensions: [
+                        SupportedVersions(
+                            [
+                                TLSv1_3,
+                                TLSv1_2,
+                            ],
+                        ),
+                        ECPointFormats(
+                            [
+                                Uncompressed,
+                            ],
+                        ),
+                        NamedGroups(
+                            [
+                                X25519,
+                                secp256r1,
+                                secp384r1,
+                            ],
+                        ),
+                        SignatureAlgorithms(
+                            [
+                                ECDSA_NISTP384_SHA384,
+                                ECDSA_NISTP256_SHA256,
+                                ED25519,
+                                RSA_PSS_SHA512,
+                                RSA_PSS_SHA384,
+                                RSA_PSS_SHA256,
+                                RSA_PKCS1_SHA512,
+                                RSA_PKCS1_SHA384,
+                                RSA_PKCS1_SHA256,
+                            ],
+                        ),
+                        ExtendedMasterSecretRequest,
+                        CertificateStatusRequest(
+                            OCSP(
+                                OCSPCertificateStatusRequest {
+                                    responder_ids: [],
+                                    extensions: ,
+                                },
+                            ),
+                        ),
+                        ServerName(
+                            [
+                                ServerName {
+                                    typ: HostName,
+                                    payload: HostName(
+                                        (
+                                            6c6f63616c686f7374,
+                                            DnsName(
+                                                "localhost",
+                                            ),
+                                        ),
+                                    ),
+                                },
+                            ],
+                        ),
+                        SignedCertificateTimestampRequest,
+                        KeyShare(
+                            [
+                                KeyShareEntry {
+                                    group: X25519,
+                                    payload: 69f056aaf6af54c6e4a7b0def335dec7aac9fe63264bd6275f53875e61097f40,
+                                },
+                            ],
+                        ),
+                        PresharedKeyModes(
+                            [
+                                PSK_DHE_KE,
+                            ],
+                        ),
+                        SessionTicket(
+                            Request,
+                        ),
+                    ],
+                },
+            ),
+        },
+        encoded: 010000e703031ee1baaa501e0f64198b5f38dd78661197d8614b42341e2b1b16aaa19211ccf520c08a1945d779aea28d0d2eea494f443b2294cb226340342dcb1bd4ed45a7fa260014130213011303c02cc02bcca9c030c02fcca800ff0100008a002b00050403040303000b00020100000a00080006001d00170018000d00140012050304030807080608050804060105010401001700000005000501000000000000000e000c0000096c6f63616c686f737400120000003300260024001d002069f056aaf6af54c6e4a7b0def335dec7aac9fe63264bd6275f53875e61097f40002d0002010100230000,
+    },
+}
+2022-11-15 08:15:48.179689 TRACE rustls::client::hs - We got ServerHello ServerHelloPayload {
+    legacy_version: TLSv1_2,
+    random: 1aecd89b504210562aea995e9930683dea741de3e87f7aa4ef457974e42a576f,
+    session_id: c08a1945d779aea28d0d2eea494f443b2294cb226340342dcb1bd4ed45a7fa26,
+    cipher_suite: TLS13_AES_256_GCM_SHA384,
+    compression_method: Null,
+    extensions: [
+        SupportedVersions(
+            TLSv1_3,
+        ),
+        KeyShare(
+            KeyShareEntry {
+                group: X25519,
+                payload: 5d3c8e8a71d7d31ed7c34a8f7f11e6a6cb806b3e4fc5b829cb6c994f6bd74b52,
+            },
+        ),
+    ],
+}
+2022-11-15 08:15:48.1797315 DEBUG rustls::client::hs - Using ciphersuite TLS13_AES_256_GCM_SHA384
+2022-11-15 08:15:48.1797783 DEBUG rustls::client::tls13 - Not resuming
+2022-11-15 08:15:48.179782 TRACE rustls::client::client_conn - EarlyData rejected
+2022-11-15 08:15:48.1804372 TRACE rustls::conn - Dropping CCS
+2022-11-15 08:15:48.180473 DEBUG rustls::client::tls13 - TLS1.3 encrypted extensions: []
+2022-11-15 08:15:48.1804783 DEBUG rustls::client::hs - ALPN protocol is None
+2022-11-15 08:15:48.1805248 DEBUG rustls::client::tls13 - Got CertificateRequest CertificateRequestPayloadTLS13 { context: , extensions: [SignatureAlgorithms([ECDSA_NISTP256_SHA256, ECDSA_NISTP384_SHA384, ECDSA_NISTP521_SHA512, ED25519, ED448, Unknown(2057), RSA_PSS_SHA256, Unknown(2058), RSA_PSS_SHA384, Unknown(2059), RSA_PSS_SHA512, RSA_PKCS1_SHA256, RSA_PKCS1_SHA384, RSA_PKCS1_SHA512, Unknown(771), Unknown(769), ECDSA_SHA1_Legacy, RSA_PKCS1_SHA1])] }
+2022-11-15 08:15:48.1805445 DEBUG rustls::client::common - Client auth requested but no cert/sigscheme available
+2022-11-15 08:15:48.1808347 TRACE rustls::client::tls13 - Server cert is [Certificate(b"0\x82\x03\x070\x82\x01\xef\xa0\x03\x02\x01\x02\x02\x01\x020\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0@1>0<\x06\x03U\x04\x03\x0c5MySQL_Server_8.0.30_Auto_Generated_Server_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xf3\x83\xe2\x85\x1dx\xaf\x02i \xaf\x06\xcb\x92\xee\xc66\xf0\xbd\x1e\x8bA\xb7\xbf\xaa\x8a\r\xa5\xe7\x9f\xe8E\x11\x92c)\x1b\x91\x85,\xc6\x05\0\xfc\xfa#\xef\xa7\xf3\xbcO\xcfX\xdb\x82\xe6\x97\xad\xd9\xaf\xeaf6\xf07\x0ec\x19\xd9>\xacy\x8e\xc3IW\xfa\xec/\xc5^\x9a\x06\xe5\xb2wQ\xd4\xe0\xea\x827\xbe\x82\xc4H\xe6i\xa4?%\r\xcc}\xd3s\x80R#\x95\xe3tL\r\x8c\xcap\xcd\x98!\xb1!\x8e\0m8X\xb4\x86\xa5/\xf2\xfeB\x8c\xf4\xf5\x17\xc1\x95\x9b\xe2C\xf3\x18c\xcf\xc9p\xf1\x82F\xb2\xaa\xf7\xe9\xa9\xd8O\x9a\xf2\x14\x8aa\xe0\xd0&\x0el\x86\xea\xd7<\xb8\x81\xce\xde\x8b\x90\xb9\x9e\x80gIe8T\xe4F\x15y\xa3\x03\xe2\xe8n\xef\xdbc\x81]\xe1k\x02\x98B\"\x98\xc9\xa8\xf95\x1b\x9ec\xa4w\xc8\x8a\x92\xf8\x10\xa1\t~[ThT=\xa2\x1a\xb7V\x06\x80\xa4\x9d\xd6Y\xc1\xca\x0f\xd5\x90\xb7\x8b\xe0U\x90\xc0_\xf5\xa1ji\x02\x03\x01\0\x01\xa3\x100\x0e0\x0c\x06\x03U\x1d\x13\x01\x01\xff\x04\x020\00\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0th\xf8X#G\x91^+Af^\xe8\x817\x8c\xa4\xd0\xc8:\xf4}v>K\xadb\xcf\xad\xea\xc8\xf0d\xc1j\x9c\x8aS\xdbX\xf9(\xf2\x99L\x91\xdc\xbcR\x94\xc0(\xd19\xb9\xc6]]\xe5\x127\x04\x88\xf3\r\xa0-\xa1\xe2\xb3\xe7\xc3vN\x12:[7\x9bc\x12f\x89W7\x9f\xb8\x06\"\x9e\x14\xe9\x84\x83l\xd2\x83@\x84\x98e\twb\x9d\xf5\xba\x93\xf7ski\xca\xc3\xf0\xf7Y7.A\x08Q\x89\xe6\xc7]\xccrfv\xb2\x88\x97\xb6\xe2jH\xc0Q\x8c\xebM\xcc\xca\xad\x14O\xdbc\tp?)\xec.\xaf\x8e\xd1\x8c\\)7E\xb8\x9c\xdah\x04\xfa\xdf\x19\xfeC\xf9G\r\xbf\xb3D\x14BJ\x07\xc0\xdc\x9d\xb3\xf1d!\xd2\xb0?\x95j\x86\x8a?\x08\xd3\xc6\xd4\xd9\xa3~3\x05]\"\xbfO\xb6\xaf\xf0\xd5\xb7o\x0fK\xfe\x85?|\xd9\xb8ad\xec\x89\xb5\x18C,\xff9\x92\x9c\xf8\x98e\x0bj\x12\x98\xddDU\x9e\xd5cV\xdb\xa3\x959\x8e"), Certificate(b"0\x82\x03\x060\x82\x01\xee\xa0\x03\x02\x01\x02\x02\x01\x010\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xca\xb3,\x88\x10\xbf\xd7|\xffm\x96\xa7\xa48\t\xa1Xec\xfd7\xc2V\x85\xebFq\xfc\xd7\xc0'\x03`\xfd\xf8\xd4} \xe4\x1d\xea8\xb9\x8a\xd2tr\x87\x9d#A\x97E\xc0=\xec\x8c\xd8\\\x7f\xff\xae\"\x90*\xc9\x88$Tf\x04o\xf4\xe3S\nr\0G5\x85\"\xda\x9f\x97\xc2\xa0$\xb6\xdd:\"'\xadR\xa0\x81\xcb\x87\xb3#\xe9O\xef\xe2f\xd6\x13\x9c\n\xf9P\xde\xad\xe2\x15\tJVc#\x0b\xe6\xb04\x14\x13\xe0N\x05\xc1z\xb6l\x0er\x91\xc8\x96\x8a\xc3\n*\x9f\xe1z\x01 \x02\x04\x04\x1a7\x01\"\xe7\x8ei\x87#\xeb\x9a\x90\xd6!\x14pi\xda\xd4\xe6\x06\x8b\xbc\xba\xd0\xees\x04\xfc\xc3R'\xb8\x07O\xed\xd6\xd5\x8d\x97\xbev\xe2!\x97H\xf5\x12\x1f\xf4\xc6\xfe\x049\x91{4\x1c\xdc\x9f\\bL\rrj\x0cL\xca\x8c\xbcb#fY\xcb\x8bD\x9c$\xcfj)N\x8f\x88\xc8\xee\xcd\x1d\x84\x08\x8d'N\x817E\xf1\x85\x99H\xa9s\xf7\x02\x03\x01\0\x01\xa3\x130\x110\x0f\x06\x03U\x1d\x13\x01\x01\xff\x04\x050\x03\x01\x01\xff0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0\x03\xcd\xc8,W~z\xcc=#\xca\x13Cv\x13N\x06x[\xd0\xdb%\xe0\x0eKd\xcb\x8f\x0bc\x9cg#\x85\xf5\x8d\xa1%\x98[.Ojh\xc4'\xeb\xa0\x02\x91\x05B\x06\x0c\xb3Z\xbc\xeba}\xe4|\xc8\x8c\x16\xd6\x14\xf0\xa3,\x03\xce\x14\\\x1et\x97\xad\x03\x85M\x16\t\x8aj*\xd5\x12\xe2Q\xd7\xc0\xbeA_\xec\xfd\x07\x11\xeb\xc3s\xc6\x95K\xc6O\x89\xf5\xcb1\xa3\xc3\r\xbe\x12\x8f\x87\xd5\xd0\xba\xac\x1a[+\xabt\x93\xfe\xff\"\x9dz\x10\xcc\x07\xc4|\x82\xee\xb2\x8b_\x8d8\x10\xdc^W>b\xcfI\x81DC\xa9GW+\n\x97\xa6\x8bQ\xa9\xa4\x8f'\xbf\x86\xdf\xe4\xbb\xa0\xea\xcf\xec\xcc\xbc\xe7\x0c\x87=\xa0Zh\x99nV\x03\xc4\xda\xf4\xe4\"(Bp\xbb\xaf\xb5\x12\xcc\x1a\xe31\x81|\xc4\x8d\x83m\xe3\x17*\x1e\xef\0[\\f\xffn\0\xdbe3\x99C\x95g\xb9\x15\0\x8b\x0f\x93\xb9W=\xc8\x16\xea\x04_t'\xd4\xf8.#\x01h\xb3\xa2")]
+2022-11-15 08:15:48.1822423 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 08:15:48.1823318 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 08:15:48.1853711 TRACE mio::poll - deregistering event source from poller
+2022-11-15 08:16:10.8150169 TRACE mio::poll - registering event source with poller: token=Token(0), interests=READABLE | WRITABLE
+2022-11-15 08:16:10.8178462 DEBUG rustls::client::hs - No cached session for DnsName(DnsName(DnsName("localhost")))
+2022-11-15 08:16:10.8181518 DEBUG rustls::client::hs - Not resuming any session
+2022-11-15 08:16:10.8184986 TRACE rustls::client::hs - Sending ClientHello Message {
+    version: TLSv1_0,
+    payload: Handshake {
+        parsed: HandshakeMessagePayload {
+            typ: ClientHello,
+            payload: ClientHello(
+                ClientHelloPayload {
+                    client_version: TLSv1_2,
+                    random: 18f191fb58536bc7cad89ba12f9f48639417c90b4d10cd2d4afb50a56cb08311,
+                    session_id: d3b3d5137c97c6db057a2b679f498f3f7c4075cb0782437b3a8b19af62cc608f,
+                    cipher_suites: [
+                        TLS13_AES_256_GCM_SHA384,
+                        TLS13_AES_128_GCM_SHA256,
+                        TLS13_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_EMPTY_RENEGOTIATION_INFO_SCSV,
+                    ],
+                    compression_methods: [
+                        Null,
+                    ],
+                    extensions: [
+                        SupportedVersions(
+                            [
+                                TLSv1_3,
+                                TLSv1_2,
+                            ],
+                        ),
+                        ECPointFormats(
+                            [
+                                Uncompressed,
+                            ],
+                        ),
+                        NamedGroups(
+                            [
+                                X25519,
+                                secp256r1,
+                                secp384r1,
+                            ],
+                        ),
+                        SignatureAlgorithms(
+                            [
+                                ECDSA_NISTP384_SHA384,
+                                ECDSA_NISTP256_SHA256,
+                                ED25519,
+                                RSA_PSS_SHA512,
+                                RSA_PSS_SHA384,
+                                RSA_PSS_SHA256,
+                                RSA_PKCS1_SHA512,
+                                RSA_PKCS1_SHA384,
+                                RSA_PKCS1_SHA256,
+                            ],
+                        ),
+                        ExtendedMasterSecretRequest,
+                        CertificateStatusRequest(
+                            OCSP(
+                                OCSPCertificateStatusRequest {
+                                    responder_ids: [],
+                                    extensions: ,
+                                },
+                            ),
+                        ),
+                        ServerName(
+                            [
+                                ServerName {
+                                    typ: HostName,
+                                    payload: HostName(
+                                        (
+                                            6c6f63616c686f7374,
+                                            DnsName(
+                                                "localhost",
+                                            ),
+                                        ),
+                                    ),
+                                },
+                            ],
+                        ),
+                        SignedCertificateTimestampRequest,
+                        KeyShare(
+                            [
+                                KeyShareEntry {
+                                    group: X25519,
+                                    payload: 40c9af191ea30f5dd19a618a16ce648caaf6d60afea4479bfffc6e53287c3030,
+                                },
+                            ],
+                        ),
+                        PresharedKeyModes(
+                            [
+                                PSK_DHE_KE,
+                            ],
+                        ),
+                        SessionTicket(
+                            Request,
+                        ),
+                    ],
+                },
+            ),
+        },
+        encoded: 010000e7030318f191fb58536bc7cad89ba12f9f48639417c90b4d10cd2d4afb50a56cb0831120d3b3d5137c97c6db057a2b679f498f3f7c4075cb0782437b3a8b19af62cc608f0014130213011303c02cc02bcca9c030c02fcca800ff0100008a002b00050403040303000b00020100000a00080006001d00170018000d00140012050304030807080608050804060105010401001700000005000501000000000000000e000c0000096c6f63616c686f737400120000003300260024001d002040c9af191ea30f5dd19a618a16ce648caaf6d60afea4479bfffc6e53287c3030002d0002010100230000,
+    },
+}
+2022-11-15 08:16:10.8199654 TRACE rustls::client::hs - We got ServerHello ServerHelloPayload {
+    legacy_version: TLSv1_2,
+    random: fcfb18da4e342556f013c00c5dae2bfe86e146e7b92761e312d1c81a28156380,
+    session_id: d3b3d5137c97c6db057a2b679f498f3f7c4075cb0782437b3a8b19af62cc608f,
+    cipher_suite: TLS13_AES_256_GCM_SHA384,
+    compression_method: Null,
+    extensions: [
+        SupportedVersions(
+            TLSv1_3,
+        ),
+        KeyShare(
+            KeyShareEntry {
+                group: X25519,
+                payload: 981b9a3dbbd954d4dcc7c0f178f8be8da993f1d8923d684e4a72288eafb0e141,
+            },
+        ),
+    ],
+}
+2022-11-15 08:16:10.8199918 DEBUG rustls::client::hs - Using ciphersuite TLS13_AES_256_GCM_SHA384
+2022-11-15 08:16:10.820019 DEBUG rustls::client::tls13 - Not resuming
+2022-11-15 08:16:10.8200228 TRACE rustls::client::client_conn - EarlyData rejected
+2022-11-15 08:16:10.8206088 TRACE rustls::conn - Dropping CCS
+2022-11-15 08:16:10.8206399 DEBUG rustls::client::tls13 - TLS1.3 encrypted extensions: []
+2022-11-15 08:16:10.820645 DEBUG rustls::client::hs - ALPN protocol is None
+2022-11-15 08:16:10.8207017 DEBUG rustls::client::tls13 - Got CertificateRequest CertificateRequestPayloadTLS13 { context: , extensions: [SignatureAlgorithms([ECDSA_NISTP256_SHA256, ECDSA_NISTP384_SHA384, ECDSA_NISTP521_SHA512, ED25519, ED448, Unknown(2057), RSA_PSS_SHA256, Unknown(2058), RSA_PSS_SHA384, Unknown(2059), RSA_PSS_SHA512, RSA_PKCS1_SHA256, RSA_PKCS1_SHA384, RSA_PKCS1_SHA512, Unknown(771), Unknown(769), ECDSA_SHA1_Legacy, RSA_PKCS1_SHA1])] }
+2022-11-15 08:16:10.820724 DEBUG rustls::client::common - Client auth requested but no cert/sigscheme available
+2022-11-15 08:16:10.8210248 TRACE rustls::client::tls13 - Server cert is [Certificate(b"0\x82\x03\x070\x82\x01\xef\xa0\x03\x02\x01\x02\x02\x01\x020\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0@1>0<\x06\x03U\x04\x03\x0c5MySQL_Server_8.0.30_Auto_Generated_Server_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xf3\x83\xe2\x85\x1dx\xaf\x02i \xaf\x06\xcb\x92\xee\xc66\xf0\xbd\x1e\x8bA\xb7\xbf\xaa\x8a\r\xa5\xe7\x9f\xe8E\x11\x92c)\x1b\x91\x85,\xc6\x05\0\xfc\xfa#\xef\xa7\xf3\xbcO\xcfX\xdb\x82\xe6\x97\xad\xd9\xaf\xeaf6\xf07\x0ec\x19\xd9>\xacy\x8e\xc3IW\xfa\xec/\xc5^\x9a\x06\xe5\xb2wQ\xd4\xe0\xea\x827\xbe\x82\xc4H\xe6i\xa4?%\r\xcc}\xd3s\x80R#\x95\xe3tL\r\x8c\xcap\xcd\x98!\xb1!\x8e\0m8X\xb4\x86\xa5/\xf2\xfeB\x8c\xf4\xf5\x17\xc1\x95\x9b\xe2C\xf3\x18c\xcf\xc9p\xf1\x82F\xb2\xaa\xf7\xe9\xa9\xd8O\x9a\xf2\x14\x8aa\xe0\xd0&\x0el\x86\xea\xd7<\xb8\x81\xce\xde\x8b\x90\xb9\x9e\x80gIe8T\xe4F\x15y\xa3\x03\xe2\xe8n\xef\xdbc\x81]\xe1k\x02\x98B\"\x98\xc9\xa8\xf95\x1b\x9ec\xa4w\xc8\x8a\x92\xf8\x10\xa1\t~[ThT=\xa2\x1a\xb7V\x06\x80\xa4\x9d\xd6Y\xc1\xca\x0f\xd5\x90\xb7\x8b\xe0U\x90\xc0_\xf5\xa1ji\x02\x03\x01\0\x01\xa3\x100\x0e0\x0c\x06\x03U\x1d\x13\x01\x01\xff\x04\x020\00\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0th\xf8X#G\x91^+Af^\xe8\x817\x8c\xa4\xd0\xc8:\xf4}v>K\xadb\xcf\xad\xea\xc8\xf0d\xc1j\x9c\x8aS\xdbX\xf9(\xf2\x99L\x91\xdc\xbcR\x94\xc0(\xd19\xb9\xc6]]\xe5\x127\x04\x88\xf3\r\xa0-\xa1\xe2\xb3\xe7\xc3vN\x12:[7\x9bc\x12f\x89W7\x9f\xb8\x06\"\x9e\x14\xe9\x84\x83l\xd2\x83@\x84\x98e\twb\x9d\xf5\xba\x93\xf7ski\xca\xc3\xf0\xf7Y7.A\x08Q\x89\xe6\xc7]\xccrfv\xb2\x88\x97\xb6\xe2jH\xc0Q\x8c\xebM\xcc\xca\xad\x14O\xdbc\tp?)\xec.\xaf\x8e\xd1\x8c\\)7E\xb8\x9c\xdah\x04\xfa\xdf\x19\xfeC\xf9G\r\xbf\xb3D\x14BJ\x07\xc0\xdc\x9d\xb3\xf1d!\xd2\xb0?\x95j\x86\x8a?\x08\xd3\xc6\xd4\xd9\xa3~3\x05]\"\xbfO\xb6\xaf\xf0\xd5\xb7o\x0fK\xfe\x85?|\xd9\xb8ad\xec\x89\xb5\x18C,\xff9\x92\x9c\xf8\x98e\x0bj\x12\x98\xddDU\x9e\xd5cV\xdb\xa3\x959\x8e"), Certificate(b"0\x82\x03\x060\x82\x01\xee\xa0\x03\x02\x01\x02\x02\x01\x010\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xca\xb3,\x88\x10\xbf\xd7|\xffm\x96\xa7\xa48\t\xa1Xec\xfd7\xc2V\x85\xebFq\xfc\xd7\xc0'\x03`\xfd\xf8\xd4} \xe4\x1d\xea8\xb9\x8a\xd2tr\x87\x9d#A\x97E\xc0=\xec\x8c\xd8\\\x7f\xff\xae\"\x90*\xc9\x88$Tf\x04o\xf4\xe3S\nr\0G5\x85\"\xda\x9f\x97\xc2\xa0$\xb6\xdd:\"'\xadR\xa0\x81\xcb\x87\xb3#\xe9O\xef\xe2f\xd6\x13\x9c\n\xf9P\xde\xad\xe2\x15\tJVc#\x0b\xe6\xb04\x14\x13\xe0N\x05\xc1z\xb6l\x0er\x91\xc8\x96\x8a\xc3\n*\x9f\xe1z\x01 \x02\x04\x04\x1a7\x01\"\xe7\x8ei\x87#\xeb\x9a\x90\xd6!\x14pi\xda\xd4\xe6\x06\x8b\xbc\xba\xd0\xees\x04\xfc\xc3R'\xb8\x07O\xed\xd6\xd5\x8d\x97\xbev\xe2!\x97H\xf5\x12\x1f\xf4\xc6\xfe\x049\x91{4\x1c\xdc\x9f\\bL\rrj\x0cL\xca\x8c\xbcb#fY\xcb\x8bD\x9c$\xcfj)N\x8f\x88\xc8\xee\xcd\x1d\x84\x08\x8d'N\x817E\xf1\x85\x99H\xa9s\xf7\x02\x03\x01\0\x01\xa3\x130\x110\x0f\x06\x03U\x1d\x13\x01\x01\xff\x04\x050\x03\x01\x01\xff0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0\x03\xcd\xc8,W~z\xcc=#\xca\x13Cv\x13N\x06x[\xd0\xdb%\xe0\x0eKd\xcb\x8f\x0bc\x9cg#\x85\xf5\x8d\xa1%\x98[.Ojh\xc4'\xeb\xa0\x02\x91\x05B\x06\x0c\xb3Z\xbc\xeba}\xe4|\xc8\x8c\x16\xd6\x14\xf0\xa3,\x03\xce\x14\\\x1et\x97\xad\x03\x85M\x16\t\x8aj*\xd5\x12\xe2Q\xd7\xc0\xbeA_\xec\xfd\x07\x11\xeb\xc3s\xc6\x95K\xc6O\x89\xf5\xcb1\xa3\xc3\r\xbe\x12\x8f\x87\xd5\xd0\xba\xac\x1a[+\xabt\x93\xfe\xff\"\x9dz\x10\xcc\x07\xc4|\x82\xee\xb2\x8b_\x8d8\x10\xdc^W>b\xcfI\x81DC\xa9GW+\n\x97\xa6\x8bQ\xa9\xa4\x8f'\xbf\x86\xdf\xe4\xbb\xa0\xea\xcf\xec\xcc\xbc\xe7\x0c\x87=\xa0Zh\x99nV\x03\xc4\xda\xf4\xe4\"(Bp\xbb\xaf\xb5\x12\xcc\x1a\xe31\x81|\xc4\x8d\x83m\xe3\x17*\x1e\xef\0[\\f\xffn\0\xdbe3\x99C\x95g\xb9\x15\0\x8b\x0f\x93\xb9W=\xc8\x16\xea\x04_t'\xd4\xf8.#\x01h\xb3\xa2")]
+2022-11-15 08:16:10.8221383 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 08:16:10.8221965 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 08:16:10.8260184 INFO rbatis::plugin::log - [rbatis] [434990306610515968] Fetch  ==> show databases;
+                                                      [rbatis]                      Args   ==> []
+2022-11-15 08:16:10.8408392 INFO rbatis::plugin::log - [rbatis] [434990306610515968] ReturnRows <== 5
+2022-11-15 08:17:19.7776754 TRACE mio::poll - registering event source with poller: token=Token(0), interests=READABLE | WRITABLE
+2022-11-15 08:17:19.7800837 DEBUG rustls::client::hs - No cached session for DnsName(DnsName(DnsName("localhost")))
+2022-11-15 08:17:19.7804169 DEBUG rustls::client::hs - Not resuming any session
+2022-11-15 08:17:19.7808137 TRACE rustls::client::hs - Sending ClientHello Message {
+    version: TLSv1_0,
+    payload: Handshake {
+        parsed: HandshakeMessagePayload {
+            typ: ClientHello,
+            payload: ClientHello(
+                ClientHelloPayload {
+                    client_version: TLSv1_2,
+                    random: 3df2993c92e84894ffdf1f7c0b3508ceb8852bbd1a9f26041c9ced8e533e8a67,
+                    session_id: 307b82467338cf3c7fde85debc8e727613071666aecb07697c46bc29d7d987b5,
+                    cipher_suites: [
+                        TLS13_AES_256_GCM_SHA384,
+                        TLS13_AES_128_GCM_SHA256,
+                        TLS13_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_EMPTY_RENEGOTIATION_INFO_SCSV,
+                    ],
+                    compression_methods: [
+                        Null,
+                    ],
+                    extensions: [
+                        SupportedVersions(
+                            [
+                                TLSv1_3,
+                                TLSv1_2,
+                            ],
+                        ),
+                        ECPointFormats(
+                            [
+                                Uncompressed,
+                            ],
+                        ),
+                        NamedGroups(
+                            [
+                                X25519,
+                                secp256r1,
+                                secp384r1,
+                            ],
+                        ),
+                        SignatureAlgorithms(
+                            [
+                                ECDSA_NISTP384_SHA384,
+                                ECDSA_NISTP256_SHA256,
+                                ED25519,
+                                RSA_PSS_SHA512,
+                                RSA_PSS_SHA384,
+                                RSA_PSS_SHA256,
+                                RSA_PKCS1_SHA512,
+                                RSA_PKCS1_SHA384,
+                                RSA_PKCS1_SHA256,
+                            ],
+                        ),
+                        ExtendedMasterSecretRequest,
+                        CertificateStatusRequest(
+                            OCSP(
+                                OCSPCertificateStatusRequest {
+                                    responder_ids: [],
+                                    extensions: ,
+                                },
+                            ),
+                        ),
+                        ServerName(
+                            [
+                                ServerName {
+                                    typ: HostName,
+                                    payload: HostName(
+                                        (
+                                            6c6f63616c686f7374,
+                                            DnsName(
+                                                "localhost",
+                                            ),
+                                        ),
+                                    ),
+                                },
+                            ],
+                        ),
+                        SignedCertificateTimestampRequest,
+                        KeyShare(
+                            [
+                                KeyShareEntry {
+                                    group: X25519,
+                                    payload: 2fb1dcfc8152a556bfe1a8301e0f4d67b5ed9a80b55f36dbdddc65c505934332,
+                                },
+                            ],
+                        ),
+                        PresharedKeyModes(
+                            [
+                                PSK_DHE_KE,
+                            ],
+                        ),
+                        SessionTicket(
+                            Request,
+                        ),
+                    ],
+                },
+            ),
+        },
+        encoded: 010000e703033df2993c92e84894ffdf1f7c0b3508ceb8852bbd1a9f26041c9ced8e533e8a6720307b82467338cf3c7fde85debc8e727613071666aecb07697c46bc29d7d987b50014130213011303c02cc02bcca9c030c02fcca800ff0100008a002b00050403040303000b00020100000a00080006001d00170018000d00140012050304030807080608050804060105010401001700000005000501000000000000000e000c0000096c6f63616c686f737400120000003300260024001d00202fb1dcfc8152a556bfe1a8301e0f4d67b5ed9a80b55f36dbdddc65c505934332002d0002010100230000,
+    },
+}
+2022-11-15 08:17:19.7825686 TRACE rustls::client::hs - We got ServerHello ServerHelloPayload {
+    legacy_version: TLSv1_2,
+    random: dc010129c61a18503345fa76f40b7066938503c4f2e687a027bafad8e332f328,
+    session_id: 307b82467338cf3c7fde85debc8e727613071666aecb07697c46bc29d7d987b5,
+    cipher_suite: TLS13_AES_256_GCM_SHA384,
+    compression_method: Null,
+    extensions: [
+        SupportedVersions(
+            TLSv1_3,
+        ),
+        KeyShare(
+            KeyShareEntry {
+                group: X25519,
+                payload: 77e50d883406fdff56c74189d643322b0f447ced53a89aa6dff1c51267c5240a,
+            },
+        ),
+    ],
+}
+2022-11-15 08:17:19.7826068 DEBUG rustls::client::hs - Using ciphersuite TLS13_AES_256_GCM_SHA384
+2022-11-15 08:17:19.7826488 DEBUG rustls::client::tls13 - Not resuming
+2022-11-15 08:17:19.782653 TRACE rustls::client::client_conn - EarlyData rejected
+2022-11-15 08:17:19.7833023 TRACE rustls::conn - Dropping CCS
+2022-11-15 08:17:19.7833467 DEBUG rustls::client::tls13 - TLS1.3 encrypted extensions: []
+2022-11-15 08:17:19.7833548 DEBUG rustls::client::hs - ALPN protocol is None
+2022-11-15 08:17:19.7834292 DEBUG rustls::client::tls13 - Got CertificateRequest CertificateRequestPayloadTLS13 { context: , extensions: [SignatureAlgorithms([ECDSA_NISTP256_SHA256, ECDSA_NISTP384_SHA384, ECDSA_NISTP521_SHA512, ED25519, ED448, Unknown(2057), RSA_PSS_SHA256, Unknown(2058), RSA_PSS_SHA384, Unknown(2059), RSA_PSS_SHA512, RSA_PKCS1_SHA256, RSA_PKCS1_SHA384, RSA_PKCS1_SHA512, Unknown(771), Unknown(769), ECDSA_SHA1_Legacy, RSA_PKCS1_SHA1])] }
+2022-11-15 08:17:19.7834514 DEBUG rustls::client::common - Client auth requested but no cert/sigscheme available
+2022-11-15 08:17:19.7837672 TRACE rustls::client::tls13 - Server cert is [Certificate(b"0\x82\x03\x070\x82\x01\xef\xa0\x03\x02\x01\x02\x02\x01\x020\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0@1>0<\x06\x03U\x04\x03\x0c5MySQL_Server_8.0.30_Auto_Generated_Server_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xf3\x83\xe2\x85\x1dx\xaf\x02i \xaf\x06\xcb\x92\xee\xc66\xf0\xbd\x1e\x8bA\xb7\xbf\xaa\x8a\r\xa5\xe7\x9f\xe8E\x11\x92c)\x1b\x91\x85,\xc6\x05\0\xfc\xfa#\xef\xa7\xf3\xbcO\xcfX\xdb\x82\xe6\x97\xad\xd9\xaf\xeaf6\xf07\x0ec\x19\xd9>\xacy\x8e\xc3IW\xfa\xec/\xc5^\x9a\x06\xe5\xb2wQ\xd4\xe0\xea\x827\xbe\x82\xc4H\xe6i\xa4?%\r\xcc}\xd3s\x80R#\x95\xe3tL\r\x8c\xcap\xcd\x98!\xb1!\x8e\0m8X\xb4\x86\xa5/\xf2\xfeB\x8c\xf4\xf5\x17\xc1\x95\x9b\xe2C\xf3\x18c\xcf\xc9p\xf1\x82F\xb2\xaa\xf7\xe9\xa9\xd8O\x9a\xf2\x14\x8aa\xe0\xd0&\x0el\x86\xea\xd7<\xb8\x81\xce\xde\x8b\x90\xb9\x9e\x80gIe8T\xe4F\x15y\xa3\x03\xe2\xe8n\xef\xdbc\x81]\xe1k\x02\x98B\"\x98\xc9\xa8\xf95\x1b\x9ec\xa4w\xc8\x8a\x92\xf8\x10\xa1\t~[ThT=\xa2\x1a\xb7V\x06\x80\xa4\x9d\xd6Y\xc1\xca\x0f\xd5\x90\xb7\x8b\xe0U\x90\xc0_\xf5\xa1ji\x02\x03\x01\0\x01\xa3\x100\x0e0\x0c\x06\x03U\x1d\x13\x01\x01\xff\x04\x020\00\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0th\xf8X#G\x91^+Af^\xe8\x817\x8c\xa4\xd0\xc8:\xf4}v>K\xadb\xcf\xad\xea\xc8\xf0d\xc1j\x9c\x8aS\xdbX\xf9(\xf2\x99L\x91\xdc\xbcR\x94\xc0(\xd19\xb9\xc6]]\xe5\x127\x04\x88\xf3\r\xa0-\xa1\xe2\xb3\xe7\xc3vN\x12:[7\x9bc\x12f\x89W7\x9f\xb8\x06\"\x9e\x14\xe9\x84\x83l\xd2\x83@\x84\x98e\twb\x9d\xf5\xba\x93\xf7ski\xca\xc3\xf0\xf7Y7.A\x08Q\x89\xe6\xc7]\xccrfv\xb2\x88\x97\xb6\xe2jH\xc0Q\x8c\xebM\xcc\xca\xad\x14O\xdbc\tp?)\xec.\xaf\x8e\xd1\x8c\\)7E\xb8\x9c\xdah\x04\xfa\xdf\x19\xfeC\xf9G\r\xbf\xb3D\x14BJ\x07\xc0\xdc\x9d\xb3\xf1d!\xd2\xb0?\x95j\x86\x8a?\x08\xd3\xc6\xd4\xd9\xa3~3\x05]\"\xbfO\xb6\xaf\xf0\xd5\xb7o\x0fK\xfe\x85?|\xd9\xb8ad\xec\x89\xb5\x18C,\xff9\x92\x9c\xf8\x98e\x0bj\x12\x98\xddDU\x9e\xd5cV\xdb\xa3\x959\x8e"), Certificate(b"0\x82\x03\x060\x82\x01\xee\xa0\x03\x02\x01\x02\x02\x01\x010\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xca\xb3,\x88\x10\xbf\xd7|\xffm\x96\xa7\xa48\t\xa1Xec\xfd7\xc2V\x85\xebFq\xfc\xd7\xc0'\x03`\xfd\xf8\xd4} \xe4\x1d\xea8\xb9\x8a\xd2tr\x87\x9d#A\x97E\xc0=\xec\x8c\xd8\\\x7f\xff\xae\"\x90*\xc9\x88$Tf\x04o\xf4\xe3S\nr\0G5\x85\"\xda\x9f\x97\xc2\xa0$\xb6\xdd:\"'\xadR\xa0\x81\xcb\x87\xb3#\xe9O\xef\xe2f\xd6\x13\x9c\n\xf9P\xde\xad\xe2\x15\tJVc#\x0b\xe6\xb04\x14\x13\xe0N\x05\xc1z\xb6l\x0er\x91\xc8\x96\x8a\xc3\n*\x9f\xe1z\x01 \x02\x04\x04\x1a7\x01\"\xe7\x8ei\x87#\xeb\x9a\x90\xd6!\x14pi\xda\xd4\xe6\x06\x8b\xbc\xba\xd0\xees\x04\xfc\xc3R'\xb8\x07O\xed\xd6\xd5\x8d\x97\xbev\xe2!\x97H\xf5\x12\x1f\xf4\xc6\xfe\x049\x91{4\x1c\xdc\x9f\\bL\rrj\x0cL\xca\x8c\xbcb#fY\xcb\x8bD\x9c$\xcfj)N\x8f\x88\xc8\xee\xcd\x1d\x84\x08\x8d'N\x817E\xf1\x85\x99H\xa9s\xf7\x02\x03\x01\0\x01\xa3\x130\x110\x0f\x06\x03U\x1d\x13\x01\x01\xff\x04\x050\x03\x01\x01\xff0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0\x03\xcd\xc8,W~z\xcc=#\xca\x13Cv\x13N\x06x[\xd0\xdb%\xe0\x0eKd\xcb\x8f\x0bc\x9cg#\x85\xf5\x8d\xa1%\x98[.Ojh\xc4'\xeb\xa0\x02\x91\x05B\x06\x0c\xb3Z\xbc\xeba}\xe4|\xc8\x8c\x16\xd6\x14\xf0\xa3,\x03\xce\x14\\\x1et\x97\xad\x03\x85M\x16\t\x8aj*\xd5\x12\xe2Q\xd7\xc0\xbeA_\xec\xfd\x07\x11\xeb\xc3s\xc6\x95K\xc6O\x89\xf5\xcb1\xa3\xc3\r\xbe\x12\x8f\x87\xd5\xd0\xba\xac\x1a[+\xabt\x93\xfe\xff\"\x9dz\x10\xcc\x07\xc4|\x82\xee\xb2\x8b_\x8d8\x10\xdc^W>b\xcfI\x81DC\xa9GW+\n\x97\xa6\x8bQ\xa9\xa4\x8f'\xbf\x86\xdf\xe4\xbb\xa0\xea\xcf\xec\xcc\xbc\xe7\x0c\x87=\xa0Zh\x99nV\x03\xc4\xda\xf4\xe4\"(Bp\xbb\xaf\xb5\x12\xcc\x1a\xe31\x81|\xc4\x8d\x83m\xe3\x17*\x1e\xef\0[\\f\xffn\0\xdbe3\x99C\x95g\xb9\x15\0\x8b\x0f\x93\xb9W=\xc8\x16\xea\x04_t'\xd4\xf8.#\x01h\xb3\xa2")]
+2022-11-15 08:17:19.7854602 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 08:17:19.7855987 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 08:17:19.7885893 INFO rbatis::plugin::log - [rbatis] [434990595862302720] Fetch  ==> show databases;
+                                                      [rbatis]                      Args   ==> []
+2022-11-15 08:17:19.7913703 INFO rbatis::plugin::log - [rbatis] [434990595862302720] ReturnRows <== 5
+2022-11-15 08:24:09.3194889 TRACE mio::poll - registering event source with poller: token=Token(0), interests=READABLE | WRITABLE
+2022-11-15 08:24:09.3242508 DEBUG rustls::client::hs - No cached session for DnsName(DnsName(DnsName("localhost")))
+2022-11-15 08:24:09.32482 DEBUG rustls::client::hs - Not resuming any session
+2022-11-15 08:24:09.3256167 TRACE rustls::client::hs - Sending ClientHello Message {
+    version: TLSv1_0,
+    payload: Handshake {
+        parsed: HandshakeMessagePayload {
+            typ: ClientHello,
+            payload: ClientHello(
+                ClientHelloPayload {
+                    client_version: TLSv1_2,
+                    random: 406a77f549249845a3285d4d98d713dbad7d778960df2032dd0c4ba272136570,
+                    session_id: 475d63894a51bc5c2b76164655e54de226c5af0580b213423b16346635703c65,
+                    cipher_suites: [
+                        TLS13_AES_256_GCM_SHA384,
+                        TLS13_AES_128_GCM_SHA256,
+                        TLS13_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_EMPTY_RENEGOTIATION_INFO_SCSV,
+                    ],
+                    compression_methods: [
+                        Null,
+                    ],
+                    extensions: [
+                        SupportedVersions(
+                            [
+                                TLSv1_3,
+                                TLSv1_2,
+                            ],
+                        ),
+                        ECPointFormats(
+                            [
+                                Uncompressed,
+                            ],
+                        ),
+                        NamedGroups(
+                            [
+                                X25519,
+                                secp256r1,
+                                secp384r1,
+                            ],
+                        ),
+                        SignatureAlgorithms(
+                            [
+                                ECDSA_NISTP384_SHA384,
+                                ECDSA_NISTP256_SHA256,
+                                ED25519,
+                                RSA_PSS_SHA512,
+                                RSA_PSS_SHA384,
+                                RSA_PSS_SHA256,
+                                RSA_PKCS1_SHA512,
+                                RSA_PKCS1_SHA384,
+                                RSA_PKCS1_SHA256,
+                            ],
+                        ),
+                        ExtendedMasterSecretRequest,
+                        CertificateStatusRequest(
+                            OCSP(
+                                OCSPCertificateStatusRequest {
+                                    responder_ids: [],
+                                    extensions: ,
+                                },
+                            ),
+                        ),
+                        ServerName(
+                            [
+                                ServerName {
+                                    typ: HostName,
+                                    payload: HostName(
+                                        (
+                                            6c6f63616c686f7374,
+                                            DnsName(
+                                                "localhost",
+                                            ),
+                                        ),
+                                    ),
+                                },
+                            ],
+                        ),
+                        SignedCertificateTimestampRequest,
+                        KeyShare(
+                            [
+                                KeyShareEntry {
+                                    group: X25519,
+                                    payload: dc0b9c94066a1b0fc88a9a67a6bf50108c8866fb0f2b79f9c2542482913cf960,
+                                },
+                            ],
+                        ),
+                        PresharedKeyModes(
+                            [
+                                PSK_DHE_KE,
+                            ],
+                        ),
+                        SessionTicket(
+                            Request,
+                        ),
+                    ],
+                },
+            ),
+        },
+        encoded: 010000e70303406a77f549249845a3285d4d98d713dbad7d778960df2032dd0c4ba27213657020475d63894a51bc5c2b76164655e54de226c5af0580b213423b16346635703c650014130213011303c02cc02bcca9c030c02fcca800ff0100008a002b00050403040303000b00020100000a00080006001d00170018000d00140012050304030807080608050804060105010401001700000005000501000000000000000e000c0000096c6f63616c686f737400120000003300260024001d0020dc0b9c94066a1b0fc88a9a67a6bf50108c8866fb0f2b79f9c2542482913cf960002d0002010100230000,
+    },
+}
+2022-11-15 08:24:09.3289709 TRACE rustls::client::hs - We got ServerHello ServerHelloPayload {
+    legacy_version: TLSv1_2,
+    random: bceb87d0500a3fc8e548807e418bbf140b0729c178f4a41bfff462dbbaa7ca1b,
+    session_id: 475d63894a51bc5c2b76164655e54de226c5af0580b213423b16346635703c65,
+    cipher_suite: TLS13_AES_256_GCM_SHA384,
+    compression_method: Null,
+    extensions: [
+        SupportedVersions(
+            TLSv1_3,
+        ),
+        KeyShare(
+            KeyShareEntry {
+                group: X25519,
+                payload: 65c4634ab874370200f230ac19cb18ff291f8a771be7ffbe408b893773ab7f14,
+            },
+        ),
+    ],
+}
+2022-11-15 08:24:09.3290128 DEBUG rustls::client::hs - Using ciphersuite TLS13_AES_256_GCM_SHA384
+2022-11-15 08:24:09.329049 DEBUG rustls::client::tls13 - Not resuming
+2022-11-15 08:24:09.3290617 TRACE rustls::client::client_conn - EarlyData rejected
+2022-11-15 08:24:09.3296975 TRACE rustls::conn - Dropping CCS
+2022-11-15 08:24:09.3297349 DEBUG rustls::client::tls13 - TLS1.3 encrypted extensions: []
+2022-11-15 08:24:09.3297431 DEBUG rustls::client::hs - ALPN protocol is None
+2022-11-15 08:24:09.3298042 DEBUG rustls::client::tls13 - Got CertificateRequest CertificateRequestPayloadTLS13 { context: , extensions: [SignatureAlgorithms([ECDSA_NISTP256_SHA256, ECDSA_NISTP384_SHA384, ECDSA_NISTP521_SHA512, ED25519, ED448, Unknown(2057), RSA_PSS_SHA256, Unknown(2058), RSA_PSS_SHA384, Unknown(2059), RSA_PSS_SHA512, RSA_PKCS1_SHA256, RSA_PKCS1_SHA384, RSA_PKCS1_SHA512, Unknown(771), Unknown(769), ECDSA_SHA1_Legacy, RSA_PKCS1_SHA1])] }
+2022-11-15 08:24:09.3298296 DEBUG rustls::client::common - Client auth requested but no cert/sigscheme available
+2022-11-15 08:24:09.3301321 TRACE rustls::client::tls13 - Server cert is [Certificate(b"0\x82\x03\x070\x82\x01\xef\xa0\x03\x02\x01\x02\x02\x01\x020\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0@1>0<\x06\x03U\x04\x03\x0c5MySQL_Server_8.0.30_Auto_Generated_Server_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xf3\x83\xe2\x85\x1dx\xaf\x02i \xaf\x06\xcb\x92\xee\xc66\xf0\xbd\x1e\x8bA\xb7\xbf\xaa\x8a\r\xa5\xe7\x9f\xe8E\x11\x92c)\x1b\x91\x85,\xc6\x05\0\xfc\xfa#\xef\xa7\xf3\xbcO\xcfX\xdb\x82\xe6\x97\xad\xd9\xaf\xeaf6\xf07\x0ec\x19\xd9>\xacy\x8e\xc3IW\xfa\xec/\xc5^\x9a\x06\xe5\xb2wQ\xd4\xe0\xea\x827\xbe\x82\xc4H\xe6i\xa4?%\r\xcc}\xd3s\x80R#\x95\xe3tL\r\x8c\xcap\xcd\x98!\xb1!\x8e\0m8X\xb4\x86\xa5/\xf2\xfeB\x8c\xf4\xf5\x17\xc1\x95\x9b\xe2C\xf3\x18c\xcf\xc9p\xf1\x82F\xb2\xaa\xf7\xe9\xa9\xd8O\x9a\xf2\x14\x8aa\xe0\xd0&\x0el\x86\xea\xd7<\xb8\x81\xce\xde\x8b\x90\xb9\x9e\x80gIe8T\xe4F\x15y\xa3\x03\xe2\xe8n\xef\xdbc\x81]\xe1k\x02\x98B\"\x98\xc9\xa8\xf95\x1b\x9ec\xa4w\xc8\x8a\x92\xf8\x10\xa1\t~[ThT=\xa2\x1a\xb7V\x06\x80\xa4\x9d\xd6Y\xc1\xca\x0f\xd5\x90\xb7\x8b\xe0U\x90\xc0_\xf5\xa1ji\x02\x03\x01\0\x01\xa3\x100\x0e0\x0c\x06\x03U\x1d\x13\x01\x01\xff\x04\x020\00\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0th\xf8X#G\x91^+Af^\xe8\x817\x8c\xa4\xd0\xc8:\xf4}v>K\xadb\xcf\xad\xea\xc8\xf0d\xc1j\x9c\x8aS\xdbX\xf9(\xf2\x99L\x91\xdc\xbcR\x94\xc0(\xd19\xb9\xc6]]\xe5\x127\x04\x88\xf3\r\xa0-\xa1\xe2\xb3\xe7\xc3vN\x12:[7\x9bc\x12f\x89W7\x9f\xb8\x06\"\x9e\x14\xe9\x84\x83l\xd2\x83@\x84\x98e\twb\x9d\xf5\xba\x93\xf7ski\xca\xc3\xf0\xf7Y7.A\x08Q\x89\xe6\xc7]\xccrfv\xb2\x88\x97\xb6\xe2jH\xc0Q\x8c\xebM\xcc\xca\xad\x14O\xdbc\tp?)\xec.\xaf\x8e\xd1\x8c\\)7E\xb8\x9c\xdah\x04\xfa\xdf\x19\xfeC\xf9G\r\xbf\xb3D\x14BJ\x07\xc0\xdc\x9d\xb3\xf1d!\xd2\xb0?\x95j\x86\x8a?\x08\xd3\xc6\xd4\xd9\xa3~3\x05]\"\xbfO\xb6\xaf\xf0\xd5\xb7o\x0fK\xfe\x85?|\xd9\xb8ad\xec\x89\xb5\x18C,\xff9\x92\x9c\xf8\x98e\x0bj\x12\x98\xddDU\x9e\xd5cV\xdb\xa3\x959\x8e"), Certificate(b"0\x82\x03\x060\x82\x01\xee\xa0\x03\x02\x01\x02\x02\x01\x010\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xca\xb3,\x88\x10\xbf\xd7|\xffm\x96\xa7\xa48\t\xa1Xec\xfd7\xc2V\x85\xebFq\xfc\xd7\xc0'\x03`\xfd\xf8\xd4} \xe4\x1d\xea8\xb9\x8a\xd2tr\x87\x9d#A\x97E\xc0=\xec\x8c\xd8\\\x7f\xff\xae\"\x90*\xc9\x88$Tf\x04o\xf4\xe3S\nr\0G5\x85\"\xda\x9f\x97\xc2\xa0$\xb6\xdd:\"'\xadR\xa0\x81\xcb\x87\xb3#\xe9O\xef\xe2f\xd6\x13\x9c\n\xf9P\xde\xad\xe2\x15\tJVc#\x0b\xe6\xb04\x14\x13\xe0N\x05\xc1z\xb6l\x0er\x91\xc8\x96\x8a\xc3\n*\x9f\xe1z\x01 \x02\x04\x04\x1a7\x01\"\xe7\x8ei\x87#\xeb\x9a\x90\xd6!\x14pi\xda\xd4\xe6\x06\x8b\xbc\xba\xd0\xees\x04\xfc\xc3R'\xb8\x07O\xed\xd6\xd5\x8d\x97\xbev\xe2!\x97H\xf5\x12\x1f\xf4\xc6\xfe\x049\x91{4\x1c\xdc\x9f\\bL\rrj\x0cL\xca\x8c\xbcb#fY\xcb\x8bD\x9c$\xcfj)N\x8f\x88\xc8\xee\xcd\x1d\x84\x08\x8d'N\x817E\xf1\x85\x99H\xa9s\xf7\x02\x03\x01\0\x01\xa3\x130\x110\x0f\x06\x03U\x1d\x13\x01\x01\xff\x04\x050\x03\x01\x01\xff0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0\x03\xcd\xc8,W~z\xcc=#\xca\x13Cv\x13N\x06x[\xd0\xdb%\xe0\x0eKd\xcb\x8f\x0bc\x9cg#\x85\xf5\x8d\xa1%\x98[.Ojh\xc4'\xeb\xa0\x02\x91\x05B\x06\x0c\xb3Z\xbc\xeba}\xe4|\xc8\x8c\x16\xd6\x14\xf0\xa3,\x03\xce\x14\\\x1et\x97\xad\x03\x85M\x16\t\x8aj*\xd5\x12\xe2Q\xd7\xc0\xbeA_\xec\xfd\x07\x11\xeb\xc3s\xc6\x95K\xc6O\x89\xf5\xcb1\xa3\xc3\r\xbe\x12\x8f\x87\xd5\xd0\xba\xac\x1a[+\xabt\x93\xfe\xff\"\x9dz\x10\xcc\x07\xc4|\x82\xee\xb2\x8b_\x8d8\x10\xdc^W>b\xcfI\x81DC\xa9GW+\n\x97\xa6\x8bQ\xa9\xa4\x8f'\xbf\x86\xdf\xe4\xbb\xa0\xea\xcf\xec\xcc\xbc\xe7\x0c\x87=\xa0Zh\x99nV\x03\xc4\xda\xf4\xe4\"(Bp\xbb\xaf\xb5\x12\xcc\x1a\xe31\x81|\xc4\x8d\x83m\xe3\x17*\x1e\xef\0[\\f\xffn\0\xdbe3\x99C\x95g\xb9\x15\0\x8b\x0f\x93\xb9W=\xc8\x16\xea\x04_t'\xd4\xf8.#\x01h\xb3\xa2")]
+2022-11-15 08:24:09.3313861 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 08:24:09.3314429 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 08:24:09.3344271 INFO rbatis::plugin::log - [rbatis] [434992313622728704] Fetch  ==> show databases;
+                                                      [rbatis]                      Args   ==> []
+2022-11-15 08:24:09.3375362 INFO rbatis::plugin::log - [rbatis] [434992313622728704] ReturnRows <== 5
+2022-11-15 08:25:00.9377396 TRACE mio::poll - registering event source with poller: token=Token(0), interests=READABLE | WRITABLE
+2022-11-15 08:25:00.9429806 DEBUG rustls::client::hs - No cached session for DnsName(DnsName(DnsName("localhost")))
+2022-11-15 08:25:00.9434377 DEBUG rustls::client::hs - Not resuming any session
+2022-11-15 08:25:00.9439945 TRACE rustls::client::hs - Sending ClientHello Message {
+    version: TLSv1_0,
+    payload: Handshake {
+        parsed: HandshakeMessagePayload {
+            typ: ClientHello,
+            payload: ClientHello(
+                ClientHelloPayload {
+                    client_version: TLSv1_2,
+                    random: ce0235053b8383393f10d34570d51285a2c0aec5297e15429c24d32f2386c261,
+                    session_id: 014737e3428e1014a48fb72e5fa9f660021faaffb8bf54a255274035704829ea,
+                    cipher_suites: [
+                        TLS13_AES_256_GCM_SHA384,
+                        TLS13_AES_128_GCM_SHA256,
+                        TLS13_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_EMPTY_RENEGOTIATION_INFO_SCSV,
+                    ],
+                    compression_methods: [
+                        Null,
+                    ],
+                    extensions: [
+                        SupportedVersions(
+                            [
+                                TLSv1_3,
+                                TLSv1_2,
+                            ],
+                        ),
+                        ECPointFormats(
+                            [
+                                Uncompressed,
+                            ],
+                        ),
+                        NamedGroups(
+                            [
+                                X25519,
+                                secp256r1,
+                                secp384r1,
+                            ],
+                        ),
+                        SignatureAlgorithms(
+                            [
+                                ECDSA_NISTP384_SHA384,
+                                ECDSA_NISTP256_SHA256,
+                                ED25519,
+                                RSA_PSS_SHA512,
+                                RSA_PSS_SHA384,
+                                RSA_PSS_SHA256,
+                                RSA_PKCS1_SHA512,
+                                RSA_PKCS1_SHA384,
+                                RSA_PKCS1_SHA256,
+                            ],
+                        ),
+                        ExtendedMasterSecretRequest,
+                        CertificateStatusRequest(
+                            OCSP(
+                                OCSPCertificateStatusRequest {
+                                    responder_ids: [],
+                                    extensions: ,
+                                },
+                            ),
+                        ),
+                        ServerName(
+                            [
+                                ServerName {
+                                    typ: HostName,
+                                    payload: HostName(
+                                        (
+                                            6c6f63616c686f7374,
+                                            DnsName(
+                                                "localhost",
+                                            ),
+                                        ),
+                                    ),
+                                },
+                            ],
+                        ),
+                        SignedCertificateTimestampRequest,
+                        KeyShare(
+                            [
+                                KeyShareEntry {
+                                    group: X25519,
+                                    payload: 46efdf9c098b65b056dc52e22063b08891e37821ccf96a9d806876fa1fb64608,
+                                },
+                            ],
+                        ),
+                        PresharedKeyModes(
+                            [
+                                PSK_DHE_KE,
+                            ],
+                        ),
+                        SessionTicket(
+                            Request,
+                        ),
+                    ],
+                },
+            ),
+        },
+        encoded: 010000e70303ce0235053b8383393f10d34570d51285a2c0aec5297e15429c24d32f2386c26120014737e3428e1014a48fb72e5fa9f660021faaffb8bf54a255274035704829ea0014130213011303c02cc02bcca9c030c02fcca800ff0100008a002b00050403040303000b00020100000a00080006001d00170018000d00140012050304030807080608050804060105010401001700000005000501000000000000000e000c0000096c6f63616c686f737400120000003300260024001d002046efdf9c098b65b056dc52e22063b08891e37821ccf96a9d806876fa1fb64608002d0002010100230000,
+    },
+}
+2022-11-15 08:25:00.9463871 TRACE rustls::client::hs - We got ServerHello ServerHelloPayload {
+    legacy_version: TLSv1_2,
+    random: b7a92c6f04f9dea91137375f713ce4ce4319bb70dda166725a105cb7ddb6a555,
+    session_id: 014737e3428e1014a48fb72e5fa9f660021faaffb8bf54a255274035704829ea,
+    cipher_suite: TLS13_AES_256_GCM_SHA384,
+    compression_method: Null,
+    extensions: [
+        SupportedVersions(
+            TLSv1_3,
+        ),
+        KeyShare(
+            KeyShareEntry {
+                group: X25519,
+                payload: 568f634fac4be3278f7a80799413789a7da5a6a4011cd75fc0912fea657c8e65,
+            },
+        ),
+    ],
+}
+2022-11-15 08:25:00.9464321 DEBUG rustls::client::hs - Using ciphersuite TLS13_AES_256_GCM_SHA384
+2022-11-15 08:25:00.9464816 DEBUG rustls::client::tls13 - Not resuming
+2022-11-15 08:25:00.9464995 TRACE rustls::client::client_conn - EarlyData rejected
+2022-11-15 08:25:00.9471643 TRACE rustls::conn - Dropping CCS
+2022-11-15 08:25:00.947216 DEBUG rustls::client::tls13 - TLS1.3 encrypted extensions: []
+2022-11-15 08:25:00.9472286 DEBUG rustls::client::hs - ALPN protocol is None
+2022-11-15 08:25:00.9473212 DEBUG rustls::client::tls13 - Got CertificateRequest CertificateRequestPayloadTLS13 { context: , extensions: [SignatureAlgorithms([ECDSA_NISTP256_SHA256, ECDSA_NISTP384_SHA384, ECDSA_NISTP521_SHA512, ED25519, ED448, Unknown(2057), RSA_PSS_SHA256, Unknown(2058), RSA_PSS_SHA384, Unknown(2059), RSA_PSS_SHA512, RSA_PKCS1_SHA256, RSA_PKCS1_SHA384, RSA_PKCS1_SHA512, Unknown(771), Unknown(769), ECDSA_SHA1_Legacy, RSA_PKCS1_SHA1])] }
+2022-11-15 08:25:00.9473563 DEBUG rustls::client::common - Client auth requested but no cert/sigscheme available
+2022-11-15 08:25:00.9476558 TRACE rustls::client::tls13 - Server cert is [Certificate(b"0\x82\x03\x070\x82\x01\xef\xa0\x03\x02\x01\x02\x02\x01\x020\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0@1>0<\x06\x03U\x04\x03\x0c5MySQL_Server_8.0.30_Auto_Generated_Server_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xf3\x83\xe2\x85\x1dx\xaf\x02i \xaf\x06\xcb\x92\xee\xc66\xf0\xbd\x1e\x8bA\xb7\xbf\xaa\x8a\r\xa5\xe7\x9f\xe8E\x11\x92c)\x1b\x91\x85,\xc6\x05\0\xfc\xfa#\xef\xa7\xf3\xbcO\xcfX\xdb\x82\xe6\x97\xad\xd9\xaf\xeaf6\xf07\x0ec\x19\xd9>\xacy\x8e\xc3IW\xfa\xec/\xc5^\x9a\x06\xe5\xb2wQ\xd4\xe0\xea\x827\xbe\x82\xc4H\xe6i\xa4?%\r\xcc}\xd3s\x80R#\x95\xe3tL\r\x8c\xcap\xcd\x98!\xb1!\x8e\0m8X\xb4\x86\xa5/\xf2\xfeB\x8c\xf4\xf5\x17\xc1\x95\x9b\xe2C\xf3\x18c\xcf\xc9p\xf1\x82F\xb2\xaa\xf7\xe9\xa9\xd8O\x9a\xf2\x14\x8aa\xe0\xd0&\x0el\x86\xea\xd7<\xb8\x81\xce\xde\x8b\x90\xb9\x9e\x80gIe8T\xe4F\x15y\xa3\x03\xe2\xe8n\xef\xdbc\x81]\xe1k\x02\x98B\"\x98\xc9\xa8\xf95\x1b\x9ec\xa4w\xc8\x8a\x92\xf8\x10\xa1\t~[ThT=\xa2\x1a\xb7V\x06\x80\xa4\x9d\xd6Y\xc1\xca\x0f\xd5\x90\xb7\x8b\xe0U\x90\xc0_\xf5\xa1ji\x02\x03\x01\0\x01\xa3\x100\x0e0\x0c\x06\x03U\x1d\x13\x01\x01\xff\x04\x020\00\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0th\xf8X#G\x91^+Af^\xe8\x817\x8c\xa4\xd0\xc8:\xf4}v>K\xadb\xcf\xad\xea\xc8\xf0d\xc1j\x9c\x8aS\xdbX\xf9(\xf2\x99L\x91\xdc\xbcR\x94\xc0(\xd19\xb9\xc6]]\xe5\x127\x04\x88\xf3\r\xa0-\xa1\xe2\xb3\xe7\xc3vN\x12:[7\x9bc\x12f\x89W7\x9f\xb8\x06\"\x9e\x14\xe9\x84\x83l\xd2\x83@\x84\x98e\twb\x9d\xf5\xba\x93\xf7ski\xca\xc3\xf0\xf7Y7.A\x08Q\x89\xe6\xc7]\xccrfv\xb2\x88\x97\xb6\xe2jH\xc0Q\x8c\xebM\xcc\xca\xad\x14O\xdbc\tp?)\xec.\xaf\x8e\xd1\x8c\\)7E\xb8\x9c\xdah\x04\xfa\xdf\x19\xfeC\xf9G\r\xbf\xb3D\x14BJ\x07\xc0\xdc\x9d\xb3\xf1d!\xd2\xb0?\x95j\x86\x8a?\x08\xd3\xc6\xd4\xd9\xa3~3\x05]\"\xbfO\xb6\xaf\xf0\xd5\xb7o\x0fK\xfe\x85?|\xd9\xb8ad\xec\x89\xb5\x18C,\xff9\x92\x9c\xf8\x98e\x0bj\x12\x98\xddDU\x9e\xd5cV\xdb\xa3\x959\x8e"), Certificate(b"0\x82\x03\x060\x82\x01\xee\xa0\x03\x02\x01\x02\x02\x01\x010\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xca\xb3,\x88\x10\xbf\xd7|\xffm\x96\xa7\xa48\t\xa1Xec\xfd7\xc2V\x85\xebFq\xfc\xd7\xc0'\x03`\xfd\xf8\xd4} \xe4\x1d\xea8\xb9\x8a\xd2tr\x87\x9d#A\x97E\xc0=\xec\x8c\xd8\\\x7f\xff\xae\"\x90*\xc9\x88$Tf\x04o\xf4\xe3S\nr\0G5\x85\"\xda\x9f\x97\xc2\xa0$\xb6\xdd:\"'\xadR\xa0\x81\xcb\x87\xb3#\xe9O\xef\xe2f\xd6\x13\x9c\n\xf9P\xde\xad\xe2\x15\tJVc#\x0b\xe6\xb04\x14\x13\xe0N\x05\xc1z\xb6l\x0er\x91\xc8\x96\x8a\xc3\n*\x9f\xe1z\x01 \x02\x04\x04\x1a7\x01\"\xe7\x8ei\x87#\xeb\x9a\x90\xd6!\x14pi\xda\xd4\xe6\x06\x8b\xbc\xba\xd0\xees\x04\xfc\xc3R'\xb8\x07O\xed\xd6\xd5\x8d\x97\xbev\xe2!\x97H\xf5\x12\x1f\xf4\xc6\xfe\x049\x91{4\x1c\xdc\x9f\\bL\rrj\x0cL\xca\x8c\xbcb#fY\xcb\x8bD\x9c$\xcfj)N\x8f\x88\xc8\xee\xcd\x1d\x84\x08\x8d'N\x817E\xf1\x85\x99H\xa9s\xf7\x02\x03\x01\0\x01\xa3\x130\x110\x0f\x06\x03U\x1d\x13\x01\x01\xff\x04\x050\x03\x01\x01\xff0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0\x03\xcd\xc8,W~z\xcc=#\xca\x13Cv\x13N\x06x[\xd0\xdb%\xe0\x0eKd\xcb\x8f\x0bc\x9cg#\x85\xf5\x8d\xa1%\x98[.Ojh\xc4'\xeb\xa0\x02\x91\x05B\x06\x0c\xb3Z\xbc\xeba}\xe4|\xc8\x8c\x16\xd6\x14\xf0\xa3,\x03\xce\x14\\\x1et\x97\xad\x03\x85M\x16\t\x8aj*\xd5\x12\xe2Q\xd7\xc0\xbeA_\xec\xfd\x07\x11\xeb\xc3s\xc6\x95K\xc6O\x89\xf5\xcb1\xa3\xc3\r\xbe\x12\x8f\x87\xd5\xd0\xba\xac\x1a[+\xabt\x93\xfe\xff\"\x9dz\x10\xcc\x07\xc4|\x82\xee\xb2\x8b_\x8d8\x10\xdc^W>b\xcfI\x81DC\xa9GW+\n\x97\xa6\x8bQ\xa9\xa4\x8f'\xbf\x86\xdf\xe4\xbb\xa0\xea\xcf\xec\xcc\xbc\xe7\x0c\x87=\xa0Zh\x99nV\x03\xc4\xda\xf4\xe4\"(Bp\xbb\xaf\xb5\x12\xcc\x1a\xe31\x81|\xc4\x8d\x83m\xe3\x17*\x1e\xef\0[\\f\xffn\0\xdbe3\x99C\x95g\xb9\x15\0\x8b\x0f\x93\xb9W=\xc8\x16\xea\x04_t'\xd4\xf8.#\x01h\xb3\xa2")]
+2022-11-15 08:25:00.9492773 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 08:25:00.9493567 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 08:25:00.9523942 INFO rbatis::plugin::log - [rbatis] [434992530124312576] Fetch  ==> show databases;
+                                                      [rbatis]                      Args   ==> []
+2022-11-15 08:25:00.9562443 INFO rbatis::plugin::log - [rbatis] [434992530124312576] ReturnRows <== 5
+2022-11-15 08:30:58.0130378 TRACE mio::poll - registering event source with poller: token=Token(0), interests=READABLE | WRITABLE
+2022-11-15 08:30:58.0166899 DEBUG rustls::client::hs - No cached session for DnsName(DnsName(DnsName("localhost")))
+2022-11-15 08:30:58.0171222 DEBUG rustls::client::hs - Not resuming any session
+2022-11-15 08:30:58.0178947 TRACE rustls::client::hs - Sending ClientHello Message {
+    version: TLSv1_0,
+    payload: Handshake {
+        parsed: HandshakeMessagePayload {
+            typ: ClientHello,
+            payload: ClientHello(
+                ClientHelloPayload {
+                    client_version: TLSv1_2,
+                    random: 765b250e5447580a991f87e6b0c2db9ffa1240810bdee44c33870163446a4555,
+                    session_id: 70cfd1f46aa772c08073f7a939dcf671950164252ff2961247462b0fe1947a6a,
+                    cipher_suites: [
+                        TLS13_AES_256_GCM_SHA384,
+                        TLS13_AES_128_GCM_SHA256,
+                        TLS13_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_EMPTY_RENEGOTIATION_INFO_SCSV,
+                    ],
+                    compression_methods: [
+                        Null,
+                    ],
+                    extensions: [
+                        SupportedVersions(
+                            [
+                                TLSv1_3,
+                                TLSv1_2,
+                            ],
+                        ),
+                        ECPointFormats(
+                            [
+                                Uncompressed,
+                            ],
+                        ),
+                        NamedGroups(
+                            [
+                                X25519,
+                                secp256r1,
+                                secp384r1,
+                            ],
+                        ),
+                        SignatureAlgorithms(
+                            [
+                                ECDSA_NISTP384_SHA384,
+                                ECDSA_NISTP256_SHA256,
+                                ED25519,
+                                RSA_PSS_SHA512,
+                                RSA_PSS_SHA384,
+                                RSA_PSS_SHA256,
+                                RSA_PKCS1_SHA512,
+                                RSA_PKCS1_SHA384,
+                                RSA_PKCS1_SHA256,
+                            ],
+                        ),
+                        ExtendedMasterSecretRequest,
+                        CertificateStatusRequest(
+                            OCSP(
+                                OCSPCertificateStatusRequest {
+                                    responder_ids: [],
+                                    extensions: ,
+                                },
+                            ),
+                        ),
+                        ServerName(
+                            [
+                                ServerName {
+                                    typ: HostName,
+                                    payload: HostName(
+                                        (
+                                            6c6f63616c686f7374,
+                                            DnsName(
+                                                "localhost",
+                                            ),
+                                        ),
+                                    ),
+                                },
+                            ],
+                        ),
+                        SignedCertificateTimestampRequest,
+                        KeyShare(
+                            [
+                                KeyShareEntry {
+                                    group: X25519,
+                                    payload: 0be4e4e0abefc1267d47e91dc5ddbe73eac626613d8e585f4502ca8ea53e3e41,
+                                },
+                            ],
+                        ),
+                        PresharedKeyModes(
+                            [
+                                PSK_DHE_KE,
+                            ],
+                        ),
+                        SessionTicket(
+                            Request,
+                        ),
+                    ],
+                },
+            ),
+        },
+        encoded: 010000e70303765b250e5447580a991f87e6b0c2db9ffa1240810bdee44c33870163446a45552070cfd1f46aa772c08073f7a939dcf671950164252ff2961247462b0fe1947a6a0014130213011303c02cc02bcca9c030c02fcca800ff0100008a002b00050403040303000b00020100000a00080006001d00170018000d00140012050304030807080608050804060105010401001700000005000501000000000000000e000c0000096c6f63616c686f737400120000003300260024001d00200be4e4e0abefc1267d47e91dc5ddbe73eac626613d8e585f4502ca8ea53e3e41002d0002010100230000,
+    },
+}
+2022-11-15 08:30:58.0202446 TRACE rustls::client::hs - We got ServerHello ServerHelloPayload {
+    legacy_version: TLSv1_2,
+    random: 17ca75951a6b9081af7a569105d6d94073eb70085bae27dd906839a47cddf790,
+    session_id: 70cfd1f46aa772c08073f7a939dcf671950164252ff2961247462b0fe1947a6a,
+    cipher_suite: TLS13_AES_256_GCM_SHA384,
+    compression_method: Null,
+    extensions: [
+        SupportedVersions(
+            TLSv1_3,
+        ),
+        KeyShare(
+            KeyShareEntry {
+                group: X25519,
+                payload: aa6b493b52321a4e794d9c6ce29d392ba951f7b449f82391fc4b1588d8053e77,
+            },
+        ),
+    ],
+}
+2022-11-15 08:30:58.020305 DEBUG rustls::client::hs - Using ciphersuite TLS13_AES_256_GCM_SHA384
+2022-11-15 08:30:58.0203613 DEBUG rustls::client::tls13 - Not resuming
+2022-11-15 08:30:58.0203716 TRACE rustls::client::client_conn - EarlyData rejected
+2022-11-15 08:30:58.021043 TRACE rustls::conn - Dropping CCS
+2022-11-15 08:30:58.021089 DEBUG rustls::client::tls13 - TLS1.3 encrypted extensions: []
+2022-11-15 08:30:58.0211013 DEBUG rustls::client::hs - ALPN protocol is None
+2022-11-15 08:30:58.0212575 DEBUG rustls::client::tls13 - Got CertificateRequest CertificateRequestPayloadTLS13 { context: , extensions: [SignatureAlgorithms([ECDSA_NISTP256_SHA256, ECDSA_NISTP384_SHA384, ECDSA_NISTP521_SHA512, ED25519, ED448, Unknown(2057), RSA_PSS_SHA256, Unknown(2058), RSA_PSS_SHA384, Unknown(2059), RSA_PSS_SHA512, RSA_PKCS1_SHA256, RSA_PKCS1_SHA384, RSA_PKCS1_SHA512, Unknown(771), Unknown(769), ECDSA_SHA1_Legacy, RSA_PKCS1_SHA1])] }
+2022-11-15 08:30:58.0212951 DEBUG rustls::client::common - Client auth requested but no cert/sigscheme available
+2022-11-15 08:30:58.0216201 TRACE rustls::client::tls13 - Server cert is [Certificate(b"0\x82\x03\x070\x82\x01\xef\xa0\x03\x02\x01\x02\x02\x01\x020\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0@1>0<\x06\x03U\x04\x03\x0c5MySQL_Server_8.0.30_Auto_Generated_Server_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xf3\x83\xe2\x85\x1dx\xaf\x02i \xaf\x06\xcb\x92\xee\xc66\xf0\xbd\x1e\x8bA\xb7\xbf\xaa\x8a\r\xa5\xe7\x9f\xe8E\x11\x92c)\x1b\x91\x85,\xc6\x05\0\xfc\xfa#\xef\xa7\xf3\xbcO\xcfX\xdb\x82\xe6\x97\xad\xd9\xaf\xeaf6\xf07\x0ec\x19\xd9>\xacy\x8e\xc3IW\xfa\xec/\xc5^\x9a\x06\xe5\xb2wQ\xd4\xe0\xea\x827\xbe\x82\xc4H\xe6i\xa4?%\r\xcc}\xd3s\x80R#\x95\xe3tL\r\x8c\xcap\xcd\x98!\xb1!\x8e\0m8X\xb4\x86\xa5/\xf2\xfeB\x8c\xf4\xf5\x17\xc1\x95\x9b\xe2C\xf3\x18c\xcf\xc9p\xf1\x82F\xb2\xaa\xf7\xe9\xa9\xd8O\x9a\xf2\x14\x8aa\xe0\xd0&\x0el\x86\xea\xd7<\xb8\x81\xce\xde\x8b\x90\xb9\x9e\x80gIe8T\xe4F\x15y\xa3\x03\xe2\xe8n\xef\xdbc\x81]\xe1k\x02\x98B\"\x98\xc9\xa8\xf95\x1b\x9ec\xa4w\xc8\x8a\x92\xf8\x10\xa1\t~[ThT=\xa2\x1a\xb7V\x06\x80\xa4\x9d\xd6Y\xc1\xca\x0f\xd5\x90\xb7\x8b\xe0U\x90\xc0_\xf5\xa1ji\x02\x03\x01\0\x01\xa3\x100\x0e0\x0c\x06\x03U\x1d\x13\x01\x01\xff\x04\x020\00\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0th\xf8X#G\x91^+Af^\xe8\x817\x8c\xa4\xd0\xc8:\xf4}v>K\xadb\xcf\xad\xea\xc8\xf0d\xc1j\x9c\x8aS\xdbX\xf9(\xf2\x99L\x91\xdc\xbcR\x94\xc0(\xd19\xb9\xc6]]\xe5\x127\x04\x88\xf3\r\xa0-\xa1\xe2\xb3\xe7\xc3vN\x12:[7\x9bc\x12f\x89W7\x9f\xb8\x06\"\x9e\x14\xe9\x84\x83l\xd2\x83@\x84\x98e\twb\x9d\xf5\xba\x93\xf7ski\xca\xc3\xf0\xf7Y7.A\x08Q\x89\xe6\xc7]\xccrfv\xb2\x88\x97\xb6\xe2jH\xc0Q\x8c\xebM\xcc\xca\xad\x14O\xdbc\tp?)\xec.\xaf\x8e\xd1\x8c\\)7E\xb8\x9c\xdah\x04\xfa\xdf\x19\xfeC\xf9G\r\xbf\xb3D\x14BJ\x07\xc0\xdc\x9d\xb3\xf1d!\xd2\xb0?\x95j\x86\x8a?\x08\xd3\xc6\xd4\xd9\xa3~3\x05]\"\xbfO\xb6\xaf\xf0\xd5\xb7o\x0fK\xfe\x85?|\xd9\xb8ad\xec\x89\xb5\x18C,\xff9\x92\x9c\xf8\x98e\x0bj\x12\x98\xddDU\x9e\xd5cV\xdb\xa3\x959\x8e"), Certificate(b"0\x82\x03\x060\x82\x01\xee\xa0\x03\x02\x01\x02\x02\x01\x010\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xca\xb3,\x88\x10\xbf\xd7|\xffm\x96\xa7\xa48\t\xa1Xec\xfd7\xc2V\x85\xebFq\xfc\xd7\xc0'\x03`\xfd\xf8\xd4} \xe4\x1d\xea8\xb9\x8a\xd2tr\x87\x9d#A\x97E\xc0=\xec\x8c\xd8\\\x7f\xff\xae\"\x90*\xc9\x88$Tf\x04o\xf4\xe3S\nr\0G5\x85\"\xda\x9f\x97\xc2\xa0$\xb6\xdd:\"'\xadR\xa0\x81\xcb\x87\xb3#\xe9O\xef\xe2f\xd6\x13\x9c\n\xf9P\xde\xad\xe2\x15\tJVc#\x0b\xe6\xb04\x14\x13\xe0N\x05\xc1z\xb6l\x0er\x91\xc8\x96\x8a\xc3\n*\x9f\xe1z\x01 \x02\x04\x04\x1a7\x01\"\xe7\x8ei\x87#\xeb\x9a\x90\xd6!\x14pi\xda\xd4\xe6\x06\x8b\xbc\xba\xd0\xees\x04\xfc\xc3R'\xb8\x07O\xed\xd6\xd5\x8d\x97\xbev\xe2!\x97H\xf5\x12\x1f\xf4\xc6\xfe\x049\x91{4\x1c\xdc\x9f\\bL\rrj\x0cL\xca\x8c\xbcb#fY\xcb\x8bD\x9c$\xcfj)N\x8f\x88\xc8\xee\xcd\x1d\x84\x08\x8d'N\x817E\xf1\x85\x99H\xa9s\xf7\x02\x03\x01\0\x01\xa3\x130\x110\x0f\x06\x03U\x1d\x13\x01\x01\xff\x04\x050\x03\x01\x01\xff0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0\x03\xcd\xc8,W~z\xcc=#\xca\x13Cv\x13N\x06x[\xd0\xdb%\xe0\x0eKd\xcb\x8f\x0bc\x9cg#\x85\xf5\x8d\xa1%\x98[.Ojh\xc4'\xeb\xa0\x02\x91\x05B\x06\x0c\xb3Z\xbc\xeba}\xe4|\xc8\x8c\x16\xd6\x14\xf0\xa3,\x03\xce\x14\\\x1et\x97\xad\x03\x85M\x16\t\x8aj*\xd5\x12\xe2Q\xd7\xc0\xbeA_\xec\xfd\x07\x11\xeb\xc3s\xc6\x95K\xc6O\x89\xf5\xcb1\xa3\xc3\r\xbe\x12\x8f\x87\xd5\xd0\xba\xac\x1a[+\xabt\x93\xfe\xff\"\x9dz\x10\xcc\x07\xc4|\x82\xee\xb2\x8b_\x8d8\x10\xdc^W>b\xcfI\x81DC\xa9GW+\n\x97\xa6\x8bQ\xa9\xa4\x8f'\xbf\x86\xdf\xe4\xbb\xa0\xea\xcf\xec\xcc\xbc\xe7\x0c\x87=\xa0Zh\x99nV\x03\xc4\xda\xf4\xe4\"(Bp\xbb\xaf\xb5\x12\xcc\x1a\xe31\x81|\xc4\x8d\x83m\xe3\x17*\x1e\xef\0[\\f\xffn\0\xdbe3\x99C\x95g\xb9\x15\0\x8b\x0f\x93\xb9W=\xc8\x16\xea\x04_t'\xd4\xf8.#\x01h\xb3\xa2")]
+2022-11-15 08:30:58.0232787 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 08:30:58.0233447 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 08:30:58.0259655 INFO rbatis::plugin::log - [rbatis] [434994027797024768] Fetch  ==> show databases;
+                                                      [rbatis]                      Args   ==> []
+2022-11-15 08:30:58.0341988 INFO rbatis::plugin::log - [rbatis] [434994027797024768] ReturnRows <== 5
+2022-11-15 08:31:24.3559869 TRACE mio::poll - registering event source with poller: token=Token(0), interests=READABLE | WRITABLE
+2022-11-15 08:31:24.3610085 DEBUG rustls::client::hs - No cached session for DnsName(DnsName(DnsName("localhost")))
+2022-11-15 08:31:24.3614235 DEBUG rustls::client::hs - Not resuming any session
+2022-11-15 08:31:24.362029 TRACE rustls::client::hs - Sending ClientHello Message {
+    version: TLSv1_0,
+    payload: Handshake {
+        parsed: HandshakeMessagePayload {
+            typ: ClientHello,
+            payload: ClientHello(
+                ClientHelloPayload {
+                    client_version: TLSv1_2,
+                    random: c825298bab06c844aa63948253eed6f824460e51906a89093e7bbad1e9fa084f,
+                    session_id: 8fd0d18858048a05fb7031389e8594755b654edb5d7ae3ecd1edd48e9f04a6a1,
+                    cipher_suites: [
+                        TLS13_AES_256_GCM_SHA384,
+                        TLS13_AES_128_GCM_SHA256,
+                        TLS13_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_EMPTY_RENEGOTIATION_INFO_SCSV,
+                    ],
+                    compression_methods: [
+                        Null,
+                    ],
+                    extensions: [
+                        SupportedVersions(
+                            [
+                                TLSv1_3,
+                                TLSv1_2,
+                            ],
+                        ),
+                        ECPointFormats(
+                            [
+                                Uncompressed,
+                            ],
+                        ),
+                        NamedGroups(
+                            [
+                                X25519,
+                                secp256r1,
+                                secp384r1,
+                            ],
+                        ),
+                        SignatureAlgorithms(
+                            [
+                                ECDSA_NISTP384_SHA384,
+                                ECDSA_NISTP256_SHA256,
+                                ED25519,
+                                RSA_PSS_SHA512,
+                                RSA_PSS_SHA384,
+                                RSA_PSS_SHA256,
+                                RSA_PKCS1_SHA512,
+                                RSA_PKCS1_SHA384,
+                                RSA_PKCS1_SHA256,
+                            ],
+                        ),
+                        ExtendedMasterSecretRequest,
+                        CertificateStatusRequest(
+                            OCSP(
+                                OCSPCertificateStatusRequest {
+                                    responder_ids: [],
+                                    extensions: ,
+                                },
+                            ),
+                        ),
+                        ServerName(
+                            [
+                                ServerName {
+                                    typ: HostName,
+                                    payload: HostName(
+                                        (
+                                            6c6f63616c686f7374,
+                                            DnsName(
+                                                "localhost",
+                                            ),
+                                        ),
+                                    ),
+                                },
+                            ],
+                        ),
+                        SignedCertificateTimestampRequest,
+                        KeyShare(
+                            [
+                                KeyShareEntry {
+                                    group: X25519,
+                                    payload: 7e0fd8c6b17c4e4c76e4d189378b6243dc35a85c61e2eb3ec21caf5484887831,
+                                },
+                            ],
+                        ),
+                        PresharedKeyModes(
+                            [
+                                PSK_DHE_KE,
+                            ],
+                        ),
+                        SessionTicket(
+                            Request,
+                        ),
+                    ],
+                },
+            ),
+        },
+        encoded: 010000e70303c825298bab06c844aa63948253eed6f824460e51906a89093e7bbad1e9fa084f208fd0d18858048a05fb7031389e8594755b654edb5d7ae3ecd1edd48e9f04a6a10014130213011303c02cc02bcca9c030c02fcca800ff0100008a002b00050403040303000b00020100000a00080006001d00170018000d00140012050304030807080608050804060105010401001700000005000501000000000000000e000c0000096c6f63616c686f737400120000003300260024001d00207e0fd8c6b17c4e4c76e4d189378b6243dc35a85c61e2eb3ec21caf5484887831002d0002010100230000,
+    },
+}
+2022-11-15 08:31:24.3640474 TRACE rustls::client::hs - We got ServerHello ServerHelloPayload {
+    legacy_version: TLSv1_2,
+    random: d57790a16ff6bda7430fef2bd3a57e3c98a7a142b1628828b63339d2448a04eb,
+    session_id: 8fd0d18858048a05fb7031389e8594755b654edb5d7ae3ecd1edd48e9f04a6a1,
+    cipher_suite: TLS13_AES_256_GCM_SHA384,
+    compression_method: Null,
+    extensions: [
+        SupportedVersions(
+            TLSv1_3,
+        ),
+        KeyShare(
+            KeyShareEntry {
+                group: X25519,
+                payload: 52c53bd4c6044544432448689f3763e7fda2015eb6fbf7afa7493d6b4d8b8755,
+            },
+        ),
+    ],
+}
+2022-11-15 08:31:24.36411 DEBUG rustls::client::hs - Using ciphersuite TLS13_AES_256_GCM_SHA384
+2022-11-15 08:31:24.3641561 DEBUG rustls::client::tls13 - Not resuming
+2022-11-15 08:31:24.3641623 TRACE rustls::client::client_conn - EarlyData rejected
+2022-11-15 08:31:24.3647882 TRACE rustls::conn - Dropping CCS
+2022-11-15 08:31:24.3648254 DEBUG rustls::client::tls13 - TLS1.3 encrypted extensions: []
+2022-11-15 08:31:24.3648299 DEBUG rustls::client::hs - ALPN protocol is None
+2022-11-15 08:31:24.3648918 DEBUG rustls::client::tls13 - Got CertificateRequest CertificateRequestPayloadTLS13 { context: , extensions: [SignatureAlgorithms([ECDSA_NISTP256_SHA256, ECDSA_NISTP384_SHA384, ECDSA_NISTP521_SHA512, ED25519, ED448, Unknown(2057), RSA_PSS_SHA256, Unknown(2058), RSA_PSS_SHA384, Unknown(2059), RSA_PSS_SHA512, RSA_PKCS1_SHA256, RSA_PKCS1_SHA384, RSA_PKCS1_SHA512, Unknown(771), Unknown(769), ECDSA_SHA1_Legacy, RSA_PKCS1_SHA1])] }
+2022-11-15 08:31:24.3649294 DEBUG rustls::client::common - Client auth requested but no cert/sigscheme available
+2022-11-15 08:31:24.3652634 TRACE rustls::client::tls13 - Server cert is [Certificate(b"0\x82\x03\x070\x82\x01\xef\xa0\x03\x02\x01\x02\x02\x01\x020\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0@1>0<\x06\x03U\x04\x03\x0c5MySQL_Server_8.0.30_Auto_Generated_Server_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xf3\x83\xe2\x85\x1dx\xaf\x02i \xaf\x06\xcb\x92\xee\xc66\xf0\xbd\x1e\x8bA\xb7\xbf\xaa\x8a\r\xa5\xe7\x9f\xe8E\x11\x92c)\x1b\x91\x85,\xc6\x05\0\xfc\xfa#\xef\xa7\xf3\xbcO\xcfX\xdb\x82\xe6\x97\xad\xd9\xaf\xeaf6\xf07\x0ec\x19\xd9>\xacy\x8e\xc3IW\xfa\xec/\xc5^\x9a\x06\xe5\xb2wQ\xd4\xe0\xea\x827\xbe\x82\xc4H\xe6i\xa4?%\r\xcc}\xd3s\x80R#\x95\xe3tL\r\x8c\xcap\xcd\x98!\xb1!\x8e\0m8X\xb4\x86\xa5/\xf2\xfeB\x8c\xf4\xf5\x17\xc1\x95\x9b\xe2C\xf3\x18c\xcf\xc9p\xf1\x82F\xb2\xaa\xf7\xe9\xa9\xd8O\x9a\xf2\x14\x8aa\xe0\xd0&\x0el\x86\xea\xd7<\xb8\x81\xce\xde\x8b\x90\xb9\x9e\x80gIe8T\xe4F\x15y\xa3\x03\xe2\xe8n\xef\xdbc\x81]\xe1k\x02\x98B\"\x98\xc9\xa8\xf95\x1b\x9ec\xa4w\xc8\x8a\x92\xf8\x10\xa1\t~[ThT=\xa2\x1a\xb7V\x06\x80\xa4\x9d\xd6Y\xc1\xca\x0f\xd5\x90\xb7\x8b\xe0U\x90\xc0_\xf5\xa1ji\x02\x03\x01\0\x01\xa3\x100\x0e0\x0c\x06\x03U\x1d\x13\x01\x01\xff\x04\x020\00\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0th\xf8X#G\x91^+Af^\xe8\x817\x8c\xa4\xd0\xc8:\xf4}v>K\xadb\xcf\xad\xea\xc8\xf0d\xc1j\x9c\x8aS\xdbX\xf9(\xf2\x99L\x91\xdc\xbcR\x94\xc0(\xd19\xb9\xc6]]\xe5\x127\x04\x88\xf3\r\xa0-\xa1\xe2\xb3\xe7\xc3vN\x12:[7\x9bc\x12f\x89W7\x9f\xb8\x06\"\x9e\x14\xe9\x84\x83l\xd2\x83@\x84\x98e\twb\x9d\xf5\xba\x93\xf7ski\xca\xc3\xf0\xf7Y7.A\x08Q\x89\xe6\xc7]\xccrfv\xb2\x88\x97\xb6\xe2jH\xc0Q\x8c\xebM\xcc\xca\xad\x14O\xdbc\tp?)\xec.\xaf\x8e\xd1\x8c\\)7E\xb8\x9c\xdah\x04\xfa\xdf\x19\xfeC\xf9G\r\xbf\xb3D\x14BJ\x07\xc0\xdc\x9d\xb3\xf1d!\xd2\xb0?\x95j\x86\x8a?\x08\xd3\xc6\xd4\xd9\xa3~3\x05]\"\xbfO\xb6\xaf\xf0\xd5\xb7o\x0fK\xfe\x85?|\xd9\xb8ad\xec\x89\xb5\x18C,\xff9\x92\x9c\xf8\x98e\x0bj\x12\x98\xddDU\x9e\xd5cV\xdb\xa3\x959\x8e"), Certificate(b"0\x82\x03\x060\x82\x01\xee\xa0\x03\x02\x01\x02\x02\x01\x010\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xca\xb3,\x88\x10\xbf\xd7|\xffm\x96\xa7\xa48\t\xa1Xec\xfd7\xc2V\x85\xebFq\xfc\xd7\xc0'\x03`\xfd\xf8\xd4} \xe4\x1d\xea8\xb9\x8a\xd2tr\x87\x9d#A\x97E\xc0=\xec\x8c\xd8\\\x7f\xff\xae\"\x90*\xc9\x88$Tf\x04o\xf4\xe3S\nr\0G5\x85\"\xda\x9f\x97\xc2\xa0$\xb6\xdd:\"'\xadR\xa0\x81\xcb\x87\xb3#\xe9O\xef\xe2f\xd6\x13\x9c\n\xf9P\xde\xad\xe2\x15\tJVc#\x0b\xe6\xb04\x14\x13\xe0N\x05\xc1z\xb6l\x0er\x91\xc8\x96\x8a\xc3\n*\x9f\xe1z\x01 \x02\x04\x04\x1a7\x01\"\xe7\x8ei\x87#\xeb\x9a\x90\xd6!\x14pi\xda\xd4\xe6\x06\x8b\xbc\xba\xd0\xees\x04\xfc\xc3R'\xb8\x07O\xed\xd6\xd5\x8d\x97\xbev\xe2!\x97H\xf5\x12\x1f\xf4\xc6\xfe\x049\x91{4\x1c\xdc\x9f\\bL\rrj\x0cL\xca\x8c\xbcb#fY\xcb\x8bD\x9c$\xcfj)N\x8f\x88\xc8\xee\xcd\x1d\x84\x08\x8d'N\x817E\xf1\x85\x99H\xa9s\xf7\x02\x03\x01\0\x01\xa3\x130\x110\x0f\x06\x03U\x1d\x13\x01\x01\xff\x04\x050\x03\x01\x01\xff0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0\x03\xcd\xc8,W~z\xcc=#\xca\x13Cv\x13N\x06x[\xd0\xdb%\xe0\x0eKd\xcb\x8f\x0bc\x9cg#\x85\xf5\x8d\xa1%\x98[.Ojh\xc4'\xeb\xa0\x02\x91\x05B\x06\x0c\xb3Z\xbc\xeba}\xe4|\xc8\x8c\x16\xd6\x14\xf0\xa3,\x03\xce\x14\\\x1et\x97\xad\x03\x85M\x16\t\x8aj*\xd5\x12\xe2Q\xd7\xc0\xbeA_\xec\xfd\x07\x11\xeb\xc3s\xc6\x95K\xc6O\x89\xf5\xcb1\xa3\xc3\r\xbe\x12\x8f\x87\xd5\xd0\xba\xac\x1a[+\xabt\x93\xfe\xff\"\x9dz\x10\xcc\x07\xc4|\x82\xee\xb2\x8b_\x8d8\x10\xdc^W>b\xcfI\x81DC\xa9GW+\n\x97\xa6\x8bQ\xa9\xa4\x8f'\xbf\x86\xdf\xe4\xbb\xa0\xea\xcf\xec\xcc\xbc\xe7\x0c\x87=\xa0Zh\x99nV\x03\xc4\xda\xf4\xe4\"(Bp\xbb\xaf\xb5\x12\xcc\x1a\xe31\x81|\xc4\x8d\x83m\xe3\x17*\x1e\xef\0[\\f\xffn\0\xdbe3\x99C\x95g\xb9\x15\0\x8b\x0f\x93\xb9W=\xc8\x16\xea\x04_t'\xd4\xf8.#\x01h\xb3\xa2")]
+2022-11-15 08:31:24.3665585 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 08:31:24.3666211 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 08:31:24.3691301 INFO rbatis::plugin::log - [rbatis] [434994138291769344] Fetch  ==> show databases;
+                                                      [rbatis]                      Args   ==> []
+2022-11-15 08:31:24.3715297 INFO rbatis::plugin::log - [rbatis] [434994138291769344] ReturnRows <== 5
+2022-11-15 08:34:11.0087205 TRACE mio::poll - registering event source with poller: token=Token(0), interests=READABLE | WRITABLE
+2022-11-15 08:34:11.0119904 DEBUG rustls::client::hs - No cached session for DnsName(DnsName(DnsName("localhost")))
+2022-11-15 08:34:11.0123866 DEBUG rustls::client::hs - Not resuming any session
+2022-11-15 08:34:11.0129913 TRACE rustls::client::hs - Sending ClientHello Message {
+    version: TLSv1_0,
+    payload: Handshake {
+        parsed: HandshakeMessagePayload {
+            typ: ClientHello,
+            payload: ClientHello(
+                ClientHelloPayload {
+                    client_version: TLSv1_2,
+                    random: 5c410dfa101cab7ca2c070359eabac4e1c6a071625a6606114378096ea700e9d,
+                    session_id: 11608c8c5f59bb29cced27c4d26dee4f9d485e583cb7b1edacc9482e3a62142d,
+                    cipher_suites: [
+                        TLS13_AES_256_GCM_SHA384,
+                        TLS13_AES_128_GCM_SHA256,
+                        TLS13_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_EMPTY_RENEGOTIATION_INFO_SCSV,
+                    ],
+                    compression_methods: [
+                        Null,
+                    ],
+                    extensions: [
+                        SupportedVersions(
+                            [
+                                TLSv1_3,
+                                TLSv1_2,
+                            ],
+                        ),
+                        ECPointFormats(
+                            [
+                                Uncompressed,
+                            ],
+                        ),
+                        NamedGroups(
+                            [
+                                X25519,
+                                secp256r1,
+                                secp384r1,
+                            ],
+                        ),
+                        SignatureAlgorithms(
+                            [
+                                ECDSA_NISTP384_SHA384,
+                                ECDSA_NISTP256_SHA256,
+                                ED25519,
+                                RSA_PSS_SHA512,
+                                RSA_PSS_SHA384,
+                                RSA_PSS_SHA256,
+                                RSA_PKCS1_SHA512,
+                                RSA_PKCS1_SHA384,
+                                RSA_PKCS1_SHA256,
+                            ],
+                        ),
+                        ExtendedMasterSecretRequest,
+                        CertificateStatusRequest(
+                            OCSP(
+                                OCSPCertificateStatusRequest {
+                                    responder_ids: [],
+                                    extensions: ,
+                                },
+                            ),
+                        ),
+                        ServerName(
+                            [
+                                ServerName {
+                                    typ: HostName,
+                                    payload: HostName(
+                                        (
+                                            6c6f63616c686f7374,
+                                            DnsName(
+                                                "localhost",
+                                            ),
+                                        ),
+                                    ),
+                                },
+                            ],
+                        ),
+                        SignedCertificateTimestampRequest,
+                        KeyShare(
+                            [
+                                KeyShareEntry {
+                                    group: X25519,
+                                    payload: ecabbcd97b91da22f8eb88e230f03ef195c4375253715fb4601901ac68c9b555,
+                                },
+                            ],
+                        ),
+                        PresharedKeyModes(
+                            [
+                                PSK_DHE_KE,
+                            ],
+                        ),
+                        SessionTicket(
+                            Request,
+                        ),
+                    ],
+                },
+            ),
+        },
+        encoded: 010000e703035c410dfa101cab7ca2c070359eabac4e1c6a071625a6606114378096ea700e9d2011608c8c5f59bb29cced27c4d26dee4f9d485e583cb7b1edacc9482e3a62142d0014130213011303c02cc02bcca9c030c02fcca800ff0100008a002b00050403040303000b00020100000a00080006001d00170018000d00140012050304030807080608050804060105010401001700000005000501000000000000000e000c0000096c6f63616c686f737400120000003300260024001d0020ecabbcd97b91da22f8eb88e230f03ef195c4375253715fb4601901ac68c9b555002d0002010100230000,
+    },
+}
+2022-11-15 08:34:11.0174805 TRACE rustls::client::hs - We got ServerHello ServerHelloPayload {
+    legacy_version: TLSv1_2,
+    random: 7f258814e04daf94e339d1dc112f47d09fb5c9fa5bc12d5fb29655bac5246382,
+    session_id: 11608c8c5f59bb29cced27c4d26dee4f9d485e583cb7b1edacc9482e3a62142d,
+    cipher_suite: TLS13_AES_256_GCM_SHA384,
+    compression_method: Null,
+    extensions: [
+        SupportedVersions(
+            TLSv1_3,
+        ),
+        KeyShare(
+            KeyShareEntry {
+                group: X25519,
+                payload: 6ab9ff68c09e6d2a41aacf6f140bbde01db82d4c334671831d9606caae1fdf32,
+            },
+        ),
+    ],
+}
+2022-11-15 08:34:11.0175338 DEBUG rustls::client::hs - Using ciphersuite TLS13_AES_256_GCM_SHA384
+2022-11-15 08:34:11.0175982 DEBUG rustls::client::tls13 - Not resuming
+2022-11-15 08:34:11.0176115 TRACE rustls::client::client_conn - EarlyData rejected
+2022-11-15 08:34:11.0182517 TRACE rustls::conn - Dropping CCS
+2022-11-15 08:34:11.0183065 DEBUG rustls::client::tls13 - TLS1.3 encrypted extensions: []
+2022-11-15 08:34:11.0183134 DEBUG rustls::client::hs - ALPN protocol is None
+2022-11-15 08:34:11.0183847 DEBUG rustls::client::tls13 - Got CertificateRequest CertificateRequestPayloadTLS13 { context: , extensions: [SignatureAlgorithms([ECDSA_NISTP256_SHA256, ECDSA_NISTP384_SHA384, ECDSA_NISTP521_SHA512, ED25519, ED448, Unknown(2057), RSA_PSS_SHA256, Unknown(2058), RSA_PSS_SHA384, Unknown(2059), RSA_PSS_SHA512, RSA_PKCS1_SHA256, RSA_PKCS1_SHA384, RSA_PKCS1_SHA512, Unknown(771), Unknown(769), ECDSA_SHA1_Legacy, RSA_PKCS1_SHA1])] }
+2022-11-15 08:34:11.018411 DEBUG rustls::client::common - Client auth requested but no cert/sigscheme available
+2022-11-15 08:34:11.018709 TRACE rustls::client::tls13 - Server cert is [Certificate(b"0\x82\x03\x070\x82\x01\xef\xa0\x03\x02\x01\x02\x02\x01\x020\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0@1>0<\x06\x03U\x04\x03\x0c5MySQL_Server_8.0.30_Auto_Generated_Server_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xf3\x83\xe2\x85\x1dx\xaf\x02i \xaf\x06\xcb\x92\xee\xc66\xf0\xbd\x1e\x8bA\xb7\xbf\xaa\x8a\r\xa5\xe7\x9f\xe8E\x11\x92c)\x1b\x91\x85,\xc6\x05\0\xfc\xfa#\xef\xa7\xf3\xbcO\xcfX\xdb\x82\xe6\x97\xad\xd9\xaf\xeaf6\xf07\x0ec\x19\xd9>\xacy\x8e\xc3IW\xfa\xec/\xc5^\x9a\x06\xe5\xb2wQ\xd4\xe0\xea\x827\xbe\x82\xc4H\xe6i\xa4?%\r\xcc}\xd3s\x80R#\x95\xe3tL\r\x8c\xcap\xcd\x98!\xb1!\x8e\0m8X\xb4\x86\xa5/\xf2\xfeB\x8c\xf4\xf5\x17\xc1\x95\x9b\xe2C\xf3\x18c\xcf\xc9p\xf1\x82F\xb2\xaa\xf7\xe9\xa9\xd8O\x9a\xf2\x14\x8aa\xe0\xd0&\x0el\x86\xea\xd7<\xb8\x81\xce\xde\x8b\x90\xb9\x9e\x80gIe8T\xe4F\x15y\xa3\x03\xe2\xe8n\xef\xdbc\x81]\xe1k\x02\x98B\"\x98\xc9\xa8\xf95\x1b\x9ec\xa4w\xc8\x8a\x92\xf8\x10\xa1\t~[ThT=\xa2\x1a\xb7V\x06\x80\xa4\x9d\xd6Y\xc1\xca\x0f\xd5\x90\xb7\x8b\xe0U\x90\xc0_\xf5\xa1ji\x02\x03\x01\0\x01\xa3\x100\x0e0\x0c\x06\x03U\x1d\x13\x01\x01\xff\x04\x020\00\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0th\xf8X#G\x91^+Af^\xe8\x817\x8c\xa4\xd0\xc8:\xf4}v>K\xadb\xcf\xad\xea\xc8\xf0d\xc1j\x9c\x8aS\xdbX\xf9(\xf2\x99L\x91\xdc\xbcR\x94\xc0(\xd19\xb9\xc6]]\xe5\x127\x04\x88\xf3\r\xa0-\xa1\xe2\xb3\xe7\xc3vN\x12:[7\x9bc\x12f\x89W7\x9f\xb8\x06\"\x9e\x14\xe9\x84\x83l\xd2\x83@\x84\x98e\twb\x9d\xf5\xba\x93\xf7ski\xca\xc3\xf0\xf7Y7.A\x08Q\x89\xe6\xc7]\xccrfv\xb2\x88\x97\xb6\xe2jH\xc0Q\x8c\xebM\xcc\xca\xad\x14O\xdbc\tp?)\xec.\xaf\x8e\xd1\x8c\\)7E\xb8\x9c\xdah\x04\xfa\xdf\x19\xfeC\xf9G\r\xbf\xb3D\x14BJ\x07\xc0\xdc\x9d\xb3\xf1d!\xd2\xb0?\x95j\x86\x8a?\x08\xd3\xc6\xd4\xd9\xa3~3\x05]\"\xbfO\xb6\xaf\xf0\xd5\xb7o\x0fK\xfe\x85?|\xd9\xb8ad\xec\x89\xb5\x18C,\xff9\x92\x9c\xf8\x98e\x0bj\x12\x98\xddDU\x9e\xd5cV\xdb\xa3\x959\x8e"), Certificate(b"0\x82\x03\x060\x82\x01\xee\xa0\x03\x02\x01\x02\x02\x01\x010\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xca\xb3,\x88\x10\xbf\xd7|\xffm\x96\xa7\xa48\t\xa1Xec\xfd7\xc2V\x85\xebFq\xfc\xd7\xc0'\x03`\xfd\xf8\xd4} \xe4\x1d\xea8\xb9\x8a\xd2tr\x87\x9d#A\x97E\xc0=\xec\x8c\xd8\\\x7f\xff\xae\"\x90*\xc9\x88$Tf\x04o\xf4\xe3S\nr\0G5\x85\"\xda\x9f\x97\xc2\xa0$\xb6\xdd:\"'\xadR\xa0\x81\xcb\x87\xb3#\xe9O\xef\xe2f\xd6\x13\x9c\n\xf9P\xde\xad\xe2\x15\tJVc#\x0b\xe6\xb04\x14\x13\xe0N\x05\xc1z\xb6l\x0er\x91\xc8\x96\x8a\xc3\n*\x9f\xe1z\x01 \x02\x04\x04\x1a7\x01\"\xe7\x8ei\x87#\xeb\x9a\x90\xd6!\x14pi\xda\xd4\xe6\x06\x8b\xbc\xba\xd0\xees\x04\xfc\xc3R'\xb8\x07O\xed\xd6\xd5\x8d\x97\xbev\xe2!\x97H\xf5\x12\x1f\xf4\xc6\xfe\x049\x91{4\x1c\xdc\x9f\\bL\rrj\x0cL\xca\x8c\xbcb#fY\xcb\x8bD\x9c$\xcfj)N\x8f\x88\xc8\xee\xcd\x1d\x84\x08\x8d'N\x817E\xf1\x85\x99H\xa9s\xf7\x02\x03\x01\0\x01\xa3\x130\x110\x0f\x06\x03U\x1d\x13\x01\x01\xff\x04\x050\x03\x01\x01\xff0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0\x03\xcd\xc8,W~z\xcc=#\xca\x13Cv\x13N\x06x[\xd0\xdb%\xe0\x0eKd\xcb\x8f\x0bc\x9cg#\x85\xf5\x8d\xa1%\x98[.Ojh\xc4'\xeb\xa0\x02\x91\x05B\x06\x0c\xb3Z\xbc\xeba}\xe4|\xc8\x8c\x16\xd6\x14\xf0\xa3,\x03\xce\x14\\\x1et\x97\xad\x03\x85M\x16\t\x8aj*\xd5\x12\xe2Q\xd7\xc0\xbeA_\xec\xfd\x07\x11\xeb\xc3s\xc6\x95K\xc6O\x89\xf5\xcb1\xa3\xc3\r\xbe\x12\x8f\x87\xd5\xd0\xba\xac\x1a[+\xabt\x93\xfe\xff\"\x9dz\x10\xcc\x07\xc4|\x82\xee\xb2\x8b_\x8d8\x10\xdc^W>b\xcfI\x81DC\xa9GW+\n\x97\xa6\x8bQ\xa9\xa4\x8f'\xbf\x86\xdf\xe4\xbb\xa0\xea\xcf\xec\xcc\xbc\xe7\x0c\x87=\xa0Zh\x99nV\x03\xc4\xda\xf4\xe4\"(Bp\xbb\xaf\xb5\x12\xcc\x1a\xe31\x81|\xc4\x8d\x83m\xe3\x17*\x1e\xef\0[\\f\xffn\0\xdbe3\x99C\x95g\xb9\x15\0\x8b\x0f\x93\xb9W=\xc8\x16\xea\x04_t'\xd4\xf8.#\x01h\xb3\xa2")]
+2022-11-15 08:34:11.0202892 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 08:34:11.0203614 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 08:34:11.0237656 INFO rbatis::plugin::log - [rbatis] [434994837289308160] Fetch  ==> show databases;
+                                                      [rbatis]                      Args   ==> []
+2022-11-15 08:34:11.0265044 INFO rbatis::plugin::log - [rbatis] [434994837289308160] ReturnRows <== 5
+2022-11-15 10:42:55.1697594 TRACE mio::poll - registering event source with poller: token=Token(0), interests=READABLE | WRITABLE
+2022-11-15 10:42:55.1729634 DEBUG rustls::client::hs - No cached session for DnsName(DnsName(DnsName("localhost")))
+2022-11-15 10:42:55.1733365 DEBUG rustls::client::hs - Not resuming any session
+2022-11-15 10:42:55.1739046 TRACE rustls::client::hs - Sending ClientHello Message {
+    version: TLSv1_0,
+    payload: Handshake {
+        parsed: HandshakeMessagePayload {
+            typ: ClientHello,
+            payload: ClientHello(
+                ClientHelloPayload {
+                    client_version: TLSv1_2,
+                    random: 8364233bb14a1c7ecbeaf6375f99041ea2b3f941891245225596ec40067596bb,
+                    session_id: 08e9f1734f9516ede18fe3d8db608676c083edfdba0c400fe1ae41c211e03880,
+                    cipher_suites: [
+                        TLS13_AES_256_GCM_SHA384,
+                        TLS13_AES_128_GCM_SHA256,
+                        TLS13_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_EMPTY_RENEGOTIATION_INFO_SCSV,
+                    ],
+                    compression_methods: [
+                        Null,
+                    ],
+                    extensions: [
+                        SupportedVersions(
+                            [
+                                TLSv1_3,
+                                TLSv1_2,
+                            ],
+                        ),
+                        ECPointFormats(
+                            [
+                                Uncompressed,
+                            ],
+                        ),
+                        NamedGroups(
+                            [
+                                X25519,
+                                secp256r1,
+                                secp384r1,
+                            ],
+                        ),
+                        SignatureAlgorithms(
+                            [
+                                ECDSA_NISTP384_SHA384,
+                                ECDSA_NISTP256_SHA256,
+                                ED25519,
+                                RSA_PSS_SHA512,
+                                RSA_PSS_SHA384,
+                                RSA_PSS_SHA256,
+                                RSA_PKCS1_SHA512,
+                                RSA_PKCS1_SHA384,
+                                RSA_PKCS1_SHA256,
+                            ],
+                        ),
+                        ExtendedMasterSecretRequest,
+                        CertificateStatusRequest(
+                            OCSP(
+                                OCSPCertificateStatusRequest {
+                                    responder_ids: [],
+                                    extensions: ,
+                                },
+                            ),
+                        ),
+                        ServerName(
+                            [
+                                ServerName {
+                                    typ: HostName,
+                                    payload: HostName(
+                                        (
+                                            6c6f63616c686f7374,
+                                            DnsName(
+                                                "localhost",
+                                            ),
+                                        ),
+                                    ),
+                                },
+                            ],
+                        ),
+                        SignedCertificateTimestampRequest,
+                        KeyShare(
+                            [
+                                KeyShareEntry {
+                                    group: X25519,
+                                    payload: 1477f6113314a3eda79d95e0d60214b5ebe1e6161b7d6be6debc1ed589d6f105,
+                                },
+                            ],
+                        ),
+                        PresharedKeyModes(
+                            [
+                                PSK_DHE_KE,
+                            ],
+                        ),
+                        SessionTicket(
+                            Request,
+                        ),
+                    ],
+                },
+            ),
+        },
+        encoded: 010000e703038364233bb14a1c7ecbeaf6375f99041ea2b3f941891245225596ec40067596bb2008e9f1734f9516ede18fe3d8db608676c083edfdba0c400fe1ae41c211e038800014130213011303c02cc02bcca9c030c02fcca800ff0100008a002b00050403040303000b00020100000a00080006001d00170018000d00140012050304030807080608050804060105010401001700000005000501000000000000000e000c0000096c6f63616c686f737400120000003300260024001d00201477f6113314a3eda79d95e0d60214b5ebe1e6161b7d6be6debc1ed589d6f105002d0002010100230000,
+    },
+}
+2022-11-15 10:42:55.1762408 TRACE rustls::client::hs - We got ServerHello ServerHelloPayload {
+    legacy_version: TLSv1_2,
+    random: 90fbc4549dd45b831cdc8003ac8fdeeb93e2d28de1a94e0be4ba11c954fd8178,
+    session_id: 08e9f1734f9516ede18fe3d8db608676c083edfdba0c400fe1ae41c211e03880,
+    cipher_suite: TLS13_AES_256_GCM_SHA384,
+    compression_method: Null,
+    extensions: [
+        SupportedVersions(
+            TLSv1_3,
+        ),
+        KeyShare(
+            KeyShareEntry {
+                group: X25519,
+                payload: 22f6c00ee17d3cbcb51b10671c0d47be2adfac89419b7ce91355d9e3488f9366,
+            },
+        ),
+    ],
+}
+2022-11-15 10:42:55.1762846 DEBUG rustls::client::hs - Using ciphersuite TLS13_AES_256_GCM_SHA384
+2022-11-15 10:42:55.1763272 DEBUG rustls::client::tls13 - Not resuming
+2022-11-15 10:42:55.1763393 TRACE rustls::client::client_conn - EarlyData rejected
+2022-11-15 10:42:55.1769609 TRACE rustls::conn - Dropping CCS
+2022-11-15 10:42:55.1770236 DEBUG rustls::client::tls13 - TLS1.3 encrypted extensions: []
+2022-11-15 10:42:55.1770325 DEBUG rustls::client::hs - ALPN protocol is None
+2022-11-15 10:42:55.1770957 DEBUG rustls::client::tls13 - Got CertificateRequest CertificateRequestPayloadTLS13 { context: , extensions: [SignatureAlgorithms([ECDSA_NISTP256_SHA256, ECDSA_NISTP384_SHA384, ECDSA_NISTP521_SHA512, ED25519, ED448, Unknown(2057), RSA_PSS_SHA256, Unknown(2058), RSA_PSS_SHA384, Unknown(2059), RSA_PSS_SHA512, RSA_PKCS1_SHA256, RSA_PKCS1_SHA384, RSA_PKCS1_SHA512, Unknown(771), Unknown(769), ECDSA_SHA1_Legacy, RSA_PKCS1_SHA1])] }
+2022-11-15 10:42:55.1771323 DEBUG rustls::client::common - Client auth requested but no cert/sigscheme available
+2022-11-15 10:42:55.1774513 TRACE rustls::client::tls13 - Server cert is [Certificate(b"0\x82\x03\x070\x82\x01\xef\xa0\x03\x02\x01\x02\x02\x01\x020\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0@1>0<\x06\x03U\x04\x03\x0c5MySQL_Server_8.0.30_Auto_Generated_Server_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xf3\x83\xe2\x85\x1dx\xaf\x02i \xaf\x06\xcb\x92\xee\xc66\xf0\xbd\x1e\x8bA\xb7\xbf\xaa\x8a\r\xa5\xe7\x9f\xe8E\x11\x92c)\x1b\x91\x85,\xc6\x05\0\xfc\xfa#\xef\xa7\xf3\xbcO\xcfX\xdb\x82\xe6\x97\xad\xd9\xaf\xeaf6\xf07\x0ec\x19\xd9>\xacy\x8e\xc3IW\xfa\xec/\xc5^\x9a\x06\xe5\xb2wQ\xd4\xe0\xea\x827\xbe\x82\xc4H\xe6i\xa4?%\r\xcc}\xd3s\x80R#\x95\xe3tL\r\x8c\xcap\xcd\x98!\xb1!\x8e\0m8X\xb4\x86\xa5/\xf2\xfeB\x8c\xf4\xf5\x17\xc1\x95\x9b\xe2C\xf3\x18c\xcf\xc9p\xf1\x82F\xb2\xaa\xf7\xe9\xa9\xd8O\x9a\xf2\x14\x8aa\xe0\xd0&\x0el\x86\xea\xd7<\xb8\x81\xce\xde\x8b\x90\xb9\x9e\x80gIe8T\xe4F\x15y\xa3\x03\xe2\xe8n\xef\xdbc\x81]\xe1k\x02\x98B\"\x98\xc9\xa8\xf95\x1b\x9ec\xa4w\xc8\x8a\x92\xf8\x10\xa1\t~[ThT=\xa2\x1a\xb7V\x06\x80\xa4\x9d\xd6Y\xc1\xca\x0f\xd5\x90\xb7\x8b\xe0U\x90\xc0_\xf5\xa1ji\x02\x03\x01\0\x01\xa3\x100\x0e0\x0c\x06\x03U\x1d\x13\x01\x01\xff\x04\x020\00\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0th\xf8X#G\x91^+Af^\xe8\x817\x8c\xa4\xd0\xc8:\xf4}v>K\xadb\xcf\xad\xea\xc8\xf0d\xc1j\x9c\x8aS\xdbX\xf9(\xf2\x99L\x91\xdc\xbcR\x94\xc0(\xd19\xb9\xc6]]\xe5\x127\x04\x88\xf3\r\xa0-\xa1\xe2\xb3\xe7\xc3vN\x12:[7\x9bc\x12f\x89W7\x9f\xb8\x06\"\x9e\x14\xe9\x84\x83l\xd2\x83@\x84\x98e\twb\x9d\xf5\xba\x93\xf7ski\xca\xc3\xf0\xf7Y7.A\x08Q\x89\xe6\xc7]\xccrfv\xb2\x88\x97\xb6\xe2jH\xc0Q\x8c\xebM\xcc\xca\xad\x14O\xdbc\tp?)\xec.\xaf\x8e\xd1\x8c\\)7E\xb8\x9c\xdah\x04\xfa\xdf\x19\xfeC\xf9G\r\xbf\xb3D\x14BJ\x07\xc0\xdc\x9d\xb3\xf1d!\xd2\xb0?\x95j\x86\x8a?\x08\xd3\xc6\xd4\xd9\xa3~3\x05]\"\xbfO\xb6\xaf\xf0\xd5\xb7o\x0fK\xfe\x85?|\xd9\xb8ad\xec\x89\xb5\x18C,\xff9\x92\x9c\xf8\x98e\x0bj\x12\x98\xddDU\x9e\xd5cV\xdb\xa3\x959\x8e"), Certificate(b"0\x82\x03\x060\x82\x01\xee\xa0\x03\x02\x01\x02\x02\x01\x010\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xca\xb3,\x88\x10\xbf\xd7|\xffm\x96\xa7\xa48\t\xa1Xec\xfd7\xc2V\x85\xebFq\xfc\xd7\xc0'\x03`\xfd\xf8\xd4} \xe4\x1d\xea8\xb9\x8a\xd2tr\x87\x9d#A\x97E\xc0=\xec\x8c\xd8\\\x7f\xff\xae\"\x90*\xc9\x88$Tf\x04o\xf4\xe3S\nr\0G5\x85\"\xda\x9f\x97\xc2\xa0$\xb6\xdd:\"'\xadR\xa0\x81\xcb\x87\xb3#\xe9O\xef\xe2f\xd6\x13\x9c\n\xf9P\xde\xad\xe2\x15\tJVc#\x0b\xe6\xb04\x14\x13\xe0N\x05\xc1z\xb6l\x0er\x91\xc8\x96\x8a\xc3\n*\x9f\xe1z\x01 \x02\x04\x04\x1a7\x01\"\xe7\x8ei\x87#\xeb\x9a\x90\xd6!\x14pi\xda\xd4\xe6\x06\x8b\xbc\xba\xd0\xees\x04\xfc\xc3R'\xb8\x07O\xed\xd6\xd5\x8d\x97\xbev\xe2!\x97H\xf5\x12\x1f\xf4\xc6\xfe\x049\x91{4\x1c\xdc\x9f\\bL\rrj\x0cL\xca\x8c\xbcb#fY\xcb\x8bD\x9c$\xcfj)N\x8f\x88\xc8\xee\xcd\x1d\x84\x08\x8d'N\x817E\xf1\x85\x99H\xa9s\xf7\x02\x03\x01\0\x01\xa3\x130\x110\x0f\x06\x03U\x1d\x13\x01\x01\xff\x04\x050\x03\x01\x01\xff0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0\x03\xcd\xc8,W~z\xcc=#\xca\x13Cv\x13N\x06x[\xd0\xdb%\xe0\x0eKd\xcb\x8f\x0bc\x9cg#\x85\xf5\x8d\xa1%\x98[.Ojh\xc4'\xeb\xa0\x02\x91\x05B\x06\x0c\xb3Z\xbc\xeba}\xe4|\xc8\x8c\x16\xd6\x14\xf0\xa3,\x03\xce\x14\\\x1et\x97\xad\x03\x85M\x16\t\x8aj*\xd5\x12\xe2Q\xd7\xc0\xbeA_\xec\xfd\x07\x11\xeb\xc3s\xc6\x95K\xc6O\x89\xf5\xcb1\xa3\xc3\r\xbe\x12\x8f\x87\xd5\xd0\xba\xac\x1a[+\xabt\x93\xfe\xff\"\x9dz\x10\xcc\x07\xc4|\x82\xee\xb2\x8b_\x8d8\x10\xdc^W>b\xcfI\x81DC\xa9GW+\n\x97\xa6\x8bQ\xa9\xa4\x8f'\xbf\x86\xdf\xe4\xbb\xa0\xea\xcf\xec\xcc\xbc\xe7\x0c\x87=\xa0Zh\x99nV\x03\xc4\xda\xf4\xe4\"(Bp\xbb\xaf\xb5\x12\xcc\x1a\xe31\x81|\xc4\x8d\x83m\xe3\x17*\x1e\xef\0[\\f\xffn\0\xdbe3\x99C\x95g\xb9\x15\0\x8b\x0f\x93\xb9W=\xc8\x16\xea\x04_t'\xd4\xf8.#\x01h\xb3\xa2")]
+2022-11-15 10:42:55.1791629 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 10:42:55.1792418 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 10:42:55.1830759 INFO rbatis::plugin::log - [rbatis] [435027234764492800] Fetch  ==> show databases;
+                                                      [rbatis]                      Args   ==> []
+2022-11-15 10:42:55.189205 INFO rbatis::plugin::log - [rbatis] [435027234764492800] ReturnRows <== 5
+2022-11-15 10:49:06.2112956 TRACE mio::poll - registering event source with poller: token=Token(0), interests=READABLE | WRITABLE
+2022-11-15 10:54:02.6714282 TRACE mio::poll - registering event source with poller: token=Token(0), interests=READABLE | WRITABLE
+2022-11-15 10:54:02.6774589 DEBUG rustls::client::hs - No cached session for DnsName(DnsName(DnsName("localhost")))
+2022-11-15 10:54:02.6779564 DEBUG rustls::client::hs - Not resuming any session
+2022-11-15 10:54:02.6784826 TRACE rustls::client::hs - Sending ClientHello Message {
+    version: TLSv1_0,
+    payload: Handshake {
+        parsed: HandshakeMessagePayload {
+            typ: ClientHello,
+            payload: ClientHello(
+                ClientHelloPayload {
+                    client_version: TLSv1_2,
+                    random: 41fa78ce8509bb1282e86642232d8db26a93c3d4e2e2115e1883c562b97bd770,
+                    session_id: 323ec7f4ec6fb32bb3a181697836f8da025ac40251952cd440b5938046b85f6f,
+                    cipher_suites: [
+                        TLS13_AES_256_GCM_SHA384,
+                        TLS13_AES_128_GCM_SHA256,
+                        TLS13_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_EMPTY_RENEGOTIATION_INFO_SCSV,
+                    ],
+                    compression_methods: [
+                        Null,
+                    ],
+                    extensions: [
+                        SupportedVersions(
+                            [
+                                TLSv1_3,
+                                TLSv1_2,
+                            ],
+                        ),
+                        ECPointFormats(
+                            [
+                                Uncompressed,
+                            ],
+                        ),
+                        NamedGroups(
+                            [
+                                X25519,
+                                secp256r1,
+                                secp384r1,
+                            ],
+                        ),
+                        SignatureAlgorithms(
+                            [
+                                ECDSA_NISTP384_SHA384,
+                                ECDSA_NISTP256_SHA256,
+                                ED25519,
+                                RSA_PSS_SHA512,
+                                RSA_PSS_SHA384,
+                                RSA_PSS_SHA256,
+                                RSA_PKCS1_SHA512,
+                                RSA_PKCS1_SHA384,
+                                RSA_PKCS1_SHA256,
+                            ],
+                        ),
+                        ExtendedMasterSecretRequest,
+                        CertificateStatusRequest(
+                            OCSP(
+                                OCSPCertificateStatusRequest {
+                                    responder_ids: [],
+                                    extensions: ,
+                                },
+                            ),
+                        ),
+                        ServerName(
+                            [
+                                ServerName {
+                                    typ: HostName,
+                                    payload: HostName(
+                                        (
+                                            6c6f63616c686f7374,
+                                            DnsName(
+                                                "localhost",
+                                            ),
+                                        ),
+                                    ),
+                                },
+                            ],
+                        ),
+                        SignedCertificateTimestampRequest,
+                        KeyShare(
+                            [
+                                KeyShareEntry {
+                                    group: X25519,
+                                    payload: 37d3c7308e9ecbccfb9d87a7841314945e28a66b516182caeaac16be4d2c3e7a,
+                                },
+                            ],
+                        ),
+                        PresharedKeyModes(
+                            [
+                                PSK_DHE_KE,
+                            ],
+                        ),
+                        SessionTicket(
+                            Request,
+                        ),
+                    ],
+                },
+            ),
+        },
+        encoded: 010000e7030341fa78ce8509bb1282e86642232d8db26a93c3d4e2e2115e1883c562b97bd77020323ec7f4ec6fb32bb3a181697836f8da025ac40251952cd440b5938046b85f6f0014130213011303c02cc02bcca9c030c02fcca800ff0100008a002b00050403040303000b00020100000a00080006001d00170018000d00140012050304030807080608050804060105010401001700000005000501000000000000000e000c0000096c6f63616c686f737400120000003300260024001d002037d3c7308e9ecbccfb9d87a7841314945e28a66b516182caeaac16be4d2c3e7a002d0002010100230000,
+    },
+}
+2022-11-15 10:54:02.6818922 TRACE rustls::client::hs - We got ServerHello ServerHelloPayload {
+    legacy_version: TLSv1_2,
+    random: a3a6b90115cb91a537978631235faf575253f127d8c602b371b66cd265984d6d,
+    session_id: 323ec7f4ec6fb32bb3a181697836f8da025ac40251952cd440b5938046b85f6f,
+    cipher_suite: TLS13_AES_256_GCM_SHA384,
+    compression_method: Null,
+    extensions: [
+        SupportedVersions(
+            TLSv1_3,
+        ),
+        KeyShare(
+            KeyShareEntry {
+                group: X25519,
+                payload: d056bfcafb9c096920259a42d6279b2ed3b96c2d4049eeb9d230112a77a13511,
+            },
+        ),
+    ],
+}
+2022-11-15 10:54:02.6819346 DEBUG rustls::client::hs - Using ciphersuite TLS13_AES_256_GCM_SHA384
+2022-11-15 10:54:02.6819811 DEBUG rustls::client::tls13 - Not resuming
+2022-11-15 10:54:02.6819835 TRACE rustls::client::client_conn - EarlyData rejected
+2022-11-15 10:54:02.6826333 TRACE rustls::conn - Dropping CCS
+2022-11-15 10:54:02.682678 DEBUG rustls::client::tls13 - TLS1.3 encrypted extensions: []
+2022-11-15 10:54:02.6826833 DEBUG rustls::client::hs - ALPN protocol is None
+2022-11-15 10:54:02.6827411 DEBUG rustls::client::tls13 - Got CertificateRequest CertificateRequestPayloadTLS13 { context: , extensions: [SignatureAlgorithms([ECDSA_NISTP256_SHA256, ECDSA_NISTP384_SHA384, ECDSA_NISTP521_SHA512, ED25519, ED448, Unknown(2057), RSA_PSS_SHA256, Unknown(2058), RSA_PSS_SHA384, Unknown(2059), RSA_PSS_SHA512, RSA_PKCS1_SHA256, RSA_PKCS1_SHA384, RSA_PKCS1_SHA512, Unknown(771), Unknown(769), ECDSA_SHA1_Legacy, RSA_PKCS1_SHA1])] }
+2022-11-15 10:54:02.6827812 DEBUG rustls::client::common - Client auth requested but no cert/sigscheme available
+2022-11-15 10:54:02.683096 TRACE rustls::client::tls13 - Server cert is [Certificate(b"0\x82\x03\x070\x82\x01\xef\xa0\x03\x02\x01\x02\x02\x01\x020\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0@1>0<\x06\x03U\x04\x03\x0c5MySQL_Server_8.0.30_Auto_Generated_Server_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xf3\x83\xe2\x85\x1dx\xaf\x02i \xaf\x06\xcb\x92\xee\xc66\xf0\xbd\x1e\x8bA\xb7\xbf\xaa\x8a\r\xa5\xe7\x9f\xe8E\x11\x92c)\x1b\x91\x85,\xc6\x05\0\xfc\xfa#\xef\xa7\xf3\xbcO\xcfX\xdb\x82\xe6\x97\xad\xd9\xaf\xeaf6\xf07\x0ec\x19\xd9>\xacy\x8e\xc3IW\xfa\xec/\xc5^\x9a\x06\xe5\xb2wQ\xd4\xe0\xea\x827\xbe\x82\xc4H\xe6i\xa4?%\r\xcc}\xd3s\x80R#\x95\xe3tL\r\x8c\xcap\xcd\x98!\xb1!\x8e\0m8X\xb4\x86\xa5/\xf2\xfeB\x8c\xf4\xf5\x17\xc1\x95\x9b\xe2C\xf3\x18c\xcf\xc9p\xf1\x82F\xb2\xaa\xf7\xe9\xa9\xd8O\x9a\xf2\x14\x8aa\xe0\xd0&\x0el\x86\xea\xd7<\xb8\x81\xce\xde\x8b\x90\xb9\x9e\x80gIe8T\xe4F\x15y\xa3\x03\xe2\xe8n\xef\xdbc\x81]\xe1k\x02\x98B\"\x98\xc9\xa8\xf95\x1b\x9ec\xa4w\xc8\x8a\x92\xf8\x10\xa1\t~[ThT=\xa2\x1a\xb7V\x06\x80\xa4\x9d\xd6Y\xc1\xca\x0f\xd5\x90\xb7\x8b\xe0U\x90\xc0_\xf5\xa1ji\x02\x03\x01\0\x01\xa3\x100\x0e0\x0c\x06\x03U\x1d\x13\x01\x01\xff\x04\x020\00\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0th\xf8X#G\x91^+Af^\xe8\x817\x8c\xa4\xd0\xc8:\xf4}v>K\xadb\xcf\xad\xea\xc8\xf0d\xc1j\x9c\x8aS\xdbX\xf9(\xf2\x99L\x91\xdc\xbcR\x94\xc0(\xd19\xb9\xc6]]\xe5\x127\x04\x88\xf3\r\xa0-\xa1\xe2\xb3\xe7\xc3vN\x12:[7\x9bc\x12f\x89W7\x9f\xb8\x06\"\x9e\x14\xe9\x84\x83l\xd2\x83@\x84\x98e\twb\x9d\xf5\xba\x93\xf7ski\xca\xc3\xf0\xf7Y7.A\x08Q\x89\xe6\xc7]\xccrfv\xb2\x88\x97\xb6\xe2jH\xc0Q\x8c\xebM\xcc\xca\xad\x14O\xdbc\tp?)\xec.\xaf\x8e\xd1\x8c\\)7E\xb8\x9c\xdah\x04\xfa\xdf\x19\xfeC\xf9G\r\xbf\xb3D\x14BJ\x07\xc0\xdc\x9d\xb3\xf1d!\xd2\xb0?\x95j\x86\x8a?\x08\xd3\xc6\xd4\xd9\xa3~3\x05]\"\xbfO\xb6\xaf\xf0\xd5\xb7o\x0fK\xfe\x85?|\xd9\xb8ad\xec\x89\xb5\x18C,\xff9\x92\x9c\xf8\x98e\x0bj\x12\x98\xddDU\x9e\xd5cV\xdb\xa3\x959\x8e"), Certificate(b"0\x82\x03\x060\x82\x01\xee\xa0\x03\x02\x01\x02\x02\x01\x010\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xca\xb3,\x88\x10\xbf\xd7|\xffm\x96\xa7\xa48\t\xa1Xec\xfd7\xc2V\x85\xebFq\xfc\xd7\xc0'\x03`\xfd\xf8\xd4} \xe4\x1d\xea8\xb9\x8a\xd2tr\x87\x9d#A\x97E\xc0=\xec\x8c\xd8\\\x7f\xff\xae\"\x90*\xc9\x88$Tf\x04o\xf4\xe3S\nr\0G5\x85\"\xda\x9f\x97\xc2\xa0$\xb6\xdd:\"'\xadR\xa0\x81\xcb\x87\xb3#\xe9O\xef\xe2f\xd6\x13\x9c\n\xf9P\xde\xad\xe2\x15\tJVc#\x0b\xe6\xb04\x14\x13\xe0N\x05\xc1z\xb6l\x0er\x91\xc8\x96\x8a\xc3\n*\x9f\xe1z\x01 \x02\x04\x04\x1a7\x01\"\xe7\x8ei\x87#\xeb\x9a\x90\xd6!\x14pi\xda\xd4\xe6\x06\x8b\xbc\xba\xd0\xees\x04\xfc\xc3R'\xb8\x07O\xed\xd6\xd5\x8d\x97\xbev\xe2!\x97H\xf5\x12\x1f\xf4\xc6\xfe\x049\x91{4\x1c\xdc\x9f\\bL\rrj\x0cL\xca\x8c\xbcb#fY\xcb\x8bD\x9c$\xcfj)N\x8f\x88\xc8\xee\xcd\x1d\x84\x08\x8d'N\x817E\xf1\x85\x99H\xa9s\xf7\x02\x03\x01\0\x01\xa3\x130\x110\x0f\x06\x03U\x1d\x13\x01\x01\xff\x04\x050\x03\x01\x01\xff0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0\x03\xcd\xc8,W~z\xcc=#\xca\x13Cv\x13N\x06x[\xd0\xdb%\xe0\x0eKd\xcb\x8f\x0bc\x9cg#\x85\xf5\x8d\xa1%\x98[.Ojh\xc4'\xeb\xa0\x02\x91\x05B\x06\x0c\xb3Z\xbc\xeba}\xe4|\xc8\x8c\x16\xd6\x14\xf0\xa3,\x03\xce\x14\\\x1et\x97\xad\x03\x85M\x16\t\x8aj*\xd5\x12\xe2Q\xd7\xc0\xbeA_\xec\xfd\x07\x11\xeb\xc3s\xc6\x95K\xc6O\x89\xf5\xcb1\xa3\xc3\r\xbe\x12\x8f\x87\xd5\xd0\xba\xac\x1a[+\xabt\x93\xfe\xff\"\x9dz\x10\xcc\x07\xc4|\x82\xee\xb2\x8b_\x8d8\x10\xdc^W>b\xcfI\x81DC\xa9GW+\n\x97\xa6\x8bQ\xa9\xa4\x8f'\xbf\x86\xdf\xe4\xbb\xa0\xea\xcf\xec\xcc\xbc\xe7\x0c\x87=\xa0Zh\x99nV\x03\xc4\xda\xf4\xe4\"(Bp\xbb\xaf\xb5\x12\xcc\x1a\xe31\x81|\xc4\x8d\x83m\xe3\x17*\x1e\xef\0[\\f\xffn\0\xdbe3\x99C\x95g\xb9\x15\0\x8b\x0f\x93\xb9W=\xc8\x16\xea\x04_t'\xd4\xf8.#\x01h\xb3\xa2")]
+2022-11-15 10:54:02.6851004 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 10:54:02.6851988 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 10:54:02.6897647 INFO rbatis::plugin::log - [rbatis] [435030034487578624] Fetch  ==> show databases;
+                                                      [rbatis]                      Args   ==> []
+2022-11-15 10:54:02.6968903 INFO rbatis::plugin::log - [rbatis] [435030034487578624] ReturnRows <== 5
+2022-11-15 10:56:24.9194471 TRACE mio::poll - registering event source with poller: token=Token(0), interests=READABLE | WRITABLE
+2022-11-15 10:56:24.9220554 DEBUG rustls::client::hs - No cached session for DnsName(DnsName(DnsName("localhost")))
+2022-11-15 10:56:24.9224457 DEBUG rustls::client::hs - Not resuming any session
+2022-11-15 10:56:24.9229531 TRACE rustls::client::hs - Sending ClientHello Message {
+    version: TLSv1_0,
+    payload: Handshake {
+        parsed: HandshakeMessagePayload {
+            typ: ClientHello,
+            payload: ClientHello(
+                ClientHelloPayload {
+                    client_version: TLSv1_2,
+                    random: 0f99b9d30bea6b62c767e91c90b667e283257d172692de5b0b791b526b20c3ba,
+                    session_id: b7d14829a8e50290a0a182c110d32a60379fd6d431f4f4565de3aaeefaf763c7,
+                    cipher_suites: [
+                        TLS13_AES_256_GCM_SHA384,
+                        TLS13_AES_128_GCM_SHA256,
+                        TLS13_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_EMPTY_RENEGOTIATION_INFO_SCSV,
+                    ],
+                    compression_methods: [
+                        Null,
+                    ],
+                    extensions: [
+                        SupportedVersions(
+                            [
+                                TLSv1_3,
+                                TLSv1_2,
+                            ],
+                        ),
+                        ECPointFormats(
+                            [
+                                Uncompressed,
+                            ],
+                        ),
+                        NamedGroups(
+                            [
+                                X25519,
+                                secp256r1,
+                                secp384r1,
+                            ],
+                        ),
+                        SignatureAlgorithms(
+                            [
+                                ECDSA_NISTP384_SHA384,
+                                ECDSA_NISTP256_SHA256,
+                                ED25519,
+                                RSA_PSS_SHA512,
+                                RSA_PSS_SHA384,
+                                RSA_PSS_SHA256,
+                                RSA_PKCS1_SHA512,
+                                RSA_PKCS1_SHA384,
+                                RSA_PKCS1_SHA256,
+                            ],
+                        ),
+                        ExtendedMasterSecretRequest,
+                        CertificateStatusRequest(
+                            OCSP(
+                                OCSPCertificateStatusRequest {
+                                    responder_ids: [],
+                                    extensions: ,
+                                },
+                            ),
+                        ),
+                        ServerName(
+                            [
+                                ServerName {
+                                    typ: HostName,
+                                    payload: HostName(
+                                        (
+                                            6c6f63616c686f7374,
+                                            DnsName(
+                                                "localhost",
+                                            ),
+                                        ),
+                                    ),
+                                },
+                            ],
+                        ),
+                        SignedCertificateTimestampRequest,
+                        KeyShare(
+                            [
+                                KeyShareEntry {
+                                    group: X25519,
+                                    payload: 09e60417b42f6abfb468f7a3594d86a71bd227fb05ef31026752862adabfb815,
+                                },
+                            ],
+                        ),
+                        PresharedKeyModes(
+                            [
+                                PSK_DHE_KE,
+                            ],
+                        ),
+                        SessionTicket(
+                            Request,
+                        ),
+                    ],
+                },
+            ),
+        },
+        encoded: 010000e703030f99b9d30bea6b62c767e91c90b667e283257d172692de5b0b791b526b20c3ba20b7d14829a8e50290a0a182c110d32a60379fd6d431f4f4565de3aaeefaf763c70014130213011303c02cc02bcca9c030c02fcca800ff0100008a002b00050403040303000b00020100000a00080006001d00170018000d00140012050304030807080608050804060105010401001700000005000501000000000000000e000c0000096c6f63616c686f737400120000003300260024001d002009e60417b42f6abfb468f7a3594d86a71bd227fb05ef31026752862adabfb815002d0002010100230000,
+    },
+}
+2022-11-15 10:56:24.9245497 TRACE rustls::client::hs - We got ServerHello ServerHelloPayload {
+    legacy_version: TLSv1_2,
+    random: db07c16e93dd5be3560f24f8d6f795aad42c11e06dd6b87b427fa774c93d63d1,
+    session_id: b7d14829a8e50290a0a182c110d32a60379fd6d431f4f4565de3aaeefaf763c7,
+    cipher_suite: TLS13_AES_256_GCM_SHA384,
+    compression_method: Null,
+    extensions: [
+        SupportedVersions(
+            TLSv1_3,
+        ),
+        KeyShare(
+            KeyShareEntry {
+                group: X25519,
+                payload: 445217f4f7fe04d3f17010096868669545a8e7104832cd032342da2fc207b523,
+            },
+        ),
+    ],
+}
+2022-11-15 10:56:24.9245853 DEBUG rustls::client::hs - Using ciphersuite TLS13_AES_256_GCM_SHA384
+2022-11-15 10:56:24.9246294 DEBUG rustls::client::tls13 - Not resuming
+2022-11-15 10:56:24.9246378 TRACE rustls::client::client_conn - EarlyData rejected
+2022-11-15 10:56:24.925268 TRACE rustls::conn - Dropping CCS
+2022-11-15 10:56:24.9253151 DEBUG rustls::client::tls13 - TLS1.3 encrypted extensions: []
+2022-11-15 10:56:24.925326 DEBUG rustls::client::hs - ALPN protocol is None
+2022-11-15 10:56:24.9254076 DEBUG rustls::client::tls13 - Got CertificateRequest CertificateRequestPayloadTLS13 { context: , extensions: [SignatureAlgorithms([ECDSA_NISTP256_SHA256, ECDSA_NISTP384_SHA384, ECDSA_NISTP521_SHA512, ED25519, ED448, Unknown(2057), RSA_PSS_SHA256, Unknown(2058), RSA_PSS_SHA384, Unknown(2059), RSA_PSS_SHA512, RSA_PKCS1_SHA256, RSA_PKCS1_SHA384, RSA_PKCS1_SHA512, Unknown(771), Unknown(769), ECDSA_SHA1_Legacy, RSA_PKCS1_SHA1])] }
+2022-11-15 10:56:24.9254558 DEBUG rustls::client::common - Client auth requested but no cert/sigscheme available
+2022-11-15 10:56:24.9258499 TRACE rustls::client::tls13 - Server cert is [Certificate(b"0\x82\x03\x070\x82\x01\xef\xa0\x03\x02\x01\x02\x02\x01\x020\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0@1>0<\x06\x03U\x04\x03\x0c5MySQL_Server_8.0.30_Auto_Generated_Server_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xf3\x83\xe2\x85\x1dx\xaf\x02i \xaf\x06\xcb\x92\xee\xc66\xf0\xbd\x1e\x8bA\xb7\xbf\xaa\x8a\r\xa5\xe7\x9f\xe8E\x11\x92c)\x1b\x91\x85,\xc6\x05\0\xfc\xfa#\xef\xa7\xf3\xbcO\xcfX\xdb\x82\xe6\x97\xad\xd9\xaf\xeaf6\xf07\x0ec\x19\xd9>\xacy\x8e\xc3IW\xfa\xec/\xc5^\x9a\x06\xe5\xb2wQ\xd4\xe0\xea\x827\xbe\x82\xc4H\xe6i\xa4?%\r\xcc}\xd3s\x80R#\x95\xe3tL\r\x8c\xcap\xcd\x98!\xb1!\x8e\0m8X\xb4\x86\xa5/\xf2\xfeB\x8c\xf4\xf5\x17\xc1\x95\x9b\xe2C\xf3\x18c\xcf\xc9p\xf1\x82F\xb2\xaa\xf7\xe9\xa9\xd8O\x9a\xf2\x14\x8aa\xe0\xd0&\x0el\x86\xea\xd7<\xb8\x81\xce\xde\x8b\x90\xb9\x9e\x80gIe8T\xe4F\x15y\xa3\x03\xe2\xe8n\xef\xdbc\x81]\xe1k\x02\x98B\"\x98\xc9\xa8\xf95\x1b\x9ec\xa4w\xc8\x8a\x92\xf8\x10\xa1\t~[ThT=\xa2\x1a\xb7V\x06\x80\xa4\x9d\xd6Y\xc1\xca\x0f\xd5\x90\xb7\x8b\xe0U\x90\xc0_\xf5\xa1ji\x02\x03\x01\0\x01\xa3\x100\x0e0\x0c\x06\x03U\x1d\x13\x01\x01\xff\x04\x020\00\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0th\xf8X#G\x91^+Af^\xe8\x817\x8c\xa4\xd0\xc8:\xf4}v>K\xadb\xcf\xad\xea\xc8\xf0d\xc1j\x9c\x8aS\xdbX\xf9(\xf2\x99L\x91\xdc\xbcR\x94\xc0(\xd19\xb9\xc6]]\xe5\x127\x04\x88\xf3\r\xa0-\xa1\xe2\xb3\xe7\xc3vN\x12:[7\x9bc\x12f\x89W7\x9f\xb8\x06\"\x9e\x14\xe9\x84\x83l\xd2\x83@\x84\x98e\twb\x9d\xf5\xba\x93\xf7ski\xca\xc3\xf0\xf7Y7.A\x08Q\x89\xe6\xc7]\xccrfv\xb2\x88\x97\xb6\xe2jH\xc0Q\x8c\xebM\xcc\xca\xad\x14O\xdbc\tp?)\xec.\xaf\x8e\xd1\x8c\\)7E\xb8\x9c\xdah\x04\xfa\xdf\x19\xfeC\xf9G\r\xbf\xb3D\x14BJ\x07\xc0\xdc\x9d\xb3\xf1d!\xd2\xb0?\x95j\x86\x8a?\x08\xd3\xc6\xd4\xd9\xa3~3\x05]\"\xbfO\xb6\xaf\xf0\xd5\xb7o\x0fK\xfe\x85?|\xd9\xb8ad\xec\x89\xb5\x18C,\xff9\x92\x9c\xf8\x98e\x0bj\x12\x98\xddDU\x9e\xd5cV\xdb\xa3\x959\x8e"), Certificate(b"0\x82\x03\x060\x82\x01\xee\xa0\x03\x02\x01\x02\x02\x01\x010\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xca\xb3,\x88\x10\xbf\xd7|\xffm\x96\xa7\xa48\t\xa1Xec\xfd7\xc2V\x85\xebFq\xfc\xd7\xc0'\x03`\xfd\xf8\xd4} \xe4\x1d\xea8\xb9\x8a\xd2tr\x87\x9d#A\x97E\xc0=\xec\x8c\xd8\\\x7f\xff\xae\"\x90*\xc9\x88$Tf\x04o\xf4\xe3S\nr\0G5\x85\"\xda\x9f\x97\xc2\xa0$\xb6\xdd:\"'\xadR\xa0\x81\xcb\x87\xb3#\xe9O\xef\xe2f\xd6\x13\x9c\n\xf9P\xde\xad\xe2\x15\tJVc#\x0b\xe6\xb04\x14\x13\xe0N\x05\xc1z\xb6l\x0er\x91\xc8\x96\x8a\xc3\n*\x9f\xe1z\x01 \x02\x04\x04\x1a7\x01\"\xe7\x8ei\x87#\xeb\x9a\x90\xd6!\x14pi\xda\xd4\xe6\x06\x8b\xbc\xba\xd0\xees\x04\xfc\xc3R'\xb8\x07O\xed\xd6\xd5\x8d\x97\xbev\xe2!\x97H\xf5\x12\x1f\xf4\xc6\xfe\x049\x91{4\x1c\xdc\x9f\\bL\rrj\x0cL\xca\x8c\xbcb#fY\xcb\x8bD\x9c$\xcfj)N\x8f\x88\xc8\xee\xcd\x1d\x84\x08\x8d'N\x817E\xf1\x85\x99H\xa9s\xf7\x02\x03\x01\0\x01\xa3\x130\x110\x0f\x06\x03U\x1d\x13\x01\x01\xff\x04\x050\x03\x01\x01\xff0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0\x03\xcd\xc8,W~z\xcc=#\xca\x13Cv\x13N\x06x[\xd0\xdb%\xe0\x0eKd\xcb\x8f\x0bc\x9cg#\x85\xf5\x8d\xa1%\x98[.Ojh\xc4'\xeb\xa0\x02\x91\x05B\x06\x0c\xb3Z\xbc\xeba}\xe4|\xc8\x8c\x16\xd6\x14\xf0\xa3,\x03\xce\x14\\\x1et\x97\xad\x03\x85M\x16\t\x8aj*\xd5\x12\xe2Q\xd7\xc0\xbeA_\xec\xfd\x07\x11\xeb\xc3s\xc6\x95K\xc6O\x89\xf5\xcb1\xa3\xc3\r\xbe\x12\x8f\x87\xd5\xd0\xba\xac\x1a[+\xabt\x93\xfe\xff\"\x9dz\x10\xcc\x07\xc4|\x82\xee\xb2\x8b_\x8d8\x10\xdc^W>b\xcfI\x81DC\xa9GW+\n\x97\xa6\x8bQ\xa9\xa4\x8f'\xbf\x86\xdf\xe4\xbb\xa0\xea\xcf\xec\xcc\xbc\xe7\x0c\x87=\xa0Zh\x99nV\x03\xc4\xda\xf4\xe4\"(Bp\xbb\xaf\xb5\x12\xcc\x1a\xe31\x81|\xc4\x8d\x83m\xe3\x17*\x1e\xef\0[\\f\xffn\0\xdbe3\x99C\x95g\xb9\x15\0\x8b\x0f\x93\xb9W=\xc8\x16\xea\x04_t'\xd4\xf8.#\x01h\xb3\xa2")]
+2022-11-15 10:56:24.9274542 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 10:56:24.9275464 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 10:56:24.9300519 INFO rbatis::plugin::log - [rbatis] [435030631089573888] Fetch  ==> show databases;
+                                                      [rbatis]                      Args   ==> []
+2022-11-15 10:56:24.9321309 INFO rbatis::plugin::log - [rbatis] [435030631089573888] ReturnRows <== 5
+2022-11-15 11:24:46.222361 TRACE mio::poll - registering event source with poller: token=Token(0), interests=READABLE | WRITABLE
+2022-11-15 11:24:46.2273185 DEBUG rustls::client::hs - No cached session for DnsName(DnsName(DnsName("localhost")))
+2022-11-15 11:24:46.2277303 DEBUG rustls::client::hs - Not resuming any session
+2022-11-15 11:24:46.2282628 TRACE rustls::client::hs - Sending ClientHello Message {
+    version: TLSv1_0,
+    payload: Handshake {
+        parsed: HandshakeMessagePayload {
+            typ: ClientHello,
+            payload: ClientHello(
+                ClientHelloPayload {
+                    client_version: TLSv1_2,
+                    random: d6a355f6ac61b976886171c20c088b23ad4cc03c665b92b2023525d387268428,
+                    session_id: edb905d586a6df97973bb6266af59343f7ed1af97823ae4cfdc290fd03d38dee,
+                    cipher_suites: [
+                        TLS13_AES_256_GCM_SHA384,
+                        TLS13_AES_128_GCM_SHA256,
+                        TLS13_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_EMPTY_RENEGOTIATION_INFO_SCSV,
+                    ],
+                    compression_methods: [
+                        Null,
+                    ],
+                    extensions: [
+                        SupportedVersions(
+                            [
+                                TLSv1_3,
+                                TLSv1_2,
+                            ],
+                        ),
+                        ECPointFormats(
+                            [
+                                Uncompressed,
+                            ],
+                        ),
+                        NamedGroups(
+                            [
+                                X25519,
+                                secp256r1,
+                                secp384r1,
+                            ],
+                        ),
+                        SignatureAlgorithms(
+                            [
+                                ECDSA_NISTP384_SHA384,
+                                ECDSA_NISTP256_SHA256,
+                                ED25519,
+                                RSA_PSS_SHA512,
+                                RSA_PSS_SHA384,
+                                RSA_PSS_SHA256,
+                                RSA_PKCS1_SHA512,
+                                RSA_PKCS1_SHA384,
+                                RSA_PKCS1_SHA256,
+                            ],
+                        ),
+                        ExtendedMasterSecretRequest,
+                        CertificateStatusRequest(
+                            OCSP(
+                                OCSPCertificateStatusRequest {
+                                    responder_ids: [],
+                                    extensions: ,
+                                },
+                            ),
+                        ),
+                        ServerName(
+                            [
+                                ServerName {
+                                    typ: HostName,
+                                    payload: HostName(
+                                        (
+                                            6c6f63616c686f7374,
+                                            DnsName(
+                                                "localhost",
+                                            ),
+                                        ),
+                                    ),
+                                },
+                            ],
+                        ),
+                        SignedCertificateTimestampRequest,
+                        KeyShare(
+                            [
+                                KeyShareEntry {
+                                    group: X25519,
+                                    payload: 1082735c75d98694753f6f88b6f776917b06661d99aa8eb3ad89f659f60c816b,
+                                },
+                            ],
+                        ),
+                        PresharedKeyModes(
+                            [
+                                PSK_DHE_KE,
+                            ],
+                        ),
+                        SessionTicket(
+                            Request,
+                        ),
+                    ],
+                },
+            ),
+        },
+        encoded: 010000e70303d6a355f6ac61b976886171c20c088b23ad4cc03c665b92b2023525d38726842820edb905d586a6df97973bb6266af59343f7ed1af97823ae4cfdc290fd03d38dee0014130213011303c02cc02bcca9c030c02fcca800ff0100008a002b00050403040303000b00020100000a00080006001d00170018000d00140012050304030807080608050804060105010401001700000005000501000000000000000e000c0000096c6f63616c686f737400120000003300260024001d00201082735c75d98694753f6f88b6f776917b06661d99aa8eb3ad89f659f60c816b002d0002010100230000,
+    },
+}
+2022-11-15 11:24:46.2306554 TRACE rustls::client::hs - We got ServerHello ServerHelloPayload {
+    legacy_version: TLSv1_2,
+    random: f2869f8748ebe3db7e0b07d5f80a9dd1b7ba874a1326f37a11aeef030fbe17af,
+    session_id: edb905d586a6df97973bb6266af59343f7ed1af97823ae4cfdc290fd03d38dee,
+    cipher_suite: TLS13_AES_256_GCM_SHA384,
+    compression_method: Null,
+    extensions: [
+        SupportedVersions(
+            TLSv1_3,
+        ),
+        KeyShare(
+            KeyShareEntry {
+                group: X25519,
+                payload: 1c1577776b11604d6df605dc2ac62111de0f64d3bde6e0c0e6751775d10c864e,
+            },
+        ),
+    ],
+}
+2022-11-15 11:24:46.2307291 DEBUG rustls::client::hs - Using ciphersuite TLS13_AES_256_GCM_SHA384
+2022-11-15 11:24:46.2308112 DEBUG rustls::client::tls13 - Not resuming
+2022-11-15 11:24:46.2308205 TRACE rustls::client::client_conn - EarlyData rejected
+2022-11-15 11:24:46.2315547 TRACE rustls::conn - Dropping CCS
+2022-11-15 11:24:46.2315948 DEBUG rustls::client::tls13 - TLS1.3 encrypted extensions: []
+2022-11-15 11:24:46.2316005 DEBUG rustls::client::hs - ALPN protocol is None
+2022-11-15 11:24:46.23167 DEBUG rustls::client::tls13 - Got CertificateRequest CertificateRequestPayloadTLS13 { context: , extensions: [SignatureAlgorithms([ECDSA_NISTP256_SHA256, ECDSA_NISTP384_SHA384, ECDSA_NISTP521_SHA512, ED25519, ED448, Unknown(2057), RSA_PSS_SHA256, Unknown(2058), RSA_PSS_SHA384, Unknown(2059), RSA_PSS_SHA512, RSA_PKCS1_SHA256, RSA_PKCS1_SHA384, RSA_PKCS1_SHA512, Unknown(771), Unknown(769), ECDSA_SHA1_Legacy, RSA_PKCS1_SHA1])] }
+2022-11-15 11:24:46.2316953 DEBUG rustls::client::common - Client auth requested but no cert/sigscheme available
+2022-11-15 11:24:46.2320038 TRACE rustls::client::tls13 - Server cert is [Certificate(b"0\x82\x03\x070\x82\x01\xef\xa0\x03\x02\x01\x02\x02\x01\x020\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0@1>0<\x06\x03U\x04\x03\x0c5MySQL_Server_8.0.30_Auto_Generated_Server_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xf3\x83\xe2\x85\x1dx\xaf\x02i \xaf\x06\xcb\x92\xee\xc66\xf0\xbd\x1e\x8bA\xb7\xbf\xaa\x8a\r\xa5\xe7\x9f\xe8E\x11\x92c)\x1b\x91\x85,\xc6\x05\0\xfc\xfa#\xef\xa7\xf3\xbcO\xcfX\xdb\x82\xe6\x97\xad\xd9\xaf\xeaf6\xf07\x0ec\x19\xd9>\xacy\x8e\xc3IW\xfa\xec/\xc5^\x9a\x06\xe5\xb2wQ\xd4\xe0\xea\x827\xbe\x82\xc4H\xe6i\xa4?%\r\xcc}\xd3s\x80R#\x95\xe3tL\r\x8c\xcap\xcd\x98!\xb1!\x8e\0m8X\xb4\x86\xa5/\xf2\xfeB\x8c\xf4\xf5\x17\xc1\x95\x9b\xe2C\xf3\x18c\xcf\xc9p\xf1\x82F\xb2\xaa\xf7\xe9\xa9\xd8O\x9a\xf2\x14\x8aa\xe0\xd0&\x0el\x86\xea\xd7<\xb8\x81\xce\xde\x8b\x90\xb9\x9e\x80gIe8T\xe4F\x15y\xa3\x03\xe2\xe8n\xef\xdbc\x81]\xe1k\x02\x98B\"\x98\xc9\xa8\xf95\x1b\x9ec\xa4w\xc8\x8a\x92\xf8\x10\xa1\t~[ThT=\xa2\x1a\xb7V\x06\x80\xa4\x9d\xd6Y\xc1\xca\x0f\xd5\x90\xb7\x8b\xe0U\x90\xc0_\xf5\xa1ji\x02\x03\x01\0\x01\xa3\x100\x0e0\x0c\x06\x03U\x1d\x13\x01\x01\xff\x04\x020\00\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0th\xf8X#G\x91^+Af^\xe8\x817\x8c\xa4\xd0\xc8:\xf4}v>K\xadb\xcf\xad\xea\xc8\xf0d\xc1j\x9c\x8aS\xdbX\xf9(\xf2\x99L\x91\xdc\xbcR\x94\xc0(\xd19\xb9\xc6]]\xe5\x127\x04\x88\xf3\r\xa0-\xa1\xe2\xb3\xe7\xc3vN\x12:[7\x9bc\x12f\x89W7\x9f\xb8\x06\"\x9e\x14\xe9\x84\x83l\xd2\x83@\x84\x98e\twb\x9d\xf5\xba\x93\xf7ski\xca\xc3\xf0\xf7Y7.A\x08Q\x89\xe6\xc7]\xccrfv\xb2\x88\x97\xb6\xe2jH\xc0Q\x8c\xebM\xcc\xca\xad\x14O\xdbc\tp?)\xec.\xaf\x8e\xd1\x8c\\)7E\xb8\x9c\xdah\x04\xfa\xdf\x19\xfeC\xf9G\r\xbf\xb3D\x14BJ\x07\xc0\xdc\x9d\xb3\xf1d!\xd2\xb0?\x95j\x86\x8a?\x08\xd3\xc6\xd4\xd9\xa3~3\x05]\"\xbfO\xb6\xaf\xf0\xd5\xb7o\x0fK\xfe\x85?|\xd9\xb8ad\xec\x89\xb5\x18C,\xff9\x92\x9c\xf8\x98e\x0bj\x12\x98\xddDU\x9e\xd5cV\xdb\xa3\x959\x8e"), Certificate(b"0\x82\x03\x060\x82\x01\xee\xa0\x03\x02\x01\x02\x02\x01\x010\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xca\xb3,\x88\x10\xbf\xd7|\xffm\x96\xa7\xa48\t\xa1Xec\xfd7\xc2V\x85\xebFq\xfc\xd7\xc0'\x03`\xfd\xf8\xd4} \xe4\x1d\xea8\xb9\x8a\xd2tr\x87\x9d#A\x97E\xc0=\xec\x8c\xd8\\\x7f\xff\xae\"\x90*\xc9\x88$Tf\x04o\xf4\xe3S\nr\0G5\x85\"\xda\x9f\x97\xc2\xa0$\xb6\xdd:\"'\xadR\xa0\x81\xcb\x87\xb3#\xe9O\xef\xe2f\xd6\x13\x9c\n\xf9P\xde\xad\xe2\x15\tJVc#\x0b\xe6\xb04\x14\x13\xe0N\x05\xc1z\xb6l\x0er\x91\xc8\x96\x8a\xc3\n*\x9f\xe1z\x01 \x02\x04\x04\x1a7\x01\"\xe7\x8ei\x87#\xeb\x9a\x90\xd6!\x14pi\xda\xd4\xe6\x06\x8b\xbc\xba\xd0\xees\x04\xfc\xc3R'\xb8\x07O\xed\xd6\xd5\x8d\x97\xbev\xe2!\x97H\xf5\x12\x1f\xf4\xc6\xfe\x049\x91{4\x1c\xdc\x9f\\bL\rrj\x0cL\xca\x8c\xbcb#fY\xcb\x8bD\x9c$\xcfj)N\x8f\x88\xc8\xee\xcd\x1d\x84\x08\x8d'N\x817E\xf1\x85\x99H\xa9s\xf7\x02\x03\x01\0\x01\xa3\x130\x110\x0f\x06\x03U\x1d\x13\x01\x01\xff\x04\x050\x03\x01\x01\xff0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0\x03\xcd\xc8,W~z\xcc=#\xca\x13Cv\x13N\x06x[\xd0\xdb%\xe0\x0eKd\xcb\x8f\x0bc\x9cg#\x85\xf5\x8d\xa1%\x98[.Ojh\xc4'\xeb\xa0\x02\x91\x05B\x06\x0c\xb3Z\xbc\xeba}\xe4|\xc8\x8c\x16\xd6\x14\xf0\xa3,\x03\xce\x14\\\x1et\x97\xad\x03\x85M\x16\t\x8aj*\xd5\x12\xe2Q\xd7\xc0\xbeA_\xec\xfd\x07\x11\xeb\xc3s\xc6\x95K\xc6O\x89\xf5\xcb1\xa3\xc3\r\xbe\x12\x8f\x87\xd5\xd0\xba\xac\x1a[+\xabt\x93\xfe\xff\"\x9dz\x10\xcc\x07\xc4|\x82\xee\xb2\x8b_\x8d8\x10\xdc^W>b\xcfI\x81DC\xa9GW+\n\x97\xa6\x8bQ\xa9\xa4\x8f'\xbf\x86\xdf\xe4\xbb\xa0\xea\xcf\xec\xcc\xbc\xe7\x0c\x87=\xa0Zh\x99nV\x03\xc4\xda\xf4\xe4\"(Bp\xbb\xaf\xb5\x12\xcc\x1a\xe31\x81|\xc4\x8d\x83m\xe3\x17*\x1e\xef\0[\\f\xffn\0\xdbe3\x99C\x95g\xb9\x15\0\x8b\x0f\x93\xb9W=\xc8\x16\xea\x04_t'\xd4\xf8.#\x01h\xb3\xa2")]
+2022-11-15 11:24:46.2335693 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 11:24:46.233656 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 11:24:46.2372384 INFO rbatis::plugin::log - [rbatis] [435037766888329216] Fetch  ==> show databases;
+                                                      [rbatis]                      Args   ==> []
+2022-11-15 11:24:46.2413321 INFO rbatis::plugin::log - [rbatis] [435037766888329216] ReturnRows <== 5
+2022-11-15 11:30:57.07195 TRACE mio::poll - registering event source with poller: token=Token(0), interests=READABLE | WRITABLE
+2022-11-15 11:30:57.0763124 DEBUG rustls::client::hs - No cached session for DnsName(DnsName(DnsName("localhost")))
+2022-11-15 11:30:57.0768392 DEBUG rustls::client::hs - Not resuming any session
+2022-11-15 11:30:57.0775456 TRACE rustls::client::hs - Sending ClientHello Message {
+    version: TLSv1_0,
+    payload: Handshake {
+        parsed: HandshakeMessagePayload {
+            typ: ClientHello,
+            payload: ClientHello(
+                ClientHelloPayload {
+                    client_version: TLSv1_2,
+                    random: d4118ec19c2ed037713397c21ecccbb0964668c523f67ff3c4cdd276488237cb,
+                    session_id: 175719c40211b4b05d962d88fd8ec7a31534fcbb5a19b5385c58b195721f1fbf,
+                    cipher_suites: [
+                        TLS13_AES_256_GCM_SHA384,
+                        TLS13_AES_128_GCM_SHA256,
+                        TLS13_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+                        TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+                        TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256,
+                        TLS_EMPTY_RENEGOTIATION_INFO_SCSV,
+                    ],
+                    compression_methods: [
+                        Null,
+                    ],
+                    extensions: [
+                        SupportedVersions(
+                            [
+                                TLSv1_3,
+                                TLSv1_2,
+                            ],
+                        ),
+                        ECPointFormats(
+                            [
+                                Uncompressed,
+                            ],
+                        ),
+                        NamedGroups(
+                            [
+                                X25519,
+                                secp256r1,
+                                secp384r1,
+                            ],
+                        ),
+                        SignatureAlgorithms(
+                            [
+                                ECDSA_NISTP384_SHA384,
+                                ECDSA_NISTP256_SHA256,
+                                ED25519,
+                                RSA_PSS_SHA512,
+                                RSA_PSS_SHA384,
+                                RSA_PSS_SHA256,
+                                RSA_PKCS1_SHA512,
+                                RSA_PKCS1_SHA384,
+                                RSA_PKCS1_SHA256,
+                            ],
+                        ),
+                        ExtendedMasterSecretRequest,
+                        CertificateStatusRequest(
+                            OCSP(
+                                OCSPCertificateStatusRequest {
+                                    responder_ids: [],
+                                    extensions: ,
+                                },
+                            ),
+                        ),
+                        ServerName(
+                            [
+                                ServerName {
+                                    typ: HostName,
+                                    payload: HostName(
+                                        (
+                                            6c6f63616c686f7374,
+                                            DnsName(
+                                                "localhost",
+                                            ),
+                                        ),
+                                    ),
+                                },
+                            ],
+                        ),
+                        SignedCertificateTimestampRequest,
+                        KeyShare(
+                            [
+                                KeyShareEntry {
+                                    group: X25519,
+                                    payload: ad0a7149646ed3de536ccecdbf1a1a350129298bb272b5bf8200632e394d610c,
+                                },
+                            ],
+                        ),
+                        PresharedKeyModes(
+                            [
+                                PSK_DHE_KE,
+                            ],
+                        ),
+                        SessionTicket(
+                            Request,
+                        ),
+                    ],
+                },
+            ),
+        },
+        encoded: 010000e70303d4118ec19c2ed037713397c21ecccbb0964668c523f67ff3c4cdd276488237cb20175719c40211b4b05d962d88fd8ec7a31534fcbb5a19b5385c58b195721f1fbf0014130213011303c02cc02bcca9c030c02fcca800ff0100008a002b00050403040303000b00020100000a00080006001d00170018000d00140012050304030807080608050804060105010401001700000005000501000000000000000e000c0000096c6f63616c686f737400120000003300260024001d0020ad0a7149646ed3de536ccecdbf1a1a350129298bb272b5bf8200632e394d610c002d0002010100230000,
+    },
+}
+2022-11-15 11:30:57.0811234 TRACE rustls::client::hs - We got ServerHello ServerHelloPayload {
+    legacy_version: TLSv1_2,
+    random: 41191f5504331cbb950f88c069b851db802af0b1b35a13629ba2e4d258ed48d1,
+    session_id: 175719c40211b4b05d962d88fd8ec7a31534fcbb5a19b5385c58b195721f1fbf,
+    cipher_suite: TLS13_AES_256_GCM_SHA384,
+    compression_method: Null,
+    extensions: [
+        SupportedVersions(
+            TLSv1_3,
+        ),
+        KeyShare(
+            KeyShareEntry {
+                group: X25519,
+                payload: 2e6928cc2b0844f9eac0332a905d68b87ebc307d7fc248689d8574a71af2cd43,
+            },
+        ),
+    ],
+}
+2022-11-15 11:30:57.081186 DEBUG rustls::client::hs - Using ciphersuite TLS13_AES_256_GCM_SHA384
+2022-11-15 11:30:57.0812487 DEBUG rustls::client::tls13 - Not resuming
+2022-11-15 11:30:57.0812641 TRACE rustls::client::client_conn - EarlyData rejected
+2022-11-15 11:30:57.0820982 TRACE rustls::conn - Dropping CCS
+2022-11-15 11:30:57.0821754 DEBUG rustls::client::tls13 - TLS1.3 encrypted extensions: []
+2022-11-15 11:30:57.0821924 DEBUG rustls::client::hs - ALPN protocol is None
+2022-11-15 11:30:57.0822965 DEBUG rustls::client::tls13 - Got CertificateRequest CertificateRequestPayloadTLS13 { context: , extensions: [SignatureAlgorithms([ECDSA_NISTP256_SHA256, ECDSA_NISTP384_SHA384, ECDSA_NISTP521_SHA512, ED25519, ED448, Unknown(2057), RSA_PSS_SHA256, Unknown(2058), RSA_PSS_SHA384, Unknown(2059), RSA_PSS_SHA512, RSA_PKCS1_SHA256, RSA_PKCS1_SHA384, RSA_PKCS1_SHA512, Unknown(771), Unknown(769), ECDSA_SHA1_Legacy, RSA_PKCS1_SHA1])] }
+2022-11-15 11:30:57.0823335 DEBUG rustls::client::common - Client auth requested but no cert/sigscheme available
+2022-11-15 11:30:57.0827654 TRACE rustls::client::tls13 - Server cert is [Certificate(b"0\x82\x03\x070\x82\x01\xef\xa0\x03\x02\x01\x02\x02\x01\x020\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0@1>0<\x06\x03U\x04\x03\x0c5MySQL_Server_8.0.30_Auto_Generated_Server_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xf3\x83\xe2\x85\x1dx\xaf\x02i \xaf\x06\xcb\x92\xee\xc66\xf0\xbd\x1e\x8bA\xb7\xbf\xaa\x8a\r\xa5\xe7\x9f\xe8E\x11\x92c)\x1b\x91\x85,\xc6\x05\0\xfc\xfa#\xef\xa7\xf3\xbcO\xcfX\xdb\x82\xe6\x97\xad\xd9\xaf\xeaf6\xf07\x0ec\x19\xd9>\xacy\x8e\xc3IW\xfa\xec/\xc5^\x9a\x06\xe5\xb2wQ\xd4\xe0\xea\x827\xbe\x82\xc4H\xe6i\xa4?%\r\xcc}\xd3s\x80R#\x95\xe3tL\r\x8c\xcap\xcd\x98!\xb1!\x8e\0m8X\xb4\x86\xa5/\xf2\xfeB\x8c\xf4\xf5\x17\xc1\x95\x9b\xe2C\xf3\x18c\xcf\xc9p\xf1\x82F\xb2\xaa\xf7\xe9\xa9\xd8O\x9a\xf2\x14\x8aa\xe0\xd0&\x0el\x86\xea\xd7<\xb8\x81\xce\xde\x8b\x90\xb9\x9e\x80gIe8T\xe4F\x15y\xa3\x03\xe2\xe8n\xef\xdbc\x81]\xe1k\x02\x98B\"\x98\xc9\xa8\xf95\x1b\x9ec\xa4w\xc8\x8a\x92\xf8\x10\xa1\t~[ThT=\xa2\x1a\xb7V\x06\x80\xa4\x9d\xd6Y\xc1\xca\x0f\xd5\x90\xb7\x8b\xe0U\x90\xc0_\xf5\xa1ji\x02\x03\x01\0\x01\xa3\x100\x0e0\x0c\x06\x03U\x1d\x13\x01\x01\xff\x04\x020\00\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0th\xf8X#G\x91^+Af^\xe8\x817\x8c\xa4\xd0\xc8:\xf4}v>K\xadb\xcf\xad\xea\xc8\xf0d\xc1j\x9c\x8aS\xdbX\xf9(\xf2\x99L\x91\xdc\xbcR\x94\xc0(\xd19\xb9\xc6]]\xe5\x127\x04\x88\xf3\r\xa0-\xa1\xe2\xb3\xe7\xc3vN\x12:[7\x9bc\x12f\x89W7\x9f\xb8\x06\"\x9e\x14\xe9\x84\x83l\xd2\x83@\x84\x98e\twb\x9d\xf5\xba\x93\xf7ski\xca\xc3\xf0\xf7Y7.A\x08Q\x89\xe6\xc7]\xccrfv\xb2\x88\x97\xb6\xe2jH\xc0Q\x8c\xebM\xcc\xca\xad\x14O\xdbc\tp?)\xec.\xaf\x8e\xd1\x8c\\)7E\xb8\x9c\xdah\x04\xfa\xdf\x19\xfeC\xf9G\r\xbf\xb3D\x14BJ\x07\xc0\xdc\x9d\xb3\xf1d!\xd2\xb0?\x95j\x86\x8a?\x08\xd3\xc6\xd4\xd9\xa3~3\x05]\"\xbfO\xb6\xaf\xf0\xd5\xb7o\x0fK\xfe\x85?|\xd9\xb8ad\xec\x89\xb5\x18C,\xff9\x92\x9c\xf8\x98e\x0bj\x12\x98\xddDU\x9e\xd5cV\xdb\xa3\x959\x8e"), Certificate(b"0\x82\x03\x060\x82\x01\xee\xa0\x03\x02\x01\x02\x02\x01\x010\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\00<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x1e\x17\r220926051857Z\x17\r320923051857Z0<1:08\x06\x03U\x04\x03\x0c1MySQL_Server_8.0.30_Auto_Generated_CA_Certificate0\x82\x01\"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\0\x03\x82\x01\x0f\00\x82\x01\n\x02\x82\x01\x01\0\xca\xb3,\x88\x10\xbf\xd7|\xffm\x96\xa7\xa48\t\xa1Xec\xfd7\xc2V\x85\xebFq\xfc\xd7\xc0'\x03`\xfd\xf8\xd4} \xe4\x1d\xea8\xb9\x8a\xd2tr\x87\x9d#A\x97E\xc0=\xec\x8c\xd8\\\x7f\xff\xae\"\x90*\xc9\x88$Tf\x04o\xf4\xe3S\nr\0G5\x85\"\xda\x9f\x97\xc2\xa0$\xb6\xdd:\"'\xadR\xa0\x81\xcb\x87\xb3#\xe9O\xef\xe2f\xd6\x13\x9c\n\xf9P\xde\xad\xe2\x15\tJVc#\x0b\xe6\xb04\x14\x13\xe0N\x05\xc1z\xb6l\x0er\x91\xc8\x96\x8a\xc3\n*\x9f\xe1z\x01 \x02\x04\x04\x1a7\x01\"\xe7\x8ei\x87#\xeb\x9a\x90\xd6!\x14pi\xda\xd4\xe6\x06\x8b\xbc\xba\xd0\xees\x04\xfc\xc3R'\xb8\x07O\xed\xd6\xd5\x8d\x97\xbev\xe2!\x97H\xf5\x12\x1f\xf4\xc6\xfe\x049\x91{4\x1c\xdc\x9f\\bL\rrj\x0cL\xca\x8c\xbcb#fY\xcb\x8bD\x9c$\xcfj)N\x8f\x88\xc8\xee\xcd\x1d\x84\x08\x8d'N\x817E\xf1\x85\x99H\xa9s\xf7\x02\x03\x01\0\x01\xa3\x130\x110\x0f\x06\x03U\x1d\x13\x01\x01\xff\x04\x050\x03\x01\x01\xff0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x0b\x05\0\x03\x82\x01\x01\0\x03\xcd\xc8,W~z\xcc=#\xca\x13Cv\x13N\x06x[\xd0\xdb%\xe0\x0eKd\xcb\x8f\x0bc\x9cg#\x85\xf5\x8d\xa1%\x98[.Ojh\xc4'\xeb\xa0\x02\x91\x05B\x06\x0c\xb3Z\xbc\xeba}\xe4|\xc8\x8c\x16\xd6\x14\xf0\xa3,\x03\xce\x14\\\x1et\x97\xad\x03\x85M\x16\t\x8aj*\xd5\x12\xe2Q\xd7\xc0\xbeA_\xec\xfd\x07\x11\xeb\xc3s\xc6\x95K\xc6O\x89\xf5\xcb1\xa3\xc3\r\xbe\x12\x8f\x87\xd5\xd0\xba\xac\x1a[+\xabt\x93\xfe\xff\"\x9dz\x10\xcc\x07\xc4|\x82\xee\xb2\x8b_\x8d8\x10\xdc^W>b\xcfI\x81DC\xa9GW+\n\x97\xa6\x8bQ\xa9\xa4\x8f'\xbf\x86\xdf\xe4\xbb\xa0\xea\xcf\xec\xcc\xbc\xe7\x0c\x87=\xa0Zh\x99nV\x03\xc4\xda\xf4\xe4\"(Bp\xbb\xaf\xb5\x12\xcc\x1a\xe31\x81|\xc4\x8d\x83m\xe3\x17*\x1e\xef\0[\\f\xffn\0\xdbe3\x99C\x95g\xb9\x15\0\x8b\x0f\x93\xb9W=\xc8\x16\xea\x04_t'\xd4\xf8.#\x01h\xb3\xa2")]
+2022-11-15 11:30:57.0845187 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 11:30:57.0845915 DEBUG rustls::client::tls13 - Ticket saved
+2022-11-15 11:30:57.0873482 INFO rbatis::plugin::log - [rbatis] [435039322345967616] Fetch  ==> show databases;
+                                                      [rbatis]                      Args   ==> []
+2022-11-15 11:30:57.0901533 INFO rbatis::plugin::log - [rbatis] [435039322345967616] ReturnRows <== 5

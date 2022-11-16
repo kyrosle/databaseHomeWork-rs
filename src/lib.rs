@@ -1,4 +1,5 @@
 pub mod information;
-mod functions;
+mod service;
 mod database;
-pub use functions::*;
+mod config;
+pub use service::*;
