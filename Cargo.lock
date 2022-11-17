@@ -214,6 +214,7 @@ dependencies = [
  "log",
  "once_cell",
  "rbatis",
+ "rbdc",
  "rbdc-mysql",
  "rbs",
  "serde",
