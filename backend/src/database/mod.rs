@@ -13,19 +13,20 @@ pub static RB: Lazy<rbatis::Rbatis> = Lazy::new(|| {
     rb
 });
 
+pub async fn test_rbatis() -> anyhow::Result<()> {
+    let _ = fast_log::init(fast_log::Config::new().file("request.log")).unwrap();
+    let v = RB.fetch("show databases;", vec![]).await;
+    // database is ready to use
+    assert!(v.is_ok());
+    Ok(())
+}
 #[cfg(test)]
 mod test {
-    use fast_log::Config;
-
     /// test rbatis wether is able to connect the mysql sever
     /// if success , the test will pass and execute the sql query `show database;`
     /// return a not empty `Option` type;
     #[tokio::test]
-    async fn test_rbatis() {
-        let _ = fast_log::init(Config::new().file("request.log")).unwrap();
-        use crate::database::RB;
-        let v = RB.fetch("show databases;", vec![]).await;
-        // database is ready to use
-        assert!(v.is_ok());
+    async fn test_rbatis_warp() {
+        super::test_rbatis().await.unwrap();
     }
 }

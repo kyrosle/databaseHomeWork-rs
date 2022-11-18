@@ -51,40 +51,44 @@ fn get_cfg<'a>(docs: &'a Vec<Yaml>, key: &str) -> Result<&'a Yaml, Error> {
     )))
 }
 
+pub fn test_config() -> anyhow::Result<()> {
+    // left
+    let config = ApplicationConfig::default();
+
+    // right
+    let mut txt = vec![];
+
+    match crate::utils::read_lines("./application.yml") {
+        Ok(lines) => {
+            for s in lines.flatten() {
+                if !s.starts_with('#') {
+                    let sp = s.splitn(2, ':');
+                    txt.push(
+                        sp.last()
+                            .map(|ss| ss.trim_matches(|c| c == ' ' || c == '"'))
+                            .unwrap()
+                            .to_owned(),
+                    );
+                }
+            }
+        }
+        Err(e) => {
+            dbg!("Open File Error : {}", e.to_string());
+        }
+    }
+
+    assert_eq!(config.server_url, txt[0]);
+    assert_eq!(config.log_path, txt[1]);
+    assert_eq!(config.mysql_url, txt[2]);
+    Ok(())
+}
+
 #[cfg(test)]
 mod test {
     use super::*;
-    use crate::utils::read_lines;
     /// ensure the mysql connection config data structure is correctly match the yml file.
     #[test]
-    fn test_config() {
-        // left
-        let config = ApplicationConfig::default();
-
-        // right
-        let mut txt = vec![];
-
-        match read_lines("./application.yml") {
-            Ok(lines) => {
-                for s in lines.flatten() {
-                    if !s.starts_with('#') {
-                        let sp = s.splitn(2, ':');
-                        txt.push(
-                            sp.last()
-                                .map(|ss| ss.trim_matches(|c| c == ' ' || c == '"'))
-                                .unwrap()
-                                .to_owned(),
-                        );
-                    }
-                }
-            }
-            Err(e) => {
-                dbg!("Open File Error : {}", e.to_string());
-            }
-        }
-
-        assert_eq!(config.server_url, txt[0]);
-        assert_eq!(config.log_path, txt[1]);
-        assert_eq!(config.mysql_url, txt[2]);
+    fn test_config_warp() {
+        test_config().unwrap();
     }
 }

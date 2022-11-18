@@ -593,6 +593,57 @@ pub async fn query_employee_exist(id: usize) -> Result<bool> {
     }
 }
 
+#[named]
+/// display all employee information
+pub async fn display_employee_information() -> Result<Vec<Employee>> {
+    match RB
+        .fetch_decode(&SQL["displayEmployeeInformationSql"], vec![])
+        .await
+    {
+        Ok(value) => Ok(value),
+        Err(e) => return_error!(e),
+    }
+}
+#[named]
+/// query employee information by id
+pub async fn query_employee_information(id: usize) -> Result<Employee> {
+    match RB
+        .fetch_decode(
+            &SQL["queryEmployeeInformationForIdSql"],
+            vec![to_value!(id)],
+        )
+        .await
+    {
+        Ok(value) => Ok(value),
+        Err(e) => return_error!(e),
+    }
+}
+
+#[named]
+/// search employee information by query: condition, ans: revee
+pub async fn search_employee_information(query: String, ans: String) -> Result<Vec<Employee>> {
+    let sql = &format!(
+        "{}{}{}",
+        SQL["searchEmployeeInformationSqlPre"], query, SQL["searchEmployeeInformationSqlPost"]
+    );
+    match RB.fetch_decode(sql, vec![to_value!(ans)]).await {
+        Ok(value) => Ok(value),
+        Err(e) => return_error!(e),
+    }
+}
+
+#[named]
+/// query employee salary information by id
+pub async fn query_employee_salary(id: usize) -> Result<f32> {
+    match RB
+        .fetch_decode(&SQL["queryEmployeeSalaryForIdSql"], vec![to_value!(id)])
+        .await
+    {
+        Ok(value) => Ok(value),
+        Err(e) => return_error!(e),
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -614,7 +665,7 @@ mod tests {
         let res = insert_employee_information(
             1,
             1,
-            String::from("testman"),
+            String::from("test-man"),
             String::from("2020-07-05"),
             1,
             String::from("hhhh"),
@@ -624,7 +675,5 @@ mod tests {
         .await
         .unwrap();
         assert_eq!(res, last_id);
-        let del = delete_employee_information(last_id).await.unwrap();
-        assert!(del);
     }
 }
