@@ -570,6 +570,7 @@ dependencies = [
  "dioxus-desktop",
  "dioxus-hooks",
  "dioxus-html",
+ "dioxus-router",
 ]
 
 [[package]]
@@ -653,6 +654,24 @@ name = "dioxus-interpreter-js"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7d78a436643ca61ca4f5dec869fb91318c72068a013d2d5e21f9960810453b47"
+
+[[package]]
+name = "dioxus-router"
+version = "0.2.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1d87ba54351495b657c291831de8f259be9616047f9e9826757788a43d3d2907"
+dependencies = [
+ "dioxus-core",
+ "dioxus-core-macro",
+ "dioxus-html",
+ "futures-channel",
+ "futures-util",
+ "log",
+ "serde",
+ "serde_urlencoded",
+ "thiserror",
+ "url",
+]
 
 [[package]]
 name = "dispatch"
@@ -2294,6 +2313,18 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn",
+]
+
+[[package]]
+name = "serde_urlencoded"
+version = "0.7.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d3491c14715ca2294c4d6a88f15e84739788c1d030eed8c110436aafdaa2f3fd"
+dependencies = [
+ "form_urlencoded",
+ "itoa",
+ "ryu",
+ "serde",
 ]
 
 [[package]]

@@ -10,4 +10,4 @@ members = ["./backend"]
 backend = { path = "./backend", version = "0.1.0" }
 
 [dependencies]
-dioxus = { version = "0.2.4", features = ["desktop"] }
+dioxus = { version = "0.2.4", features = ["desktop", "router"] }

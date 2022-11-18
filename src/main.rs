@@ -6,6 +6,27 @@ fn main() {
 
 fn app(cx: Scope) -> Element {
     cx.render(rsx! (
-        div { "Hello, world!" }
+        div {
+            Router {
+                ul {
+                    Link {to: "/", li{"Go Home"}}
+                    Link {to: "/hello", li{"Hello"}}
+                }
+                Route { to: "/" ,Home {} }
+                Route { to: "/hello" , Hello {}}
+            }
+        }
     ))
+}
+
+fn Home(cx: Scope) -> Element {
+    cx.render(rsx! {
+        h1 {"Home"}
+    })
+}
+
+fn Hello(cx: Scope) -> Element {
+    cx.render(rsx! {
+        h1 {"Hello"}
+    })
 }
