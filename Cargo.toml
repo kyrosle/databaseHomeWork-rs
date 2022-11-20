@@ -11,3 +11,4 @@ backend = { path = "./backend", version = "0.1.0" }
 
 [dependencies]
 dioxus = { version = "0.2.4", features = ["desktop", "router"] }
+dioxus-desktop = "0.2.3"

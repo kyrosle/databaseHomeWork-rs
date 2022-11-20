@@ -3,6 +3,7 @@
     "datetime",
     "dioxus",
     "rbatis",
-    "rbdc"
+    "rbdc",
+    "stylesheet"
   ]
 }
