@@ -20,11 +20,11 @@ pub fn HomePage(cx: Scope) -> Element {
             class: "box",
             Router {
                 ul {
-                    Link {class: "tag is-link" to: "/",  li { "      HomePage      " } }
-                    Link {class: "tag is-link" to: "/1", li { "Information Addition" } }
-                    Link {class: "tag is-link" to: "/2", li { " Information Delete " } }
-                    Link {class: "tag is-link" to: "/3", li { " Information Change " } }
-                    Link {class: "tag is-link" to: "/4", li { " Information Search " } }
+                    Link {class: "button is-info is-light is-small" to: "/",  li { "      HomePage      " } }
+                    Link {class: "button is-info is-light is-small" to: "/1", li { "Information Addition" } }
+                    Link {class: "button is-info is-light is-small" to: "/2", li { " Information Delete " } }
+                    Link {class: "button is-info is-light is-small" to: "/3", li { " Information Change " } }
+                    Link {class: "button is-info is-light is-small" to: "/4", li { " Information Search " } }
                 }
                 Route { to: "/", div { "HomePage" } } 
                 Route { to: "/1", div { AddPage { } } }

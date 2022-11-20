@@ -4,26 +4,15 @@ use dioxus::prelude::*;
 
 pub fn AddPage(cx: Scope) -> Element {
     let fac = NodeFactory::new(&cx);
-
-    //     let route1 = Some(rsx!(Add1 {}).call(fac));
-    //     let route2 = Some(rsx!(Add2 {}).call(fac));
-    //     let routes = vec![("Page1".to_owned(), route1), ("Page2".to_owned(), route2)];
-
-    let routes = RouteProps::create_router(
+    let routes = create_router(
         fac,
-        vec![("Page1", rsx!(Add1 {})), ("Page2", rsx!(Add2 {}))],
+        vec![
+            ("Add Employee", rsx!(AddEmployee {})),
+            ("Page2", rsx!(Add2 {})),
+        ],
     );
-
     cx.render(rsx! {
-        SelectRoute { routes: routes }
-    })
-}
-
-fn Add1(cx: Scope) -> Element {
-    cx.render(rsx! {
-        h1 {
-            "Add1"
-        }
+        SelectRoute { routes: routes}
     })
 }
 
@@ -52,11 +41,11 @@ fn AddEmployee(cx: Scope) -> Element {
     cx.render(rsx! {
         h1 {"From"}
         // form {
-            // onsubmit: move |_| {},
-            // oninput: move |_| {},
-            // input { r#type: "text", name: "姓名: " }
-            // input { r#type: "text", name: "健康情况: " }
-            // input { r#type: "text", name: "月薪资: " }
+        //     onsubmit: move |_| {},
+        //     oninput: move |_| {},
+        //     input { r#type: "text", name: "姓名: " }
+        //     input { r#type: "text", name: "健康情况: " }
+        //     input { r#type: "text", name: "月薪资: " }
         // }
     })
 }
