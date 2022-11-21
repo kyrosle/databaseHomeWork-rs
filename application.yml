@@ -1,0 +1,7 @@
+#server 地址
+server_url: "127.0.0.1:3360"
+#log 地址
+log_path: "requests.log"
+#mysql地址
+mysql_url: "mysql://root:1234@localhost:3306/DataBaseHomeWork"
+

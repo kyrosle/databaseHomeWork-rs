@@ -32,7 +32,6 @@ pub fn HomePage(cx: Scope) -> Element {
                 Route { to: "/3", div { "Home3" } }
                 Route { to: "/4", div { "Home4" } }
                 Route { to: "" h1 { "404 Not Found" } }
-
             }
         }
     })

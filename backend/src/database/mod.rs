@@ -13,6 +13,7 @@ pub static RB: Lazy<rbatis::Rbatis> = Lazy::new(|| {
     rb
 });
 
+#[allow(dead_code)]
 pub async fn test_rbatis() -> anyhow::Result<()> {
     let _ = fast_log::init(fast_log::Config::new().file("request.log")).unwrap();
     let v = RB.fetch("show databases;", vec![]).await;

@@ -2,8 +2,12 @@
   "cSpell.words": [
     "datetime",
     "dioxus",
+    "onclick",
+    "oninput",
+    "onsubmit",
     "rbatis",
     "rbdc",
+    "splitn",
     "stylesheet"
   ]
 }

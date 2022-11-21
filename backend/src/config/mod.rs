@@ -51,6 +51,7 @@ fn get_cfg<'a>(docs: &'a Vec<Yaml>, key: &str) -> Result<&'a Yaml, Error> {
     )))
 }
 
+#[allow(dead_code)]
 pub fn test_config() -> anyhow::Result<()> {
     // left
     let config = ApplicationConfig::default();

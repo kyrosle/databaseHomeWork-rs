@@ -503,10 +503,9 @@ pub async fn insert_employee_information(
     salary: f32,
     postscript: String,
 ) -> Result<usize> {
-    let sql = &format!("{}", SQL["insertEmployeeInformationSql"]);
     match RB
         .fetch(
-            sql,
+            &SQL["insertEmployeeInformationSql"],
             vec![
                 to_value!(post_id),
                 to_value!(department_id),
@@ -620,7 +619,7 @@ pub async fn query_employee_information(id: usize) -> Result<Employee> {
 }
 
 #[named]
-/// search employee information by query: condition, ans: revee
+/// search employee information by query: condition, ans: value
 pub async fn search_employee_information(query: String, ans: String) -> Result<Vec<Employee>> {
     let sql = &format!(
         "{}{}{}",

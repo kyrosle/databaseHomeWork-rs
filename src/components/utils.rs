@@ -17,22 +17,25 @@ pub struct RouteProps<'a> {
 ///
 /// In a Page site:  
 /// ```
-/// let fac = NodeFactory::new(&cx);
-/// let routes = RouteProps::create_router(
-///     fac,
-///     vec![
-///         ("Add Employee", rsx!(AddEmployee {})),
-///         ("Page2", rsx!(Add2 {})),
-///     ],
-/// );
-/// cx.render(rsx! {
-///     SelectRoute { routes: routes}
-/// })
+/// pub fn Component(cx: Scope) -> Element {
+///     let routes = create_router(
+///         &cx,
+///         vec![
+///             ("Add Employee", rsx!(AddEmployee {})),
+///             ("Page2", rsx!(Add2 {})),
+///         ],
+///     );
+///     cx.render(rsx! {
+///         SelectRoute { routes: routes }
+///     })
+/// }
 /// ```
-pub fn create_router<'a>(
-    fac: NodeFactory<'a>,
+pub fn create_router<'a, P>(
+    cx: &Scope<'a, P>,
     routes: Vec<(&str, LazyNodes<'a, 'a>)>,
 ) -> Vec<(String, Element<'a>)> {
+    let fac = NodeFactory::new(cx);
+
     routes
         .into_iter()
         .map(|(n, r)| (n.to_owned(), Some(r.call(fac))))
@@ -52,10 +55,13 @@ pub fn SelectRoute<'a>(cx: Scope<'a, RouteProps<'a>>) -> Element<'a> {
         .map(|(idx, s)| {
             rsx! {
                 div {
-                    onclick: move |_| index.set(idx),
+                    style: "padding:5px",
                     div {
-                        class: "button is-text is-light is-small",
-                        "{s}"
+                        class: "button is-tag is-light is-small",
+                        onclick: move |_| index.set(idx),
+                        div {
+                            "{s}"
+                        }
                     }
                 }
             }
@@ -72,7 +78,7 @@ pub fn SelectRoute<'a>(cx: Scope<'a, RouteProps<'a>>) -> Element<'a> {
             let (name, node) = value;
             rsx! {
                 br {}
-                "{name}"
+                label { class: "label", "{name}" }
                 node
             }
         });

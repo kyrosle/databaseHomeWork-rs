@@ -1,0 +1,87 @@
+displayEmployeeInformationSql : select e.id, e.post_id, e.department_id, e.name, e.birth, e.political_id, e.health_status, e.salary, e.postscript, p.name post_name, d.name department_name, pl.name political_name from employee e, post p, department d, political pl where e.status = 0 and e.post_id = p.id and e.department_id = d.id and e.political_id = pl.id
+
+searchEmployeeInformationSqlPre : select employee.*, post.name post_name, department.name department_name, political.name political_name from employee, post, department, political where employee.status = 0 and employee.post_id = post.id and employee.department_id = department.id and employee.political_id = political.id and
+
+searchEmployeeInformationSqlPost : =?
+
+queryAttendanceTypeExistSql : select attendance_id from attendance_type where attendance_name=? and status=0
+
+insertAttendanceTypeInformationSql : insert into attendance_type(attendance_name, base_fine_or_bonus, rate_fine_or_bonus)values(?, ?, ?)
+
+deleteAttendanceTypeInformationSql : update attendance_type set status=1 where attendance_name=?
+
+displayAttendanceTypeInformationSql : select * from attendance_type where status=0
+
+queryPoliticalExistForNameSql : select id from political where name=? and status=0
+
+queryPoliticalExistForIdSql : select id from political where status = 0 and id = ?
+
+insertPoliticalSql : insert into political(name)values(?)
+
+deletePoliticalForNameSql : update political set status=1 where political_name=?
+
+insertEmployeeInformationSql : insert into employee(post_id, department_id, name, birth, political_id, health_status, salary, postscript)values(?, ?, ?, ?, ?, ?, ?, ?)
+
+displayPoliticalInformationSql : select * from political where status = 0
+
+queryPostExistSql : select id from post where status=0 and name=?
+
+insertPostSql : insert into post(name, salary_id, salary)values(?, ?, ?)
+
+deletePostSql : update post set status=1 where name=?
+
+displayPostInformationSql : select * from post where status=0
+
+queryNoEmployeeUsePostSql : select distinct(id) from post, employee where post.status=0 and employee.status=0 and post.name=name and post.id=employee.post_id
+
+insertEmployeeChangePersonalSql : insert into personal_change(employee_id, post_id, department_id, change_time)values(?, ?, ?, now())
+
+insertSalaryRecordInformationSql : insert into salary_record(employee_id, salary, basic_salary, bonus, fine, starting_time, cut_of_time)values(?, ?, ?, ?, ?, ?, now())
+
+updateEmployeeInformationSqlPre : update employee set
+
+updateEmployeeInformationSqlPost : =? where id=?
+
+searchAttendanceInformationSql : select e.name, aty.attendance_name,  aty.base_fine_or_bonus, aty.rate_fine_or_bonus, a.attendance_time, a.record_time  from employee as e, attendance as a, attendance_type as aty where e.id=? and a.record_time > ? and  e.id = a.employee_id and aty.attendance_id = a.attendance_id order by a.record_time
+
+searchMaxTimeFromSalaryRecordSql : SELECT MAX(cut_of_time) as cut_of_time FROM salary_record WHERE employee_id=?
+
+queryEmployeeSalaryForIdSql : select salary from employee where id = ?
+
+queryDepartmentEmptySql : select count(distinct employee.id) from department left join employee on department.id = employee.department_id where department.status=0 and employee.status=0 and department.id = ?
+
+insertDepartmentInformationSql : insert into department(name)Values(?)
+
+deleteDepartmentInformationSql : update department set status=1 where id=?
+
+queryPostExistForIdSql : select id from post where status=0 and id=?
+
+displaySalaryRecordInformationSql : select * from salary_record where salary_record.employee_id=? order by cut_of_time
+
+displayEmployeeChangePersonalInformationSql : select personal_change.id id, personal_change.change_time, department.name department_name, post.name post_name from  personal_change, employee, department, post where employee.id = personal_change.employee_id and personal_change.post_id = post.id and personal_change.department_id = department.id and employee.id=? order by personal_change.change_time
+
+queryEmployeeExistForIdSql : select * from employee where id = ? and status=0
+
+queryEmployeeInformationForIdSql : select e.id, e.post_id, e.department_id, e.name, e.birth, e.political_id, e.health_status, e.salary, e.postscript, p.name post_name, d.name department_name, pl.name political_name from employee e, post p, department d, political pl where e.status = 0 and e.post_id = p.id and e.department_id = d.id and e.political_id = pl.id and e.id=?
+
+deletePoliticalForIdSql : update political set status=1 where id=?
+
+displayDepartmentInformationSql : select department.*, employee.name manager_name from department left join employee on department.manager_id = employee.department_id where department.status=0
+
+showDepartmentInformationForIdSql : select department.*, employee.name manager_name from department left join employee on department.manager_id = employee.department_id where department.status=0 and department.id=?
+
+queryDepartmentIdForNameSql : select id from department where status=0 and name=?
+
+queryDepartmentManagerForIdSql : select id from department where manager_id=? and status=0
+
+queryDepartmentManagerForManagerIdAndDepartmentIdSql : select id from department where manager_id=? and id = ? and status=0
+
+queryDepartmentEmployeeSql : select id from employee where status=0 and id=? and department_id=?
+
+updateDepartmentManagerSql : update department set manager_id=? where status=0 and id=?
+
+queryDepartmentExistSql : select id from department where status=0 and id = ?
+
+deletePostForIdSql : update post set status=1 where id=?
+
+deleteEmployeeInformationForIdSql : update employee set status=1 where id=?

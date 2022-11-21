@@ -2,13 +2,23 @@
 name = "data_base_homework"
 version = "0.1.0"
 edition = "2021"
+default-run = "main"
 
 
 [workspace]
 members = ["./backend"]
 
-backend = { path = "./backend", version = "0.1.0" }
+[[bin]]
+name = "backend"
+path = "backend/src/main.rs"
+
+[[bin]]
+name = "main"
+path = "src/main.rs"
+
 
 [dependencies]
 dioxus = { version = "0.2.4", features = ["desktop", "router"] }
 dioxus-desktop = "0.2.3"
+backend = { path = "./backend", version = "0.1.0" }
+tokio = { version = "1.22.0", features = ["full"] }
