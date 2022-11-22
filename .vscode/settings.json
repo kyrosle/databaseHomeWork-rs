@@ -8,6 +8,8 @@
     "rbatis",
     "rbdc",
     "splitn",
-    "stylesheet"
+    "stylesheet",
+    "tbody",
+    "thead"
   ]
 }
