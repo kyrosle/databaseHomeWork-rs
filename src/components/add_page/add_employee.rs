@@ -1,56 +1,39 @@
-#![allow(non_snake_case)]
-use crate::components::*;
+use dioxus::events::FormEvent;
 use dioxus::prelude::*;
 use backend::prelude::*;
 
-pub fn AddPage(cx: Scope) -> Element {
-    let routes = create_router(
-        &cx,
-        vec![
-            ("   Add Employee  ", rsx!(AddEmployee {})),
-            (" Add Regulations ", rsx!(AddRegulations {})),
-            (" Add Attendance  ", rsx!(AddAttendance {})),
-            ("Salary Settlement", rsx!(SalarySettlement {})),
-        ],
-    );
-    cx.render(rsx! {
-        SelectRoute { routes: routes }
-    })
-}
+use crate::display_list;
 
-macro_rules! display_list {
-    ($cx: expr, $name: pat, $func: ident) => {
-        let $name = match use_future(&$cx, (),  |_| async move {
-            $func()
-            .await
-            .unwrap()
-        }).value() {
-            Some(value)  => {
-                value.iter()
-                .map(|v| {
-                    let name = v.name.clone().unwrap();
-                    rsx!{ 
-                        option{ "{name}" } 
-                    }
-                }).collect::<Vec<_>>()
-            }
-            None => Vec::<LazyNodes>::new() 
-        };
-    };
-}
-
-fn AddEmployee(cx: Scope) -> Element {
+pub(crate) fn AddEmployee(cx: Scope) -> Element {
     display_list!(cx, department, display_department_information);
     display_list!(cx, post, display_post_information);
     display_list!(cx, political, display_political_information);
 
-    let content = use_state(&cx, || {
-        String::from("Message")
-    });
-    let submit = move |evt| {
-        // cx.spawn(async move {
-        // }) 
-        println!("{:?}", evt);
+    let content = use_state(&cx, || String::from("Message"));
+    let submit = move |evt: FormEvent| {
+        cx.spawn(async move {
+            let value = &evt.values;
+            let post_id = query_post_by_name(value["post"].clone()).await.unwrap();
+            let department_id = query_department_id(value["department"].clone())
+                .await
+                .unwrap();
+            let political_id = query_political_id(value["political"].clone())
+                .await
+                .unwrap();
+
+            insert_employee_information(
+                post_id,
+                department_id,
+                value["name"].clone(),
+                value["birth"].clone(),
+                political_id,
+                value["health"].clone(),
+                value["salary"].parse::<f32>().unwrap(),
+                value["postscript"].clone(),
+            )
+            .await
+            .unwrap();
+        })
     };
     cx.render(rsx! {
         br {}
@@ -71,19 +54,19 @@ fn AddEmployee(cx: Scope) -> Element {
             // name input
             div {
                 label { class: "label", "Name : " }
-                input { class: "input", name: "user_name", r#type: "text", placeholder: "Text input" }
+                input { class: "input", name: "name", r#type: "text", placeholder: "Text input" }
             }
 
             // health status input
             div {
                 label { class: "label", "Health Status : "}
-                input { class: "input", name: "health_status", r#type: "text", placeholder: "Text input" }
+                input { class: "input", name: "health", r#type: "text", placeholder: "Text input" }
             }
 
             // salary input
             div {
-                oninput: move |e| { 
-                    if e.value.parse::<isize>().is_err() {
+                oninput: move |e| {
+                    if e.value.parse::<f32>().is_err() {
                         content.set(format!("Invalid Value: {}", e.value.clone()));
                     } else {
                         content.set(String::from(""));
@@ -156,6 +139,7 @@ fn AddEmployee(cx: Scope) -> Element {
             div {
                 label { class: "label", "Employee Status : "}
                 textarea {
+                    name: "postscript",
                     class: "textarea",
                     placeholder: "e.g. I am a employee...",
                     "rows": "5",
@@ -174,40 +158,6 @@ fn AddEmployee(cx: Scope) -> Element {
                     }
                 }
             }
-        }
-    })
-}
-
-
-
-
-
-
-
-
-
-
-
-fn AddRegulations(cx: Scope) -> Element {
-    cx.render(rsx! {
-        div {
-
-        }
-    })
-}
-
-fn AddAttendance(cx: Scope) -> Element {
-    cx.render(rsx! {
-        div {
-
-        }
-    })
-}
-
-fn SalarySettlement(cx: Scope) -> Element {
-    cx.render(rsx! {
-        div {
-
         }
     })
 }
