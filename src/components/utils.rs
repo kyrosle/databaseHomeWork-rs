@@ -34,12 +34,19 @@ pub fn create_router<'a, P>(
     cx: &Scope<'a, P>,
     routes: Vec<(&str, LazyNodes<'a, 'a>)>,
 ) -> Vec<(String, Element<'a>)> {
-    let fac = NodeFactory::new(cx);
-
     routes
         .into_iter()
-        .map(|(n, r)| (n.to_owned(), Some(r.call(fac))))
+        .map(|(n, r)| (n.to_owned(), lazy_node_to_element(cx, r)))
         .collect::<Vec<_>>()
+}
+
+/// Convent LazyNodes to Element(Option<VNode>) 
+pub fn lazy_node_to_element<'a, P>(
+    cx: &Scope<'a, P>,
+    lazy_node: LazyNodes<'a,'a>
+) -> Element<'a> {
+    let fac = NodeFactory::new(cx);
+    Some(lazy_node.call(fac))
 }
 
 /// Nested Router alternatives

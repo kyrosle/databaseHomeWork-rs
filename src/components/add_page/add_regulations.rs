@@ -1,6 +1,6 @@
 use backend::{
     display_attendance_type_information, display_department_information,
-    display_political_information, display_post_information,
+    display_political_information, display_post_information, insert_department_information,
 };
 use dioxus::{events::FormEvent, prelude::*};
 
@@ -28,13 +28,23 @@ pub(crate) fn AddRegulations(cx: Scope) -> Element {
     });
     let show_table = use_state(&cx, std::vec::Vec::new);
 
+    let change_form_index = use_state(&cx, || 0_usize);
+    let change_form = vec![rsx!(h1{"Change Form"}), rsx!(AddDepartment {})]
+        .into_iter()
+        .enumerate()
+        .filter(|(idx, _)| idx == change_form_index.get())
+        .map(|(_, ln)| ln);
+
     let show_button = move |e: FormEvent| {
         cx.spawn({
             let show_table = show_table.clone();
+            let change_form_index = change_form_index.clone();
+
             async move {
                 match &e.values["show"] {
                     s if s == "Department" => {
                         display_vec!(display_department_information, show_table);
+                        change_form_index.set(1);
                     }
                     s if s == "Post" => {
                         display_vec!(display_post_information, show_table);
@@ -57,27 +67,82 @@ pub(crate) fn AddRegulations(cx: Scope) -> Element {
             }
         })
     };
+
     cx.render(rsx! {
         div {
-            form {
-                onsubmit: show_button,
-                prevent_default: "onsubmit",
-                class: "field",
-
-                div {
+            style: "display: flex;flex-row: row nowrap;height: 500px",
+            div {
+                class: "box",
+                style: "padding: 5px",
+                form {
+                    onsubmit: show_button,
+                    prevent_default: "onsubmit",
                     class: "field",
-                    label { class: "label", "Select : " }
+
                     div {
-                        class: "control",
+                        class: "field",
+                        label { class: "label", "Select : " }
                         div {
-                            class: "select",
-                            select {
-                                name: "show",
-                                choices_show
+                            class: "control",
+                            div {
+                                class: "select",
+                                select {
+                                    name: "show",
+                                    choices_show
+                                }
+                            }
+                        }
+                    }
+                    div {
+                        class: "field is-grouped",
+                        div {
+                            class: "control",
+                            button {
+                                class: "button is-link",
+                                "Show"
                             }
                         }
                     }
                 }
+                table {
+                    class: "table",
+                    thead {
+                        tr { th { title: "Name", "Name" } }
+                    }
+                    tbody {
+                        show_table.get().iter().map(|s| rsx!(tr { th {"{s}"} }))
+                    }
+                }
+            }
+            div {
+                style: "flex: 1; padding: 5px",
+                div {
+                    change_form
+                }
+            }
+        }
+    })
+}
+
+fn AddDepartment(cx: Scope) -> Element {
+    let submit_event = move |e: FormEvent| {
+        let name = e.values["name"].clone();
+        cx.spawn(async move {
+            insert_department_information(name).await.unwrap();
+        })
+    };
+
+    cx.render(rsx! {
+        div {
+            form {
+                onsubmit: submit_event,
+                prevent_default: "onsubmit",
+
+                div {
+                    label { class: "label", "Department Name : " }
+                    input { class: "input", name: "name", r#type: "text", placeholder: "Text input" }
+                }
+
                 div {
                     class: "field is-grouped",
                     div {
@@ -87,15 +152,6 @@ pub(crate) fn AddRegulations(cx: Scope) -> Element {
                             "Show"
                         }
                     }
-                }
-            }
-            table {
-                class: "table",
-                thead {
-                    tr { th { title: "Name", "Name" } }
-                }
-                tbody {
-                    show_table.get().iter().map(|s| rsx!(tr { th {"{s}"} }))
                 }
             }
         }
