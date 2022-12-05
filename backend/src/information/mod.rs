@@ -17,6 +17,33 @@ pub struct Attendance {
     pub rate_fine_or_bonus: FieldFloat,
     pub record_time: FieldString,
 }
+
+impl Attendance {
+    pub fn get_salary(&self) -> f32 {
+        let base_fine_or_bonus = self
+            .base_fine_or_bonus
+            .clone()
+            .unwrap()
+            .0
+            .parse::<f32>()
+            .unwrap();
+        let rate_fine_or_bonus = self
+            .rate_fine_or_bonus
+            .clone()
+            .unwrap()
+            .0
+            .parse::<f32>()
+            .unwrap();
+        let attendance_time = self
+            .attendance_time
+            .clone()
+            .unwrap()
+            .0
+            .parse::<f32>()
+            .unwrap();
+        base_fine_or_bonus + rate_fine_or_bonus * attendance_time
+    }
+}
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct AttendanceType {
     pub attendance_id: Key,
@@ -42,9 +69,9 @@ pub struct Employee {
     pub salary: FieldFloat,
     pub department_id: Id,
     pub political_id: Id,
-    pub post: FieldString,
-    pub department: FieldString,
-    pub political: FieldString,
+    pub post_name: FieldString,
+    pub department_name: FieldString,
+    pub political_name: FieldString,
     pub health_status: FieldString,
 }
 #[derive(Clone, Debug, Serialize, Deserialize)]

@@ -76,10 +76,10 @@ pub async fn insert_attendance_type_information(
 
 #[named]
 /// delete attendance type by id
-pub async fn delete_attendance_type_information(attendance_id: usize) -> Result<bool> {
+pub async fn delete_attendance_type_information(attendance_id: usize) -> Result<()> {
     let sql = r#"update attendance_type set status=1 where attendance_id=?"#;
     match RB.fetch(sql, vec![to_value!(attendance_id)]).await {
-        Ok(_) => Ok(true),
+        Ok(_) => Ok(()),
         Err(err) => return_error!(err),
     }
 }
@@ -194,15 +194,12 @@ pub async fn insert_political(political_name: String) -> Result<bool> {
 
 #[named]
 /// delete political by parameter: political_name
-pub async fn delete_political(political_name: String) -> Result<bool> {
+pub async fn delete_political(id: usize) -> Result<()> {
     match RB
-        .fetch(
-            &SQL["deletePoliticalForNameSql"],
-            vec![to_value!(political_name)],
-        )
+        .fetch(&SQL["deletePoliticalForIdSql"], vec![to_value!(id)])
         .await
     {
-        Ok(_) => Ok(true),
+        Ok(_) => Ok(()),
         Err(e) => return_error!(e),
     }
 }
@@ -306,15 +303,15 @@ pub async fn query_department_employee(employee_id: usize, department_id: usize)
 
 #[named]
 /// update a department manager
-pub async fn update_department_manager(employee_id: usize, department_id: usize) -> Result<usize> {
+pub async fn update_department_manager(employee_id: usize, department_id: usize) -> Result<()> {
     match RB
-        .fetch_decode(
+        .fetch(
             &SQL["updateDepartmentManagerSql"],
             vec![to_value!(employee_id), to_value!(department_id)],
         )
         .await
     {
-        Ok(value) => Ok(value),
+        Ok(_) => Ok(()),
         Err(e) => return_error!(e),
     }
 }
@@ -442,17 +439,13 @@ pub async fn query_no_employee_use_post(name: String) -> Result<bool> {
 
 #[named]
 /// change employee field value by id
-pub async fn update_employee_information(
-    condition: String,
-    val: String,
-    id: String,
-) -> Result<bool> {
+pub async fn update_employee_information(condition: String, val: String, id: usize) -> Result<()> {
     let sql = format!(
-        "{}{}{}",
+        "{} {} {}",
         SQL["updateEmployeeInformationSqlPre"], condition, SQL["updateEmployeeInformationSqlPost"]
     );
     match RB.fetch(&sql, vec![to_value!(val), to_value!(id)]).await {
-        Ok(_) => Ok(true),
+        Ok(_) => Ok(()),
         Err(e) => return_error!(e),
     }
 }
@@ -468,12 +461,12 @@ pub async fn delete_post_by_name(name: String) -> Result<bool> {
 
 #[named]
 /// delete post by id
-pub async fn delete_post_by_id(id: String) -> Result<bool> {
+pub async fn delete_post_by_id(id: usize) -> Result<()> {
     match RB
         .fetch(&SQL["deletePostForIdSql"], vec![to_value!(id)])
         .await
     {
-        Ok(_) => Ok(true),
+        Ok(_) => Ok(()),
         Err(e) => return_error!(e),
     }
 }
@@ -519,7 +512,7 @@ pub async fn insert_employee_information(
         )
         .await
     {
-        Ok(_) => match RB.fetch_decode("select @@IDENTITY", vec![]).await {
+        Ok(_) => match RB.fetch_decode("SELECT id FROM employee ORDER BY id DESC LIMIT 1;", vec![]).await {
             Ok(value) => Ok(value),
             Err(e) => return_error!(e),
         },
@@ -529,7 +522,7 @@ pub async fn insert_employee_information(
 
 #[named]
 /// delete employee information by id
-pub async fn delete_employee_information(id: usize) -> Result<bool> {
+pub async fn delete_employee_information(id: usize) -> Result<()> {
     match RB
         .fetch(
             &SQL["deleteEmployeeInformationForIdSql"],
@@ -537,7 +530,7 @@ pub async fn delete_employee_information(id: usize) -> Result<bool> {
         )
         .await
     {
-        Ok(_) => Ok(true),
+        Ok(_) => Ok(()),
         Err(e) => return_error!(e),
     }
 }
@@ -633,12 +626,54 @@ pub async fn search_employee_information(query: String, ans: String) -> Result<V
 
 #[named]
 /// query employee salary information by id
-pub async fn query_employee_salary(id: usize) -> Result<f32> {
+pub async fn query_employee_salary(id: usize) -> Result<String> {
     match RB
         .fetch_decode(&SQL["queryEmployeeSalaryForIdSql"], vec![to_value!(id)])
         .await
     {
         Ok(value) => Ok(value),
+        Err(e) => return_error!(e),
+    }
+}
+
+#[named]
+pub async fn display_employee_change_information(id: usize) -> Result<Vec<PersonalChange>> {
+    match RB
+        .fetch_decode(
+            &SQL["displayEmployeeChangePersonalInformationSql"],
+            vec![to_value!(id)],
+        )
+        .await
+    {
+        Ok(value) => Ok(value),
+        Err(e) => return_error!(e),
+    }
+}
+
+#[named]
+pub async fn insert_salary_record_information(
+    employee_id: usize,
+    salary: f32,
+    basic_salary: f32,
+    bonus: f32,
+    fine: f32,
+    starting_time: String,
+) -> Result<()> {
+    match RB
+        .fetch(
+            &SQL["insertSalaryRecordInformationSql"],
+            vec![
+                to_value!(employee_id),
+                to_value!(salary),
+                to_value!(basic_salary),
+                to_value!(bonus),
+                to_value!(fine),
+                to_value!(starting_time),
+            ],
+        )
+        .await
+    {
+        Ok(_) => Ok(()),
         Err(e) => return_error!(e),
     }
 }

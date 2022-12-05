@@ -1,6 +1,6 @@
+use backend::prelude::*;
 use dioxus::events::FormEvent;
 use dioxus::prelude::*;
-use backend::prelude::*;
 
 use crate::display_list;
 
@@ -11,6 +11,7 @@ pub(crate) fn AddEmployee(cx: Scope) -> Element {
 
     let content = use_state(&cx, || String::from("Message"));
     let submit = move |evt: FormEvent| {
+        println!("{:#?}", evt);
         cx.spawn(async move {
             let value = &evt.values;
             let post_id = query_post_by_name(value["post"].clone()).await.unwrap();
@@ -21,7 +22,7 @@ pub(crate) fn AddEmployee(cx: Scope) -> Element {
                 .await
                 .unwrap();
 
-            insert_employee_information(
+            let employee_id = insert_employee_information(
                 post_id,
                 department_id,
                 value["name"].clone(),
@@ -33,6 +34,11 @@ pub(crate) fn AddEmployee(cx: Scope) -> Element {
             )
             .await
             .unwrap();
+            println!("{}", employee_id);
+            let now_time = chrono::Local::now().date_naive();
+            insert_salary_record_information(employee_id, 0.0, 0.0, 0.0, 0.0, now_time.to_string())
+                .await
+                .unwrap();
         })
     };
     cx.render(rsx! {

@@ -20,7 +20,7 @@ insertPoliticalSql : insert into political(name)values(?)
 
 deletePoliticalForNameSql : update political set status=1 where political_name=?
 
-insertEmployeeInformationSql : insert into employee(post_id, department_id, name, birth, political_id, health_status, salary, postscript)values(?, ?, ?, ?, ?, ?, ?, ?)
+insertEmployeeInformationSql : insert into employee(post_id, department_id, name, birth, political_id, health_status, salary, postscript)values(?, ?, ?, ?, ?, ?, ?, ?);
 
 displayPoliticalInformationSql : select * from political where status = 0
 
@@ -42,7 +42,7 @@ updateEmployeeInformationSqlPre : update employee set
 
 updateEmployeeInformationSqlPost : =? where id=?
 
-searchAttendanceInformationSql : select e.name, aty.attendance_name,  aty.base_fine_or_bonus, aty.rate_fine_or_bonus, a.attendance_time, a.record_time  from employee as e, attendance as a, attendance_type as aty where e.id=? and a.record_time > ? and  e.id = a.employee_id and aty.attendance_id = a.attendance_id order by a.record_time
+searchAttendanceInformationSql : select e.name, aty.attendance_name, a.attendance_time, aty.base_fine_or_bonus, aty.rate_fine_or_bonus,  a.record_time  from employee as e, attendance as a, attendance_type as aty where e.id=? and a.record_time > ? and  e.id = a.employee_id and aty.attendance_id = a.attendance_id order by a.record_time
 
 searchMaxTimeFromSalaryRecordSql : SELECT MAX(cut_of_time) as cut_of_time FROM salary_record WHERE employee_id=?
 
@@ -66,7 +66,7 @@ queryEmployeeInformationForIdSql : select e.id, e.post_id, e.department_id, e.na
 
 deletePoliticalForIdSql : update political set status=1 where id=?
 
-displayDepartmentInformationSql : select department.*, employee.name manager_name from department left join employee on department.manager_id = employee.department_id where department.status=0
+displayDepartmentInformationSql : select department.*, employee.name manager_name from department left join employee on department.manager_id = employee.id where department.status=0
 
 showDepartmentInformationForIdSql : select department.*, employee.name manager_name from department left join employee on department.manager_id = employee.department_id where department.status=0 and department.id=?
 

@@ -28,9 +28,9 @@ pub fn HomePage(cx: Scope) -> Element {
                 }
                 Route { to: "/", div { "HomePage" } } 
                 Route { to: "/1", div { AddPage { } } }
-                Route { to: "/2", div { "Home2" } }
-                Route { to: "/3", div { "Home3" } }
-                Route { to: "/4", div { "Home4" } }
+                Route { to: "/2", div { DeletePage { } } }
+                Route { to: "/3", div { ModifyPage { } } }
+                Route { to: "/4", div { QueryPage { } } }
                 Route { to: "" h1 { "404 Not Found" } }
             }
         }

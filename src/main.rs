@@ -9,7 +9,7 @@ fn main() {
         .with_window(
             |_| WindowBuilder::new()
                 .with_title("Human Resource Management System")
-                .with_inner_size(LogicalSize::new(1000, 1000))
+                .with_inner_size(LogicalSize::new(1000, 800))
                 .with_resizable(false)
         )
     });

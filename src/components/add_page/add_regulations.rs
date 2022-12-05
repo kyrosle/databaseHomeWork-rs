@@ -1,8 +1,7 @@
 use backend::{
     display_attendance_type_information, display_department_information,
-    display_political_information, display_post_information, insert_attendance_information,
-    insert_attendance_type_information, insert_department_information, insert_political,
-    insert_post,
+    display_political_information, display_post_information, insert_attendance_type_information,
+    insert_department_information, insert_political, insert_post,
 };
 use dioxus::{events::FormEvent, prelude::*};
 
@@ -160,7 +159,7 @@ fn AddDepartment(cx: Scope) -> Element {
                         class: "control",
                         button {
                             class: "button is-link",
-                            "Show"
+                            "Add"
                         }
                     }
                 }
@@ -231,7 +230,7 @@ fn AddPost(cx: Scope) -> Element {
                         class: "control",
                         button {
                             class: "button is-link",
-                            "Show"
+                            "Add"
                         }
                     }
                 }
@@ -305,7 +304,7 @@ fn AddAttendance(cx: Scope) -> Element {
                         class: "control",
                         button {
                             class: "button is-link",
-                            "Show"
+                            "Add"
                         }
                     }
                 }
@@ -340,7 +339,7 @@ fn AddPolitical(cx: Scope) -> Element {
                         class: "control",
                         button {
                             class: "button is-link",
-                            "Show"
+                            "Add"
                         }
                     }
                 }

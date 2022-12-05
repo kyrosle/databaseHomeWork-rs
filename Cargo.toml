@@ -8,6 +8,8 @@ default-run = "main"
 [workspace]
 members = ["./backend"]
 
+
+
 [[bin]]
 name = "backend"
 path = "backend/src/main.rs"
@@ -22,3 +24,5 @@ dioxus = { version = "0.2.4", features = ["desktop", "router"] }
 dioxus-desktop = "0.2.3"
 backend = { path = "./backend", version = "0.1.0" }
 tokio = { version = "1.22.0", features = ["full"] }
+chrono = "0.4.23"
+fast_log = "1.5.46"
